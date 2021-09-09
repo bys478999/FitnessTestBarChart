@@ -2,10 +2,10 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import plotly.express as px
-import matplotlib.pyplot as mt
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import plotly.graph_objects as go
+import openpyxl
 
 st.title('Fitness Test Web Application')
 file = st.file_uploader("Chose a file")
