@@ -14,7 +14,7 @@ def main():
         st.subheader("Login Section")
         username = st.sidebar.text_input("Username")
         password = st.sidebar.text_input("Password", type='password')
-        if st.sidebar.button("Login"): 
+        if st.sidebar.checkbox("Login"): 
             if password == '1234' and username == 'abu':
                     app = MultiApp()
                     st.title('Fitness Test Web Application')
