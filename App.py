@@ -14,7 +14,7 @@ def main():
         st.subheader("Login Section")
         username = st.sidebar.text_input("Username")
         password = st.sidebar.text_input("Password", type='password')
-        if st.sidebar.button("Login"):
+        st.sidebar.button("Login"):
             if password == '1234' and username == 'abu':
                 st.success("Logged In as {}".format(username))
                 app = MultiApp()
