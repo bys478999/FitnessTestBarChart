@@ -10,7 +10,7 @@ def main():
 
     if choice == "Home":
         st.subheader("Home")
-    elif choice == "Login":
+    elif choice == <h1>"Login"</h1>:
         st.subheader("Login Section")
         username = st.sidebar.text_input("Username")
         password = st.sidebar.text_input("Password", type='password')
