@@ -2,7 +2,7 @@ import streamlit as st
 from Multi_Page_App import MultiApp
 from APP import Home_Page, Second_Page
 import streamlit.components.v1 as components
-from PIL import image
+
 
 
 def main():
@@ -20,8 +20,8 @@ def main():
                  <h1 style = "color:yellow; background-color:blue" >Welcome to Sports Science & Sports Medicine Website</h1>
                  <h2 style = "color:blue";>Improve athlete's performance is our mission</h2>  
                  """,scrolling=False)
-                image = Image.open('ussps.jpg')
-                st.image(image, caption='USSPS photo')
+                
+                st.image("ussps.jpg", caption='USSPS photo')
             else:
                 st.warning("Incorrect username/password")
         
