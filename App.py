@@ -6,7 +6,7 @@ import streamlit.components.v1 as components
 
 def main():
     st.title("Simple Login App")
-    menu = ["Home","Login","Sign Up"]
+    menu = ["Home","Data Analysis","Sign Up"]
     choice = st.sidebar.selectbox("Menu",menu)
 
     if choice == "Home":
@@ -20,8 +20,8 @@ def main():
                  <h2 style = "color:blue";>Improve athlete's performance is our mission</h2>  
                  """,scrolling=False)
         
-    elif choice == "Login":
-        st.subheader("Login Section")
+    elif choice == "Data Analysis":
+        st.subheader("Data Analysis Section")
         username = st.sidebar.text_input("Username")
         password = st.sidebar.text_input("Password", type='password')
         if st.sidebar.checkbox("Login"): 
