@@ -16,8 +16,8 @@ def main():
         password = st.sidebar.text_input("Password", type='password')
         if st.sidebar.button("Login"):
             if password == '1234' and username == 'abu':
-                st.success("Logged In as {}".format(username))
-                while app = MultiApp()
+                while st.success("Logged In as {}".format(username))
+                     app = MultiApp()
                     st.title('Fitness Test Web Application')
                     app.add_app("Bar Chart Maker", Home_Page.app)
                     app.add_app("Bar Chart Maker (Data Comparison)", Second_Page.app)
