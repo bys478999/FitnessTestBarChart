@@ -15,7 +15,7 @@ def main():
         username = st.sidebar.text_input("Username")
         password = st.sidebar.text_input("Password", type='password')
         if st.sidebar.button("Login"):
-            while password == '1234' and username == 'abu':
+            if password == '1234' and username == 'abu':
                 st.success("Logged In as {}".format(username))
                 app = MultiApp()
                 st.title('Fitness Test Web Application')
