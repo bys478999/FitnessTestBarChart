@@ -19,6 +19,7 @@ def main():
                  <h1 style = "color:yellow; background-color:blue" >Welcome to Sports Science & Sports Medicine Website</h1>
                  <h2 style = "color:blue";>Improve athlete's performance is our mission</h2>  
                  """,scrolling=False)
+                st.image("ussps.jpg", caption='USSPS photo')
             else:
                 st.warning("Incorrect username/password")
         
