@@ -22,7 +22,7 @@ def main():
                  <h2 style = "color:blue";>Improve athlete's performance is our mission</h2>  
                  """,scrolling=False)
                 components.html(""" 
-                 <img src="ussps.jpg" alt="USSPS photo"> 
+                 <img src="https://github.com/bys478999/FitnessTestBarChart/blob/fitnesstestdata/ussps.jpg" alt="USSPS photo"> 
                  """,scrolling=False)
                
             else:
