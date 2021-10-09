@@ -5,7 +5,7 @@ import streamlit.components.v1 as components
 
 
 def main():
-    st.title("Simple Login App")
+    st.title("""Sports Science & Sports Medicine Website""")
     menu = ["Home","Data Analysis","Sign Up"]
     choice = st.sidebar.selectbox("Menu",menu)
 
