@@ -2,10 +2,6 @@ import streamlit as st
 from Multi_Page_App import MultiApp
 from APP import Home_Page, Second_Page
 
-components.html(""" 
-        <h1 style = "color:yellow; background-color:blue" >Welcome to Sports Science & Sports Medicine Website</h1>
-        <h2 style = "color:blue";>Improve athlete's performance is our mission</h2>  
-        """,scrolling=False)
 
 def main():
     st.title("Simple Login App")
