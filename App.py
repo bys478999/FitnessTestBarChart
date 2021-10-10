@@ -23,8 +23,7 @@ def main():
                  <p><h2 style = "color:black";>Aim</h2></p>
                  <p><h3 style = "color:orange";>Improve athlete's performance is our mission</h3></p>   
                  """,scrolling=False) 
-                components.html("""    
-              
+                
                 st.video("https://drive.google.com/file/d/1vZFUPynzEGHr_J6oqD_KUsbLBreoUfeB/view?usp=sharing")
                 st.markdown('Our Aim:')
                 st.markdown("Improve athlete's performance is our mission")
