@@ -21,13 +21,9 @@ def main():
                 components.html(""" 
                  <h1 style = "color:yellow; background-color:blue" >Welcome to Sports Science & Sports Medicine Website</h1>
                  <h2 style = "color:blue";>Improve athlete's performance is our mission</h2>  
-                 """,scrolling=False)
-                components.html(""" 
-                 <img src="https://github.com/bys478999/FitnessTestBarChart/blob/fitnesstestdata/ussps.jpg" alt="USSPS photo"/> 
-                 """,scrolling=False)
-                
+                 """,scrolling=False)           
                 image = Image.open('ussps.jpg')
-                st.image(image, caption='Sunrise by the mountains')
+                st.image(image, caption='Photo of intership students')
                
             else:
                 st.warning("Incorrect username/password")
