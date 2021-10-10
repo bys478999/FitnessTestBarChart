@@ -29,7 +29,7 @@ def main():
                  <p><h3 style = "color:orange";>Improve athlete's performance is our mission</h3></p>   
                  """,scrolling=False)    
                 components.html(""" 
-                 <iframe width="647" height="364" src="https://www.youtube.com/embed/7wtfhZwyrcc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                 <iframe width="323" height="182" src="https://www.youtube.com/embed/7wtfhZwyrcc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                  """,scrolling=False) 
                 st.markdown('Our Aim:')
                 st.markdown("Improve athlete's performance is our mission")
