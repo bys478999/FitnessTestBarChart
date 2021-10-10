@@ -58,5 +58,3 @@ def main():
 if __name__ == '__main__':
     main()
 
-st.write("DB username:", st.secrets["DB_USERNAME"])
-st.write("DB password:", st.secrets["DB_PASSWORD"])
