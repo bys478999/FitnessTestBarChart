@@ -6,7 +6,7 @@ from PIL import Image
 
 
 def main():
-    st.title("""Sports Science & Sports Medicine Website""")
+    st.title(<h1>"""Sports Science & Sports Medicine Website"""</h1>)
     menu = ["Home","Data Analysis","Service"]
     choice = st.sidebar.selectbox("Menu",menu)
 
