@@ -7,8 +7,6 @@ from PIL import Image
 
 
 def main():
-    st.write("DB username:", st.secrets["DB_USERNAME"])
-    st.write("DB password:", st.secrets["DB_PASSWORD"])
     st.title("""Sports Science & Sports Medicine Website""")
     menu = ["Home","Data Analysis","Service"]
     choice = st.sidebar.selectbox("Menu",menu)
@@ -60,3 +58,5 @@ def main():
 if __name__ == '__main__':
     main()
 
+st.write("DB username:", st.secrets["DB_USERNAME"])
+st.write("DB password:", st.secrets["DB_PASSWORD"])
