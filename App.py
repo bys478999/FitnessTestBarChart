@@ -2,6 +2,7 @@ import streamlit as st
 from Multi_Page_App import MultiApp
 from APP import Home_Page, Second_Page
 import streamlit.components.v1 as components
+from PIL import Image
 
 
 
@@ -24,6 +25,9 @@ def main():
                 components.html(""" 
                  <img src="https://github.com/bys478999/FitnessTestBarChart/blob/fitnesstestdata/ussps.jpg" alt="USSPS photo"/> 
                  """,scrolling=False)
+                
+                image = Image.open('ussps.jpg')
+                st.image(image, caption='Sunrise by the mountains')
                
             else:
                 st.warning("Incorrect username/password")
