@@ -4,11 +4,12 @@ from APP import Home_Page, Second_Page
 import streamlit.components.v1 as components
 from PIL import Image
 
-st.write("DB username:", st.secrets["abu"])
-st.write("DB password:", st.secrets["1234"])
+
 
 
 def main():
+    st.write("DB username:", st.secrets["abu"])
+    st.write("DB password:", st.secrets["1234"])
     st.title("""Sports Science & Sports Medicine Website""")
     menu = ["Home","Data Analysis","Service"]
     choice = st.sidebar.selectbox("Menu",menu)
