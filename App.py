@@ -13,7 +13,7 @@ def main():
     choice = st.sidebar.selectbox("Menu",menu)
 
     if choice == "Home":
-        st.subheader("Home Page")
+        st.header("Home Page")
         username = st.sidebar.text_input("Username")
         password = st.sidebar.text_input("Password", type='password')
         if st.sidebar.checkbox("Login"): 
@@ -24,7 +24,7 @@ def main():
                  <p><h3 style = "color:orange";>Improve athlete's performance is our mission</h3></p>   
                  """,scrolling=False)    
                 st.markdown('Our Aim:')
-                st.caption("Improve athlete's performance is our mission")
+                st.markdown("Improve athlete's performance is our mission")
                 image = Image.open('ussps.jpg')
                 st.image(image, caption='Photo with intership students')
                
