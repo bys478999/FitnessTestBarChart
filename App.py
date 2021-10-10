@@ -4,13 +4,11 @@ from APP import Home_Page, Second_Page
 import streamlit.components.v1 as components
 from PIL import Image
 
-[theme]
-primaryColor="#F63366"
+primaryColor="#8A2BE2"
 backgroundColor="#FFFFFF"
 secondaryBackgroundColor="#F0F2F6"
 textColor="#262730"
 font="sans serif"
-
 
 
 
