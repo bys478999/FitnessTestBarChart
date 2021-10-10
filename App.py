@@ -14,8 +14,8 @@ def main():
        st.header("Home Page")
        username = st.sidebar.text_input("Username")
        password = st.sidebar.text_input("Password", type='password')
-            if st.sidebar.checkbox("Login"): 
-                if password == st.secrets["password"] and username == st.secrets["username"]:
+       if st.sidebar.checkbox("Login"): 
+            if password == st.secrets["password"] and username == st.secrets["username"]:
                 components.html(""" 
                  <h1 style = "color:yellow; background-color:blue" >Welcome to Sports Science & Sports Medicine</h1>
                  <p><h2 style = "color:black";>Aim</h2></p>
