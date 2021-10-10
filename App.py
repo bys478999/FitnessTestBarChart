@@ -17,7 +17,7 @@ def main():
         username = st.sidebar.text_input("Username")
         password = st.sidebar.text_input("Password", type='password')
         if st.sidebar.checkbox("Login"): 
-            if password == '123' and username == 'abu':
+            if password == 'msnpp8383' and username == 'uss&ps':
                 components.html(""" 
                  <h1 style = "color:yellow; background-color:blue" >Welcome to Sports Science & Sports Medicine</h1>
                  <p><h2 style = "color:black";>Aim</h2></p>
@@ -38,7 +38,7 @@ def main():
         username = st.sidebar.text_input("Username")
         password = st.sidebar.text_input("Password", type='password')
         if st.sidebar.checkbox("Login"): 
-            if password == '1234' and username == 'abu':
+            if password == '8383' and username == 'uss&ps':
                     app = MultiApp()
                     st.title('Fitness Test Web Application')
                     app.add_app("Bar Chart Maker", Home_Page.app)
