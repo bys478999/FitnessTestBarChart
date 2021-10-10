@@ -4,19 +4,16 @@ from APP import Home_Page, Second_Page
 import streamlit.components.v1 as components
 from PIL import Image
 
-username = st.sidebar.text_input("Username")
-password = st.sidebar.text_input("Password", type='password')
-if password == st.secrets["password_1"] and username == st.secrets["username_1"]
 
-    def main():
-        st.title("""Sports Science & Sports Medicine Website""")
-        menu = ["Home","Data Analysis","Service"]
-        choice = st.sidebar.selectbox("Menu",menu)
+def main():
+    st.title("""Sports Science & Sports Medicine Website""")
+    menu = ["Home","Data Analysis","Service"]
+    choice = st.sidebar.selectbox("Menu",menu)
 
-        if choice == "Home":
-            st.header("Home Page")
-            username = st.sidebar.text_input("Username")
-            password = st.sidebar.text_input("Password", type='password')
+    if choice == "Home":
+       st.header("Home Page")
+       username = st.sidebar.text_input("Username")
+       password = st.sidebar.text_input("Password", type='password')
             if st.sidebar.checkbox("Login"): 
                 if password == st.secrets["password"] and username == st.secrets["username"]:
                 components.html(""" 
