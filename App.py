@@ -31,6 +31,7 @@ def main():
                 components.html(""" 
                  <iframe width="323" height="182" src="https://www.youtube.com/embed/7wtfhZwyrcc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                  """,scrolling=False) 
+                st.video("https://www.youtube.com/watch?v=7wtfhZwyrcc")
                 st.markdown('Our Aim:')
                 st.markdown("Improve athlete's performance is our mission")
                 image = Image.open('ussps.jpg')
