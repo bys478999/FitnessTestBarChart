@@ -22,14 +22,14 @@ def main():
                  <h1 style = "color:yellow; background-color:blue" >Welcome to Sports Science & Sports Medicine</h1>
                  <p><h2 style = "color:black";>Aim</h2></p>
                  <p><h3 style = "color:orange";>Improve athlete's performance is our mission</h3></p>   
-                 """,scrolling=False) 
-                st.video('https://youtu.be/iRAKIcJ_9HM?list=PLNU1HqjHb92rscpN1h-HflhQRaunwDFbD')
-                st.video('https://youtu.be/Kz0Y5ZT119I?list=PLNU1HqjHb92rscpN1h-HflhQRaunwDFbD') 
-                st.video('https://youtu.be/pcSARMfV9z4?list=PLNU1HqjHb92rscpN1h-HflhQRaunwDFbD') 
+                 """,scrolling=False)             
                 st.markdown('Our Aim:')
                 st.markdown("Improve athlete's performance is our mission")
                 image = Image.open('ussps.jpg')
                 st.image(image, caption='Photo with intership students')
+                st.video('https://youtu.be/iRAKIcJ_9HM?list=PLNU1HqjHb92rscpN1h-HflhQRaunwDFbD')
+                st.video('https://youtu.be/Kz0Y5ZT119I?list=PLNU1HqjHb92rscpN1h-HflhQRaunwDFbD') 
+                st.video('https://youtu.be/pcSARMfV9z4?list=PLNU1HqjHb92rscpN1h-HflhQRaunwDFbD') 
                
             else:
                 st.warning("Incorrect username/password")
