@@ -8,8 +8,6 @@ from PIL import Image
 
 
 def main():
-    st.write("DB username:", st.secrets["abu"])
-    st.write("DB password:", st.secrets["1234"])
     st.title("""Sports Science & Sports Medicine Website""")
     menu = ["Home","Data Analysis","Service"]
     choice = st.sidebar.selectbox("Menu",menu)
