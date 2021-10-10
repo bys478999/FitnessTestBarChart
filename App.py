@@ -34,7 +34,7 @@ def main():
                 st.warning("Incorrect username/password")
         
     elif choice == "Data Analysis":
-        st.subheader("Data Analysis Section")
+        st.header("Data Analysis Section")
         username = st.sidebar.text_input("Username")
         password = st.sidebar.text_input("Password", type='password')
         if st.sidebar.checkbox("Login"): 
@@ -53,8 +53,8 @@ def main():
             else:
                 st.warning("Incorrect username/password")
 
-    elif choice == "Sign Up":
-        st.subheader("Create New Account")
+    elif choice == "Service":
+        st.header("Our Service")
 
 if __name__ == '__main__':
     main()
