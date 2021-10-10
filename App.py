@@ -9,7 +9,7 @@ from PIL import Image
 
 def main():
     st.title("""Sports Science & Sports Medicine Website""")
-    menu = ["Home","Data Analysis","Sign Up"]
+    menu = ["Home","Data Analysis","Service"]
     choice = st.sidebar.selectbox("Menu",menu)
 
     if choice == "Home":
