@@ -4,6 +4,9 @@ from APP import Home_Page, Second_Page
 import streamlit.components.v1 as components
 from PIL import Image
 
+username = st.sidebar.text_input("Username")
+password = st.sidebar.text_input("Password", type='password')
+if password == st.secrets["password_1"] and username == st.secrets["username_1"]
 
 def main():
     st.title("""Sports Science & Sports Medicine Website""")
