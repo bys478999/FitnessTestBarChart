@@ -4,8 +4,6 @@ from APP import Home_Page, Second_Page
 import streamlit.components.v1 as components
 from PIL import Image
 
-st.write("DB username:", st.secrets["DB_USERNAME"]) 
-st.write("DB password:", st.secrets["DB_PASSWORD"])
 
 def main():
     st.title("""Sports Science & Sports Medicine Website""")
@@ -17,7 +15,7 @@ def main():
         username = st.sidebar.text_input("Username")
         password = st.sidebar.text_input("Password", type='password')
         if st.sidebar.checkbox("Login"): 
-            if password == 'msnpp8383' and username == st.secrets["DB_USERNAME"]:
+            if password == st.secrets["password"] and username == st.secrets["username"]:
                 components.html(""" 
                  <h1 style = "color:yellow; background-color:blue" >Welcome to Sports Science & Sports Medicine</h1>
                  <p><h2 style = "color:black";>Aim</h2></p>
@@ -38,7 +36,7 @@ def main():
         username = st.sidebar.text_input("Username")
         password = st.sidebar.text_input("Password", type='password')
         if st.sidebar.checkbox("Login"): 
-            if password == '8383' and username == 'uss&ps':
+            if password == st.secrets["password_1"] and username == st.secrets["username_1"]:
                     app = MultiApp()
                     st.title('Fitness Test Web Application')
                     app.add_app("Bar Chart Maker", Home_Page.app)
