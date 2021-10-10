@@ -23,8 +23,6 @@ def main():
                  <p><h2 style = "color:black";>Aim</h2></p>
                  <p><h3 style = "color:orange";>Improve athlete's performance is our mission</h3></p>   
                  """,scrolling=False)             
-                st.markdown('Our Aim:')
-                st.markdown("Improve athlete's performance is our mission")
                 image = Image.open('ussps.jpg')
                 st.image(image, caption='Photo with intership students')
                 st.video('https://youtu.be/iRAKIcJ_9HM?list=PLNU1HqjHb92rscpN1h-HflhQRaunwDFbD')
