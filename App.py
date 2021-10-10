@@ -23,15 +23,9 @@ def main():
                  <p><h2 style = "color:black";>Aim</h2></p>
                  <p><h3 style = "color:orange";>Improve athlete's performance is our mission</h3></p>   
                  """,scrolling=False) 
-                components.html(""" 
-                 <h1 style = "color:yellow; background-color:blue" >Welcome to Sports Science & Sports Medicine</h1>
-                 <p><h2 style = "color:black";>Aim</h2></p>
-                 <p><h3 style = "color:orange";>Improve athlete's performance is our mission</h3></p>   
-                 """,scrolling=False)    
-                components.html(""" 
-                 <iframe width="323" height="182" src="https://www.youtube.com/embed/7wtfhZwyrcc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                 """,scrolling=False) 
-                st.video("https://www.youtube.com/watch?v=7wtfhZwyrcc")
+                components.html("""    
+              
+                st.video("https://drive.google.com/file/d/1vZFUPynzEGHr_J6oqD_KUsbLBreoUfeB/view?usp=sharing")
                 st.markdown('Our Aim:')
                 st.markdown("Improve athlete's performance is our mission")
                 image = Image.open('ussps.jpg')
