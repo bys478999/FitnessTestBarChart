@@ -23,8 +23,8 @@ def main():
                  <p><h2 style = "color:black";>Aim</h2></p>
                  <p><h3 style = "color:orange";>Improve athlete's performance is our mission</h3></p>   
                  """,scrolling=False)    
-                st.text('Our Aim:/n
-                        Improve athlete's performance is our mission')
+                st.text('Our Aim:')
+                st.text("Improve athlete's performance is our mission")
                 image = Image.open('ussps.jpg')
                 st.image(image, caption='Photo with intership students')
                
