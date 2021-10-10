@@ -4,7 +4,7 @@ from APP import Home_Page, Second_Page
 import streamlit.components.v1 as components
 from PIL import Image
 
-primaryColor="#8A2BE2"
+primaryColor="red"
 backgroundColor="#FFFFFF"
 secondaryBackgroundColor="#F0F2F6"
 textColor="#262730"
