@@ -4,8 +4,8 @@ from APP import Home_Page, Second_Page
 import streamlit.components.v1 as components
 from PIL import Image
 
-st.write("DB username:", st.secrets[""]) 
-st.write("DB password:", st.secrets[""])
+st.write("DB username:", st.secrets["bu"]) 
+st.write("DB password:", st.secrets["12"])
 
 def main():
     st.title("""Sports Science & Sports Medicine Website""")
