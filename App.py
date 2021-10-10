@@ -1,11 +1,14 @@
 import streamlit as st
+
+st.write("DB username:", st.secrets["DB_USERNAME"])
+st.write("DB password:", st.secrets["DB_PASSWORD"])
+
 from Multi_Page_App import MultiApp
 from APP import Home_Page, Second_Page
 import streamlit.components.v1 as components
 from PIL import Image
 
-st.write("DB username:", st.secrets["DB_USERNAME"])
-st.write("DB password:", st.secrets["DB_PASSWORD"])
+
 
 def main():
     st.title("""Sports Science & Sports Medicine Website""")
