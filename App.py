@@ -29,7 +29,7 @@ def main():
                  
                
             else:
-                st.warning("Incorrect username/password")
+                <h1>st.warning("Incorrect username/password")</h1>
         
     elif choice == "Data Analysis":
         st.header("Data Analysis Section")
