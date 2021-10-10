@@ -3,6 +3,8 @@ from Multi_Page_App import MultiApp
 from APP import Home_Page, Second_Page
 import streamlit.components.v1 as components
 from PIL import Image
+
+[theme]
 primaryColor="#F63366"
 backgroundColor="#FFFFFF"
 secondaryBackgroundColor="#F0F2F6"
