@@ -6,8 +6,7 @@ from PIL import Image
 
 
 
-st.write("DB username:", st.secrets["abu"])
-st.write("DB password:", st.secrets["1234"])
+
 
 def main():
     st.title("""Sports Science & Sports Medicine Website""")
