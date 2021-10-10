@@ -13,6 +13,7 @@ def main():
     choice = st.sidebar.selectbox("Menu",menu)
 
     if choice == "Home":
+        st.subheader("Home Page")
         username = st.sidebar.text_input("Username")
         password = st.sidebar.text_input("Password", type='password')
         if st.sidebar.checkbox("Login"): 
@@ -21,7 +22,9 @@ def main():
                  <h1 style = "color:yellow; background-color:blue" >Welcome to Sports Science & Sports Medicine</h1>
                  <p><h2 style = "color:black";>Aim</h2></p>
                  <p><h3 style = "color:orange";>Improve athlete's performance is our mission</h3></p>   
-                 """,scrolling=False)           
+                 """,scrolling=False)    
+                st.text('Our Aim:/n
+                        Improve athlete's performance is our mission')
                 image = Image.open('ussps.jpg')
                 st.image(image, caption='Photo with intership students')
                
