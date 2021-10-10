@@ -29,7 +29,8 @@ def main():
                 st.image(image, caption='Photo with intership students')
                 st.video('https://youtu.be/iRAKIcJ_9HM?list=PLNU1HqjHb92rscpN1h-HflhQRaunwDFbD')
                 st.video('https://youtu.be/Kz0Y5ZT119I?list=PLNU1HqjHb92rscpN1h-HflhQRaunwDFbD') 
-                st.video('https://youtu.be/pcSARMfV9z4?list=PLNU1HqjHb92rscpN1h-HflhQRaunwDFbD') 
+                st.video('https://youtu.be/pcSARMfV9z4?list=PLNU1HqjHb92rscpN1h-HflhQRaunwDFbD')
+                st.video('https://drive.google.com/file/d/1vZFUPynzEGHr_J6oqD_KUsbLBreoUfeB/view?usp=sharing') 
                
             else:
                 st.warning("Incorrect username/password")
