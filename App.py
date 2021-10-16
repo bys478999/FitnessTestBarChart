@@ -61,10 +61,8 @@ def main():
                    st.header("BodyMechanics Service")
                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
                    st.dataframe(df)
-                   Year = df['Year']
-                   a = st.sidebar.selectbox("Year",Year)
-                   a_data = df.groupby(['Year'] == a)['Month'].count()
-                   st.write(a_data)
+                   a= df.groupby(['Year'])['Month'].count()
+                   st.write(a)
                     
                    #Month = [df['Month']
                    #a = st.sidebar.selectbox("Month",Month)
