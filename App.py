@@ -52,7 +52,10 @@ def main():
                 st.warning("Incorrect username/password")
 
     elif choice == "Service":
-        st.header("Our Service")
+        st.header("BodyMechanics Service")
+        df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/1NVPrXAes46nxhhevFzuvRkUCM9Y6JQNqUteR9KUyL-I/export?format=xlsx")
+                st.subheader('Gym Workout Log')
+                st.dataframe(df)
 
 if __name__ == '__main__':
     main()
