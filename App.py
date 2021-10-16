@@ -63,6 +63,9 @@ def main():
                    st.dataframe(df)
                    a= df.groupby(['Year'])['Month'].count()
                    st.write(a)
+                   
+                   b= df.groupby(['Month'])['Name'].count()
+                   st.write(b)
                     
                    #Month = [df['Month']
                    #a = st.sidebar.selectbox("Month",Month)
