@@ -66,8 +66,8 @@ def main():
                    a_data = df.groupby(['Year'] == a)['Month'].count()
                    st.write(a_data)
                     
-                   Month = [df['Month']
-                   a = st.sidebar.selectbox("Month",Month)
+                   #Month = [df['Month']
+                   #a = st.sidebar.selectbox("Month",Month)
                     
                     
 
