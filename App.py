@@ -55,8 +55,7 @@ def main():
         sheet_id = '1NVPrXAes46nxhhevFzuvRkUCM9Y6JQNqUteR9KUyL-I'
         st.header("BodyMechanics Service")
         df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
-                st.subheader('Gym Workout Log')
-                st.dataframe(df)
+        st.dataframe(df)
               
 
 if __name__ == '__main__':
