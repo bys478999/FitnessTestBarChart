@@ -82,7 +82,7 @@ def main():
                    selected = selected_year.rename(columns={'Name': 'Case'})
                    b= selected.groupby(['Month'])['Case'].count()
                    x = selected['Month'].drop_duplicates()
-                   col1.write(b)
+                   col1.table(b)
                    fig, ax = plt.subplots(nrows=1, ncols=1)   
                    y = b
                    ax.plot(x,y, marker='o', color='blue', mec='red', ls=':')
@@ -91,7 +91,10 @@ def main():
                    ax.set_ylabel('Case')
                    col2.pyplot(fig)
                     
-               
+                   month = st.selectbox('Chose The Month', df['Month'].drop_duplicates())
+                   col1, col2 = st.columns(2)
+                   selected_month = selected_year.loc[df['Month'] == month]
+                   st.write(selected_month)
                     
                     
 
