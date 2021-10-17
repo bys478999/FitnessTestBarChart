@@ -4,6 +4,7 @@ from APP import Home_Page, Second_Page
 import streamlit.components.v1 as components
 from PIL import Image
 import pandas as pd
+import matplotlib.pyplot as plt
 
 
 def main():
