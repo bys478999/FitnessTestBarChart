@@ -70,11 +70,11 @@ def main():
                    selected_year = df.loc[df['Year'] == year]
                    b= selected_year.groupby(['Month'])['Name'].count()
                    x = selected_year['Month'].drop_duplicates()
-                   st.write(x)
-                   #fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 4))   
-                   #y = b
-                   #ax.plot(x,y)
-                   #st.pyplot(fig)
+                   st.write(b)
+                   fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 4))   
+                   y = b
+                   ax.plot(x,y)
+                   st.pyplot(fig)
                     
                
                     
