@@ -101,7 +101,7 @@ def main():
                    mylabels = selected_month['Sport'].drop_duplicates()
                    mylabels1 = selected_month['Gender'].drop_duplicates()
                    mylabels2 = selected_month['Status'].drop_duplicates()
-                   ax[0].pie(y, labels=y)
+                   ax[0].pie(y, labels=y,explode=explode)
                    ax[1].pie(y1,labels=y1)
                    ax[2].pie(y2,labels=y2)
                    ax[0].legend(mylabels, loc='upper right')
