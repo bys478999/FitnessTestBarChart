@@ -94,12 +94,12 @@ def main():
                    month = st.selectbox('Chose The Month', df['Month'].drop_duplicates())       
                    selected_month = selected_year.loc[df['Month'] == month]
                    st.write(selected_month)
-                   fig, ax = plt.subplots(nrows=3, ncols=1)   
+                   fig, ax = plt.subplots(nrows=1, ncols=3)   
                    y = selected_month.groupby(['Sport'])['Month'].count()
                    y1 = selected_month.groupby(['Gender'])['Month'].count()
                    y2 = selected_month.groupby(['Status'])['Month'].count()
                    mylabels = selected_month['Sport'].drop_duplicates()
-                   ax[0].pie(y, labels=y,autopct='%1.2f%%')
+                   ax[0].pie(y, labels=y)
                    ax[1].pie(y1,labels=y1)
                    ax[2].pie(y2,labels=y2)
                 
