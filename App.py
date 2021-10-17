@@ -108,7 +108,7 @@ def main():
                    #ax[0].legend(mylabels, loc='best')
                    #ax[1].legend(mylabels1, loc='best')
                    #ax[2].legend(mylabels2, loc='best')
-                   fig.legend(mylabels,mylabels1,mylabels2, loc='best')
+                   fig.legend([mylabels,mylabels1,mylabels2], loc='best')
                    fig.tight_layout()
                    st.pyplot(fig)
                    
