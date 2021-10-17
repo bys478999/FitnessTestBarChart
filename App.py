@@ -60,8 +60,9 @@ def main():
             if password == "1234" and username == "abu":
                    sheet_id = '1NVPrXAes46nxhhevFzuvRkUCM9Y6JQNqUteR9KUyL-I'
                    st.header("BodyMechanics Service")
-                   df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
-                   st.dataframe(df.fillna(0))
+                   gsheet = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
+                   df = gsheet.fillna(NA)
+                   st.dataframe(df)
                    chosen = df.rename(columns={'Month': 'Total Cases'})
                    a = chosen.groupby(['Year'])['Total Cases'].count()
                    col1, col2 = st.columns(2)   
