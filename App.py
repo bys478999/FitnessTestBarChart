@@ -102,7 +102,7 @@ def main():
                    ax[0].pie(y, labels=y)
                    ax[1].pie(y1,labels=y1)
                    ax[2].pie(y2,labels=y2)
-                   ax[0].legend(mylabels)
+                   ax[0].legend(mylabels, loc='best')
                    
                 
                    st.pyplot(fig)
