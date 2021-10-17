@@ -98,7 +98,7 @@ def main():
                    y = selected_month.groupby(['Sport'])['Sport'].count()
                    y1 = selected_month.groupby(['Gender'])['Gender'].count()
                    y2 = selected_month.groupby(['Status'])['Status'].count()
-                   mylabels = selected_month['Sport'].drop_duplicated()
+                   mylabels = selected_month.groupby(['Sport'])
                    ax[0].pie(y, labels=mylabels)
                    ax[1].pie(y1)
                    ax[2].pie(y2)
