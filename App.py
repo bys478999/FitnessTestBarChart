@@ -95,10 +95,10 @@ def main():
                    selected_month = selected_year.loc[df['Month'] == month]
                    st.write(selected_month)
                    fig, ax = plt.subplots(nrows=1, ncols=3)   
-                   y = selected_month.groupby(['Sport'])['Sport'].count()
-                   y1 = selected_month.groupby(['Gender'])['Gender'].count()
-                   y2 = selected_month.groupby(['Status'])['Status'].count()
-                   mylabels = selected_month.groupby(['Sport'])['Sport']
+                   y = selected_month.groupby(['Month'])['Sport'].count()
+                   y1 = selected_month.groupby(['Month'])['Gender'].count()
+                   y2 = selected_month.groupby(['Month'])['Status'].count()
+                   mylabels = y
                    ax[0].pie(y, labels=mylabels)
                    ax[1].pie(y1)
                    ax[2].pie(y2)
