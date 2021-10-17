@@ -113,7 +113,7 @@ def main():
              
                    plt.pie(y, labels=y)
                    plt.legend(mylabels, loc='best')
-                   st.pyplot(fig)
+                   st.pyplot()
                    
 
                     
