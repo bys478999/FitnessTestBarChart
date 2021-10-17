@@ -124,8 +124,9 @@ def main():
                    cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Gender'].count()
                    st.table(cs)
                    athlete = st.selectbox('Chose Athlete', chosen_sport['Name'].drop_duplicates())
+                   chosen_athlete = chosen_sport.loc[df['Name'] == athlete]
                    ca = athlete.groupby(['Month'])['Gender'].count()
-                   st.table(athlete)
+                   st.table(ca)
                    
                    
                    
