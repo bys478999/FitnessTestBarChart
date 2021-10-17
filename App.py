@@ -110,9 +110,10 @@ def main():
                    fig.tight_layout()
                    st.pyplot(fig)
                    
-                   fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 8)) 
+                   fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 6)) 
                    ax.pie(y, labels=y)
                    ax.legend(mylabels, loc='best')
+                   fig.tight_layout()
                    st.pyplot(fig)
                    
 
