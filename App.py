@@ -121,7 +121,7 @@ def main():
                    st.subheader(' Sports' + '('+year+')')
                    sport = st.selectbox('Chose The Sport', df['Sport'].drop_duplicates())  
                    chosen_sport = selected_year.loc[df['Sport'] == sport]
-                   cs = chosen_sport.groupby(['Name','Month'],as_index=False)['Gender'].count()
+                   cs = chosen_sport.groupby(['Name','Month'],sort=False, as_index=False)['Gender'].count()
                    st.table(cs)
                    
                    
