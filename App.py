@@ -82,7 +82,7 @@ def main():
                    selected = selected_year.rename(columns={'Name': 'Case'})
                    b= selected.groupby(['Month'])['Case'].count()
                    x = selected['Month'].drop_duplicates()
-                   col1.table(b)
+                   col1.write(b)
                    fig, ax = plt.subplots(nrows=1, ncols=1)   
                    y = b
                    ax.plot(x,y, marker='o', color='blue', mec='red', ls=':')
