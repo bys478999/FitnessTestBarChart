@@ -75,6 +75,9 @@ def main():
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 4))   
                    y = b
                    ax.plot(x,y)
+                   ax.set_title("Cases in" + year)
+                   ax.set_xlabel('Month')
+                   ax.set_ylabel('Case')
                    col2.pyplot(fig)
                     
                
