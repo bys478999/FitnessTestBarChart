@@ -120,15 +120,17 @@ def main():
                 
                    st.subheader(' Sports' + '('+year+')')
                    sport = st.selectbox('Chose The Sport', df['Sport'].drop_duplicates())  
-                   chosen_sport = selected_year.loc[df['Sport'] == sport]
-                   cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Gender'].count()
+                   replaceG = selected_year.loc[df['Sport'] == sport]
+                   chose_sport = replaceG.rename(columns={'Gender': 'Case'})
+                   cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Case'].count()
                    st.table(cs)
                    athlete = st.selectbox('Chose Athlete', chosen_sport['Name'].drop_duplicates())
-                   chosen_athlete = chosen_sport.loc[df['Name'] == athlete]
+                   replaceG1 = chosen_sport.loc[df['Name'] == athlete]
+                   chose_athlete = replaceG1.rename(columns={'Gender': 'Case'})
                    ca = chosen_athlete.groupby(['Month'],sort=False, as_index=False)['Gender'].count()
                    st.table(ca)
                    
-                   
+                  
                    
 
                     
