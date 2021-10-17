@@ -65,12 +65,12 @@ def main():
                    a= df.groupby(['Year'])['Month'].count()
                    st.write(a)
                    
-                   col1, col2 = st.columns(2)
+                
                    year = st.selectbox('Chose The Year', df['Year'].drop_duplicates())
                    selected_year = df.loc[df['Year'] == year]
                    b= selected_year.groupby(['Month'])['Name'].count()
                    x = selected_year['Month']
-                   col1.write(b)
+                   st.write(b)
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 4))   
                    y = b
                    ax.plot(x,y)
