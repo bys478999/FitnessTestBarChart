@@ -125,7 +125,7 @@ def main():
                    st.table(cs)
                    athlete = st.selectbox('Chose Athlete', chosen_sport['Name'].drop_duplicates())
                    ca = athlete.groupby(['Month'])['Gender'].count()
-                   st.table(ca)
+                   st.table(chosen_sport)
                    
                    
                    
