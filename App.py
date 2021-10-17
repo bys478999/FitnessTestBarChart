@@ -99,9 +99,9 @@ def main():
                    y1 = selected_month.groupby(['Gender'])['Month'].count()
                    y2 = selected_month.groupby(['Status'])['Month'].count()
                    mylabels = selected_month['Sport'].drop_duplicates()
-                   ax[0].pie(y, labels=mylabels,rotatelabels=True)
-                   ax[1].pie(y1)
-                   ax[2].pie(y2)
+                   ax[0].pie(y, labels=y)
+                   ax[1].pie(y1,labels=y1)
+                   ax[2].pie(y2,labels=y2)
                 
                    st.pyplot(fig)
                     
