@@ -127,7 +127,7 @@ def main():
                    athlete = st.selectbox('Chose Athlete', chosen_sport['Name'].drop_duplicates())
                    replaceG1 = chosen_sport.loc[df['Name'] == athlete]
                    chose_athlete = replaceG1.rename(columns={'Gender': 'Case'})
-                   ca = chosen_athlete.groupby(['Month'],sort=False, as_index=False)['Gender'].count()
+                   ca = chosen_athlete.groupby(['Month'],sort=False, as_index=False)['Case'].count()
                    st.table(ca)
                    
                   
