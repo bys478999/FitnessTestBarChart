@@ -71,7 +71,7 @@ def main():
                    col1.write(b)
                    x = selected_year
                    y = b
-                   col2.pyplot(x,y)
+                   col2.pyplot(b)
                     
                
                     
