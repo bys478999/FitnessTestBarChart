@@ -68,7 +68,7 @@ def main():
                    x1 = df['Year'].drop_duplicates()
                    y1 = a
                    fig, ax = plt.subplots(nrows=1, ncols=1)   
-                   ax.plot(x1,y1)
+                   ax.plot(x1,y1, marker='^', color='blue', mec='red', ls='--')
                    ax.set_title("Bodymechanics Service")
                    ax.set_xlabel('Year')
                    ax.set_ylabel('Case')
@@ -84,7 +84,7 @@ def main():
                    col1.table(b)
                    fig, ax = plt.subplots(nrows=1, ncols=1)   
                    y = b
-                   ax.plot(x,y)
+                   ax.plot(x,y, marker='o', color='blue', mec='red', ls=':')
                    ax.set_title("Cases in year " + year)
                    ax.set_xlabel('Month')
                    ax.set_ylabel('Case')
