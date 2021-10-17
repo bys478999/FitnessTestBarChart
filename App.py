@@ -111,8 +111,8 @@ def main():
                    fig.tight_layout()
                    st.pyplot(fig)
                    
-                   fig = px.pie(y, values='y', names=mylabels, title='Population of European continent')
-                   fig.show()
+                   fig1 = px.pie(y, values='y', names=mylabels, title='Population of European continent')
+                   st.pyplot(fig1)
                     
 
 
