@@ -68,10 +68,11 @@ def main():
                    year = st.selectbox('Chose The Year', df['Year'].drop_duplicates())
                    selected_year = df.loc[df['Year'] == year]
                    b= selected_year.groupby(['Month'])['Name'].count()
+                   b1 = selected_year.groupby(['Month'])
                    col1.write(b)
-                   x = selected_year
-                   y = b
-                   col2.pyplot(b)
+                   x = b1
+                   y = b1['Name'].count()
+                   col2.pyplot(x,y)
                     
                
                     
