@@ -67,12 +67,12 @@ def main():
                    col11.write(a)
                    x1 = df['Year']
                    y1 = a
-                   fig, ax = plt.subplots(nrows=1, ncols=1)   
+                   fig1, ax = plt.subplots(nrows=1, ncols=1)   
                    ax.plot(x1,y1)
                    ax.set_title("Bodymechanics Service")
                    ax.set_xlabel('Year')
                    ax.set_ylabel('Case')
-                   col22.pyplot(fig)
+                   col22.pyplot(fig1)
                    
                                 
                    year = st.selectbox('Chose The Year', df['Year'].drop_duplicates())
