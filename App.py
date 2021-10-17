@@ -72,6 +72,7 @@ def main():
                    ax.set_title("Bodymechanics Service")
                    ax.set_xlabel('Year')
                    ax.set_ylabel('Case')
+                   col22.pyplot(fig)
                    
                                 
                    year = st.selectbox('Chose The Year', df['Year'].drop_duplicates())
