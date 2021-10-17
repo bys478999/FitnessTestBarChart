@@ -72,7 +72,7 @@ def main():
                    col1.write(b)
                    x = b1
                    y = b
-                   col2.pyplot(x,y)
+                   col2.st.pyplot(x,y)
                     
                
                     
