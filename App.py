@@ -64,8 +64,8 @@ def main():
                    st.dataframe(df)  
                    a= df.groupby(['Year'])['Month'].count()
                    col1, col2 = st.columns(2)   
-                   col1.write(a)
-                   x1 = df['Year']
+                   col1.table(a)
+                   x1 = df['Year'].drop_duplicates()
                    y1 = a
                    fig, ax = plt.subplots(nrows=1, ncols=1)   
                    ax.plot(x1,y1)
