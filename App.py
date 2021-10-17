@@ -102,7 +102,8 @@ def main():
                    aa1 = ax[0].pie(y, labels=y)
                    ax[1].pie(y1,labels=y1)
                    ax[2].pie(y2,labels=y2)
-                   ax[0].legend([aa1])
+                   ax[0].legend([aa1],labels=[mylabels])
+                   
                 
                    st.pyplot(fig)
                     
