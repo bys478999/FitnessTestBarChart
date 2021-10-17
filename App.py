@@ -70,9 +70,11 @@ def main():
                    b= selected_year.groupby(['Month'])['Name'].count()
                    b1 = selected_year.groupby(['Month'])
                    col1.write(b)
+                   fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 4))   
                    x = b1
                    y = b
-                   col2.st.pyplot(x,y)
+                   ax.plot(x,y)
+                   col2.pyplot(fig)
                     
                
                     
