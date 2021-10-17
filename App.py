@@ -117,6 +117,14 @@ def main():
                    ax.legend(mylabels, loc='best', bbox_to_anchor=(1.05, 1.0))
                    fig.tight_layout()
                    st.pyplot(fig)
+                
+                   st.subheader(' Sports' + '('+year+')')
+                   sport = st.selectbox('Chose The Sport', df['Sport'].drop_duplicates())  
+                   chosen_sport = selected_year.loc[df['Sport'] == sport]
+                   cs = chosen_sport.groupby(['Name'],['Month'])['Gender'].count()
+                   st.write(cs)
+                   
+                   
                    
 
                     
