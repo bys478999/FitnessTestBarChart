@@ -91,10 +91,18 @@ def main():
                    ax.set_ylabel('Case')
                    col2.pyplot(fig)
                     
-                   month = st.selectbox('Chose The Month', df['Month'].drop_duplicates())
-                   col1, col2 = st.columns(2)
+                   month = st.selectbox('Chose The Month', df['Month'].drop_duplicates())       
                    selected_month = selected_year.loc[df['Month'] == month]
                    st.write(selected_month)
+                   fig, ax = plt.subplots(nrows=1, ncols=3)   
+                   y = selected_month.groupby(['Sport'])['Sport'].count()
+                   y1 = selected_month.groupby(['Gender'])['Gender'].count()
+                   y2 = selected_month.groupby(['Status'])['Status'].count()
+                   ax[0].pie(y)
+                   ax[1].pie(y1)
+                   ax[2].pie(y2)
+                
+                   st.pyplot(fig)
                     
                     
 
