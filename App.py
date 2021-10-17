@@ -60,13 +60,18 @@ def main():
                    sheet_id = '1NVPrXAes46nxhhevFzuvRkUCM9Y6JQNqUteR9KUyL-I'
                    st.header("BodyMechanics Service")
                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
-                   st.dataframe(df)
+                   st.dataframe(df)  
                    a= df.groupby(['Year'])['Month'].count()
                    st.write(a)
+                   
+                   col1, col2 = st.columns(2)
                    year = st.selectbox('Chose The Year', df['Year'].drop_duplicates())
                    selected_year = df.loc[df['Year'] == year]
                    b= selected_year.groupby(['Month'])['Name'].count()
-                   st.write(b)
+                   col1.write(b)
+                   x = selected_year
+                   y = b
+                   col2.pyplot(x,y)
                     
                
                     
