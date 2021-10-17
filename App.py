@@ -63,9 +63,18 @@ def main():
                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
                    st.dataframe(df)  
                    a= df.groupby(['Year'])['Month'].count()
-                   st.write(a)
+                   col11 col22 = st.columns(2)   
+                   col11.write(a)
+                   x1 = df['Year']
+                   y1 = a
+                   fig, ax = plt.subplots(nrows=1, ncols=1)   
+                   ax.plot(x1,y1)
+                   ax.set_title("Bodymechanics Service")
+                   ax.set_xlabel('Year')
+                   ax.set_ylabel('Case')
+                   
                                 
-                   year = st.selectbox('Chose The Year', df['Year'].drop_duplicates().astype(str))
+                   year = st.selectbox('Chose The Year', df['Year'].drop_duplicates())
                    col1, col2 = st.columns(2)
                    selected_year = df.loc[df['Year'] == year]
                    selected = selected_year.rename(columns={'Name': 'Case'})
@@ -75,7 +84,7 @@ def main():
                    fig, ax = plt.subplots(nrows=1, ncols=1)   
                    y = b
                    ax.plot(x,y)
-                   ax.set_title("Cases in " + year)
+                   ax.set_title("Cases in year " + year)
                    ax.set_xlabel('Month')
                    ax.set_ylabel('Case')
                    col2.pyplot(fig)
