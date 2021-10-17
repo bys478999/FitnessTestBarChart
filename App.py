@@ -86,7 +86,7 @@ def main():
                    col1.table(b)
                    fig, ax = plt.subplots(nrows=1, ncols=1)   
                    y = b
-                   ax.plot(x,y, marker='o', color='blue', mec='red', ls=':')
+                   ax.plot(x,b, marker='o', color='blue', mec='red', ls=':')
                    ax.set_title("Cases in year " + year)
                    ax.set_xlabel('Month')
                    ax.set_ylabel('Case')
