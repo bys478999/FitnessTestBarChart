@@ -63,8 +63,8 @@ def main():
                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
                    st.dataframe(df)  
                    a= df.groupby(['Year'])['Month'].count()
-                   col11 col22 = st.columns(2)   
-                   col11.write(a)
+                   col1 col2 = st.columns(2)   
+                   col1.write(a)
                    x1 = df['Year']
                    y1 = a
                    fig, ax = plt.subplots(nrows=1, ncols=1)   
@@ -72,7 +72,7 @@ def main():
                    ax.set_title("Bodymechanics Service")
                    ax.set_xlabel('Year')
                    ax.set_ylabel('Case')
-                   col22.pyplot(fig)
+                   col2.pyplot(fig)
                    
                                 
                    year = st.selectbox('Chose The Year', df['Year'].drop_duplicates())
