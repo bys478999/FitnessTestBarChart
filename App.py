@@ -61,7 +61,7 @@ def main():
                    sheet_id = '1NVPrXAes46nxhhevFzuvRkUCM9Y6JQNqUteR9KUyL-I'
                    st.header("BodyMechanics Service")
                    gsheet = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
-                   df = gsheet.fillna(NA)
+                   df = gsheet.fillna(0)
                    st.dataframe(df)
                    chosen = df.rename(columns={'Month': 'Total Cases'})
                    a = chosen.groupby(['Year'])['Total Cases'].count()
