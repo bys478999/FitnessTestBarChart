@@ -68,7 +68,7 @@ def main():
                    year = st.selectbox('Chose The Year', df['Year'].drop_duplicates())
                    col1, col2 = st.columns(2)
                    selected_year = df.loc[df['Year'] == year]
-                   b= selected_year.groupby(['Month'])['Name'].count()
+                   b= selected_year.groupby(['Month'])['Name'].count().rename(columns={'Name': 'Case'})
                    x = selected_year['Month'].drop_duplicates()
                    col1.table(b)
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 4))   
