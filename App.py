@@ -71,10 +71,10 @@ def main():
                    b= selected_year.groupby(['Month'])['Name'].count()
                    x = selected_year['Month']
                    st.write(b)
-                   fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 4))   
-                   y = b
-                   ax.plot(x,y)
-                   st.pyplot(fig)
+                   #fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 4))   
+                   #y = b
+                   #ax.plot(x,y)
+                   #st.pyplot(fig)
                     
                
                     
