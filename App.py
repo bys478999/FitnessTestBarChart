@@ -58,8 +58,8 @@ def main():
        username = st.sidebar.text_input("Username")
        password = st.sidebar.text_input("Password", type='password')
        if st.sidebar.checkbox("Login"): 
-            if password == "1234" and username == "abu":
-                   sheet_id = '1NVPrXAes46nxhhevFzuvRkUCM9Y6JQNqUteR9KUyL-I'
+            if password == st.secrets["password"]:
+                   sheet_id = st.secrets[username]
                    st.header("BodyMechanics Service")
                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
                    chosen = df.rename(columns={'Month': 'Total Cases'})
