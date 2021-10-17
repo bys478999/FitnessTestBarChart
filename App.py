@@ -65,8 +65,9 @@ def main():
                    st.dataframe(df)
                    chosen = df.rename(columns={'Month': 'Total Cases'})
                    a = chosen.groupby(['Year'])['Total Cases'].count()
+                   table_in_year = chosen.groupby(['Year'],sort=False,as_index=False)['Total Cases'].count()
                    col1, col2 = st.columns(2)   
-                   col1.table(a)
+                   col1.table(table_in_year)
                    x1 = df['Year'].drop_duplicates()
                    y1 = a
                    fig, ax = plt.subplots(nrows=1, ncols=1)   
