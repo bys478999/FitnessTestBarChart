@@ -5,7 +5,7 @@ import streamlit.components.v1 as components
 from PIL import Image
 import pandas as pd
 import matplotlib.pyplot as plt
-import plotly.express as px
+
 
 
 def main():
@@ -111,8 +111,7 @@ def main():
                    fig.tight_layout()
                    st.pyplot(fig)
                    
-                   fig1 = px.pie(y, values='y', names=mylabels, title='Population of European continent')
-                   st.pyplot(fig1)
+
                     
 
 
