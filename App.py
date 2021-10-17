@@ -123,6 +123,9 @@ def main():
                    chosen_sport = selected_year.loc[df['Sport'] == sport]
                    cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Gender'].count()
                    st.table(cs)
+                   athlete = st.selectbox('Chose Athlete', df['Name'].drop_duplicates())
+                   ca = chosen_sport.loc[df['Name'] == athlete]
+                   st.table(ca)
                    
                    
                    
