@@ -111,7 +111,7 @@ def main():
                    st.pyplot(fig)
                    
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(12, 12)) 
-                   ax.pie(y, labels=y)
+                   ax.pie(y, labels=y, radius=1800)
                    ax.legend(mylabels, loc='best')
                    fig.tight_layout()
                    st.pyplot(fig)
