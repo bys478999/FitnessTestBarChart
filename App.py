@@ -67,7 +67,7 @@ def main():
                    a = chosen.groupby(['Year'])['Total Cases'].count()
                    table_in_year = chosen.groupby(['Year'],sort=False,as_index=False)['Total Cases'].count()
                    col1, col2 = st.columns(2)   
-                   col1.write(table_in_year)
+                   col1.table(table_in_year)
                    x1 = df['Year'].drop_duplicates()
                    y1 = a
                    fig, ax = plt.subplots(nrows=1, ncols=1)   
@@ -85,7 +85,7 @@ def main():
                    b= selected.groupby(['Month'], sort=False,as_index=False)['Case'].count()
                    y= selected.groupby(['Month'], sort=False)['Case'].count()
                    x = selected['Month'].drop_duplicates()
-                   col1.write(b)
+                   col1.table(b)
                    fig, ax = plt.subplots(nrows=1, ncols=1)   
                    ax.plot(x,y, marker='o', color='blue', mec='red', ls=':')
                    ax.set_title("Cases in year " + year)
