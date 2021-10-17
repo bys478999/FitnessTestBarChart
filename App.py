@@ -5,6 +5,7 @@ import streamlit.components.v1 as components
 from PIL import Image
 import pandas as pd
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 
 def main():
@@ -109,7 +110,9 @@ def main():
                    ax[2].legend(mylabels2, loc='best')
                    fig.tight_layout()
                    st.pyplot(fig)
-                    
+                   
+                   fig = px.pie(y, values='y', names=mylabels, title='Population of European continent')
+                   fig.show()
                     
 
 
