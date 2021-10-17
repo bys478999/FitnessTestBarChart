@@ -104,9 +104,9 @@ def main():
                    ax[0].pie(y, labels=y)
                    ax[1].pie(y1,labels=y1)
                    ax[2].pie(y2,labels=y2)
-                   ax[0].legend(mylabels, loc='upper right')
-                   ax[1].legend(mylabels1, loc='upper right')
-                   ax[2].legend(mylabels2, loc='upper right')
+                   ax[0].legend(mylabels, loc='better')
+                   ax[1].legend(mylabels1, loc='better')
+                   ax[2].legend(mylabels2, loc='better')
                    fig.tight_layout()
                    st.pyplot(fig)
                     
