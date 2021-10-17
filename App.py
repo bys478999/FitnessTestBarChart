@@ -113,7 +113,7 @@ def main():
                    
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(10, 10))    
                    ax.pie(y,labels=y)
-                   ax.legend(mylabels, loc='best')
+                   ax.legend(mylabels, loc='best', bbox_to_anchor=(1.05, 1.0))
                    fig.tight_layout()
                    st.pyplot(fig)
                    
