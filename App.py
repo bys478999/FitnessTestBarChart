@@ -71,7 +71,7 @@ def main():
                    b1 = selected_year.groupby(['Month'])
                    col1.write(b)
                    x = b1
-                   y = b1['Name'].count()
+                   y = b
                    col2.pyplot(x,y)
                     
                
