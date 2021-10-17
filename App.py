@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 def main():
     st.title("""Sports Science & Sports Medicine Website""")
-    menu = ["Home","Data Analysis","Service"]
+    menu = ["Home","Data Analysis","Body Mechanics"]
     choice = st.sidebar.selectbox("Menu",menu)
 
     if choice == "Home":
@@ -54,13 +54,13 @@ def main():
             else:
                 st.warning("Incorrect username/password")
 
-    elif choice == "Service":
+    elif choice == "Body Mechanics":
        username = st.sidebar.text_input("Username")
        password = st.sidebar.text_input("Password", type='password')
        if st.sidebar.checkbox("Login"): 
             if password == st.secrets["password"]:
                    sheet_id = st.secrets[username]
-                   st.header("BodyMechanics Service")
+                   st.header("Body Mechanics Service")
                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
                    chosen = df.rename(columns={'Month': 'Total Cases'})
                    a = chosen.groupby(['Year'])['Total Cases'].count()
