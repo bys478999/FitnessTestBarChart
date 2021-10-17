@@ -96,7 +96,7 @@ def main():
                    month = st.selectbox('Chose The Month', df['Month'].drop_duplicates())       
                    selected_month = selected_year.loc[df['Month'] == month]
                    st.write(selected_month)
-                   fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(10, 10))   
+                   fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(8, 6))   
                    y = selected_month.groupby(['Sport'])['Month'].count()
                    y1 = selected_month.groupby(['Gender'])['Month'].count()
                    y2 = selected_month.groupby(['Status'])['Month'].count()
