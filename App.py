@@ -130,7 +130,7 @@ def main():
                    ca = chosen_athlete.groupby(['Month','Injury Part'],sort=False, as_index=False)['Case'].count()
                    st.table(ca)
                    
-     elif choice == "Sports Rehab":
+    elif choice == "Sports Rehab":
           username = st.sidebar.text_input("Username")
           password = st.sidebar.text_input("Password", type='password')
           if st.sidebar.checkbox("Login"): 
