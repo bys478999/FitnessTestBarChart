@@ -141,7 +141,7 @@ def main():
                     df1 = df.rename(columns={'NAME': 'COUNT'})
                     a = df1.groupby(['IC NUMBER','COUNT','STATUS'])['COUNT'].count()
                     st.write(a)
-                    st.download_button(label="Download", df1)
+                    st.download_button("Download", df1)
                   
                    
 
