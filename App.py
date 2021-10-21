@@ -138,7 +138,8 @@ def main():
                     sheet_id = st.secrets[username]
                     st.header("Sports Rehab Service")
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Database')
-                    a = df.groupby(['IC NUMBER','NAME'])['NAME'].count()
+                    df1 = df.rename(columns={'NAME': 'COUNT'})
+                    a = df1.groupby(['IC NUMBER','COUNT'])['COUNT'].count()
                     st.write(a)
                   
                    
