@@ -139,7 +139,7 @@ def main():
                     st.header("Sports Rehab Service")
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Database')
                     df1 = df.rename(columns={'NAME': 'COUNT'})
-                    a = df1.groupby(['IC NUMBER','COUNT'])['COUNT'].count()
+                    a = df1.groupby(['IC NUMBER','COUNT','STATUS'])['COUNT'].count()
                     st.write(a)
                   
                    
