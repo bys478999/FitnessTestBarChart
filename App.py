@@ -137,7 +137,7 @@ def main():
                if password == st.secrets["password"]:
                     sheet_id = st.secrets[username]
                     st.header("Sports Rehab Service")
-                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
+                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Database')
                     a = df.groupby(['IC NUMBER'])['NAME'].count()
                     st.write(a)
                   
