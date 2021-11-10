@@ -104,9 +104,11 @@ def main():
                    p3 = selected_month.groupby('Status').groups
                    y3 = selected_month.groupby(['Name'])['Month'].count()
                    p4 = selected_month.groupby('Name').groups
+                   
+                
                    st.subheader('Cases by Gender & Status' + '(' +month +'/'+year+')')    
                    color =  ["green", "red"]
-                   ax[0].pie(y1,labels=y1, colors = color )
+                   ax[0].pie(y1,labels=y1, colors = color, autopct='%1.1f%%' )
                    ax[1].pie(y2,labels=y2)
                    ax[0].legend(p2, loc='best')
                    ax[1].legend(p3, loc='best')
