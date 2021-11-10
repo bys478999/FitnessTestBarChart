@@ -97,6 +97,7 @@ def main():
                    st.write(selected_month)
                    fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(8, 6))   
                    y = selected_month.groupby(['Sport'])['Month'].count()
+                   p1 = selected_month.groupby(['Sport'])
                    y1 = selected_month.groupby(['Gender'])['Month'].count()
                    y2 = selected_month.groupby(['Status'])['Month'].count()
                    mylabels = selected_month['Sport'].drop_duplicates()
@@ -114,7 +115,7 @@ def main():
                    st.subheader('Cases by Sports' + '(' +month +'/'+year+')') 
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))    
                    ax.pie(y,labels=y)
-                   ax.legend(y, loc='best', bbox_to_anchor=(1.05, 1.0))
+                   ax.legend(p1, loc='best', bbox_to_anchor=(1.05, 1.0))
                    fig.tight_layout()
                    st.pyplot(fig)
                 
