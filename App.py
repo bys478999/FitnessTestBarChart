@@ -99,7 +99,9 @@ def main():
                    y = selected_month.groupby(['Sport'])['Month'].count()
                    p1 = selected_month.groupby('Sport').groups
                    y1 = selected_month.groupby(['Gender'])['Month'].count()
+                   p2 = selected_month.groupby('Gender').groups
                    y2 = selected_month.groupby(['Status'])['Month'].count()
+                   p3 = selected_month.groupby('Status').groups
                    mylabels = selected_month['Sport'].drop_duplicates()
                    mylabels1 = selected_month['Gender'].drop_duplicates()
                    mylabels2 = selected_month['Status'].drop_duplicates()
@@ -107,8 +109,8 @@ def main():
                    color =  ["green", "red"]
                    ax[0].pie(y1,labels=y1, colors = color )
                    ax[1].pie(y2,labels=y2)
-                   ax[0].legend(mylabels1, loc='best')
-                   ax[1].legend(mylabels2, loc='best')
+                   ax[0].legend(p2, loc='best')
+                   ax[1].legend(p3, loc='best')
                    fig.tight_layout()
                    st.pyplot(fig)
                    
