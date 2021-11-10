@@ -102,9 +102,6 @@ def main():
                    p2 = selected_month.groupby('Gender').groups
                    y2 = selected_month.groupby(['Status'])['Month'].count()
                    p3 = selected_month.groupby('Status').groups
-                   mylabels = selected_month['Sport'].drop_duplicates()
-                   mylabels1 = selected_month['Gender'].drop_duplicates()
-                   mylabels2 = selected_month['Status'].drop_duplicates()
                    st.subheader('Cases by Gender & Status' + '(' +month +'/'+year+')')    
                    color =  ["green", "red"]
                    ax[0].pie(y1,labels=y1, colors = color )
