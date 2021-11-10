@@ -102,6 +102,8 @@ def main():
                    p2 = selected_month.groupby('Gender').groups
                    y2 = selected_month.groupby(['Status'])['Month'].count()
                    p3 = selected_month.groupby('Status').groups
+                   y3 = selected_month.groupby(['Name'])['Month'].count()
+                   p4 = selected_month.groupby('Name').groups
                    st.subheader('Cases by Gender & Status' + '(' +month +'/'+year+')')    
                    color =  ["green", "red"]
                    ax[0].pie(y1,labels=y1, colors = color )
@@ -117,6 +119,15 @@ def main():
                    ax.legend(p1, loc='best', bbox_to_anchor=(1.05, 1.0))
                    fig.tight_layout()
                    st.pyplot(fig)
+                    
+                    
+                   st.subheader('Cases by Patient' + '(' +month +'/'+year+')') 
+                   fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))    
+                   ax.pie(y3,labels=y3)
+                   ax.legend(p4, loc='best', bbox_to_anchor=(1.05, 1.0))
+                   fig.tight_layout()
+                   st.pyplot(fig)   
+                
                 
                    st.subheader(' Sports' + '('+year+')')
                    sport = st.selectbox('Chose The Sport', df['Sport'].drop_duplicates())  
