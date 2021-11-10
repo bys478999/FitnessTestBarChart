@@ -109,7 +109,7 @@ def main():
                    st.subheader('Cases by Gender & Status' + '(' +month +'/'+year+')')    
                    color =  ["green", "red"]
                    ax[0].pie(y1,labels=y1, colors = color, autopct='%1.1f%%' )
-                   ax[1].pie(y2,labels=y2)
+                   ax[1].pie(y2,labels=y2, autopct='%1.1f%%')
                    ax[0].legend(p2, loc='best')
                    ax[1].legend(p3, loc='best')
                    fig.tight_layout()
@@ -117,7 +117,7 @@ def main():
                    
                    st.subheader('Cases by Sports' + '(' +month +'/'+year+')') 
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))    
-                   ax.pie(y,labels=y)
+                   ax.pie(y,labels=y, autopct='%1.1f%%')
                    ax.legend(p1, loc='best', bbox_to_anchor=(1.05, 1.0))
                    fig.tight_layout()
                    st.pyplot(fig)
@@ -125,7 +125,7 @@ def main():
                     
                    st.subheader('Cases by Patient' + '(' +month +'/'+year+')') 
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))    
-                   ax.pie(y3,labels=y3)
+                   ax.pie(y3,labels=y3, autopct='%1.1f%%')
                    ax.legend(p4, loc='best', bbox_to_anchor=(1.05, 1.0))
                    fig.tight_layout()
                    st.pyplot(fig)   
