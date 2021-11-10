@@ -113,7 +113,7 @@ def main():
                    
                    st.subheader('Cases by Sports' + '(' +month +'/'+year+')') 
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))    
-                   ax.pie(y,labels=y)
+                   ax.pie(y,labels=y,rotatelabels=True)
                    ax.legend(mylabels, loc='best', bbox_to_anchor=(1.05, 1.0))
                    fig.tight_layout()
                    st.pyplot(fig)
