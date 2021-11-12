@@ -120,6 +120,7 @@ def main():
                    ax.pie(y,labels=y, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.6)
                    ax.legend(p1, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
                    fig.tight_layout()
+                   texts.set_fontsize(4)
                    st.pyplot(fig)
                     
                     
