@@ -152,8 +152,8 @@ def main():
                     st.header("Supplement")
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Sheet1')
                     df['Date'] = pd.to_datetime(df['Date'], format="%d/%m/%Y")
-                    startdate = st.text_input("Chose the start date")
-                    enddate = st.text_input("Chose the end date")
+                    startdate = st.text_input("Chose the start date(year/month/day):")
+                    enddate = st.text_input("Chose the end date(year/month/day):")
                     mask = (df['Date'] >= startdate) & (df['Date'] <= enddate)
                     wholedata = df.loc[mask]
                     st.write(wholedata)
