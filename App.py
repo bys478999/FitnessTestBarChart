@@ -151,7 +151,7 @@ def main():
                     sheet_id = st.secrets[username]
                     st.header("Supplement")
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Sheet1')
-                    df.to_datetime(df['Date'],format=%a/%d/%m/%Y)
+                    df.to_datetime(df['Date'])
                     startdate = st.text_input("Chose the start date")
                     enddate = st.text_input("Chose the end date")
                     mask = (df['Date'] >= startdate) & (df['Date'] <= enddate)
