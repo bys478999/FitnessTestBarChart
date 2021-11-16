@@ -153,7 +153,7 @@ def main():
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Sheet1')
                     startdate = st.text_input("Chose the start date")
                     enddate = st.text_input("Chose the end date")
-                    wholedata = df.loc[['Date'] > 1/1/2021]
+                    wholedata = df.loc[['Date'] > startdate]
                     st.write(wholedata)
                  
                   
