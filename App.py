@@ -151,11 +151,11 @@ def main():
                     sheet_id = st.secrets[username]
                     st.header("Supplement")
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Sheet1')
-                    df1 = df.to_datetime(df['Date'], dayfirst=True, utc=None, format="%a/%d/%m/%Y")
+                    df['Date'] = df.to_datetime(df['Date'], dayfirst=True, utc=None, format="%a/%d/%m/%Y")
                     startdate = st.text_input("Chose the start date")
                     enddate = st.text_input("Chose the end date")
-                    mask = (df1['Date'] >= startdate) & (df1['Date'] <= enddate)
-                    wholedata = df1.loc[mask]
+                    mask = (df['Date'] >= startdate) & (df['Date'] <= enddate)
+                    wholedata = df.loc[mask]
                     st.write(wholedata)
                  
                   
