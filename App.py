@@ -154,7 +154,7 @@ def main():
                     df1 = pd.to_datetime(df['Date'], dayfirst=True, utc=None, format="%a/%d/%m/%Y")
                     startdate = st.text_input("Chose the start date")
                     enddate = st.text_input("Chose the end date")
-                    mask = (df1['Date'] >= startdate) & (df1['Date'] <= enddate)
+                    mask = (df['Date'] >= startdate) & (df['Date'] <= enddate)
                     wholedata = df1.loc[mask]
                     st.write(wholedata)
                  
