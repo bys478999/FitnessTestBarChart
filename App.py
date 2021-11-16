@@ -150,8 +150,9 @@ def main():
                if password == st.secrets["password"]:
                     sheet_id = st.secrets[username]
                     st.header("Supplement")
-                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Sheet1')  
-                    st.write(df)
+                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Sheet1')
+                    date_selection = df.date_range(start=st.text_input("Chose the starting date"), end=st.text_input("Chose the starting date")
+                    st.write(date_selection)
                  
                   
                    
