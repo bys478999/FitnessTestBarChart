@@ -151,7 +151,9 @@ def main():
                     sheet_id = st.secrets[username]
                     st.header("Supplement")
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Sheet1')
-                    date_selection = df.date_range(start=st.text_input("Chose the starting date"), end=st.text_input("Chose the starting date")
+                    startdate = st.text_input("Chose the starting date"
+                    enddate = st.text_input("Chose the starting date"
+                    date_selection = df.date_range(start=startdate), end=enddate)
                     st.write(date_selection)
                  
                   
