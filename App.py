@@ -154,7 +154,7 @@ def main():
                     startdate = st.text_input("Chose the start date")
                     enddate = st.text_input("Chose the end date")
                     date_selection = df.date_range(start=startdate, end=enddate)
-                    wholedata = df['Date']==date_selection
+                    wholedata = df.loc['Date']==date_selection
                     st.write(wholedata)
                  
                   
