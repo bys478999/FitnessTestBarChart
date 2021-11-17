@@ -161,6 +161,10 @@ def main():
                     
                     supplement_type = wholedata.groupby(['Supplement'])['Quantity'].sum()
                     st.write(supplement_type)
+                    
+                    
+                    total_price = wholedata.groupby(['Supplement'])['Total Price (RM)'].sum()
+                    st.write(total_price)
                  
                   
                    
