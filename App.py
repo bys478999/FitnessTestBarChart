@@ -179,7 +179,7 @@ def main():
                     st.write(sport)
                     
                     sportchosen = st.selectbox('Chose the sport', wholedata['Sports'].drop_duplicates())
-                    selectedsport = wholedata.loc['Sports']==sportchosen
+                    selectedsport = wholedata.loc[df['Sports']==sportchosen]
                     filtersport = selectedsport.groupby(['Supplement','Name'])['Quantity','Total Price (RM)'].sum()
                     st.table(filtersport)
                     
