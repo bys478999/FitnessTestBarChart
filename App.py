@@ -177,6 +177,9 @@ def main():
                     st.pyplot(fig)
                     st.subheader("Sports that given supplement"+ " from "+startdate+" to "+enddate)
                     st.write(sport)
+                    
+                    sportchosen = st.selectbox('Chose the sport', wholedata['Sports'].drop_duplicates())  
+                    
                    
 
                     
