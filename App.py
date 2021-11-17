@@ -160,11 +160,7 @@ def main():
                     st.write(wholedata)
                     
                     supplement_type = wholedata.groupby(['Supplement'])['Quantity'].sum()   
-                    st.write(supplement_type)
-                    
-                    
                     total_price = wholedata.groupby(['Supplement'])['Total Price (RM)'].sum()  
-                    st.write(total_price)
                     legend_type = wholedata.groupby('Supplement').groups
                  
                     fig, ax = plt.subplots(nrows=1, ncols=2)    
@@ -172,8 +168,8 @@ def main():
                     ax[1].pie(total_price,labels=total_price, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.6, textprops={'fontsize': 8})
                     ax[0].legend(legend_type, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
                     ax[1].legend(legend_type, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
-                    ax[0].set_title("Total amount of supplement (unit)")
-                    ax[1].set_title("Total amount of supplement (RM)")
+                    ax[0].set_title("Total amount of supplement given (unit)")
+                    ax[1].set_title("Total value of supplement (RM)")
                     fig.tight_layout()
                     st.pyplot(fig)
                    
