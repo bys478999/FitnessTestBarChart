@@ -166,7 +166,7 @@ def main():
                     legend_type = wholedata.groupby('Supplement').groups
                  
 
-                    fig, ax = plt.subplots(nrows=2, ncols=2)    
+                    fig, ax = plt.subplots(nrows=1, ncols=2)    
                     ax[0].pie(supplement_type,labels=supplement_type, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.6, textprops={'fontsize': 8})
                     ax[1].pie(total_price,labels=total_price, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.6, textprops={'fontsize': 8})
                     ax[0].legend(legend_type, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
