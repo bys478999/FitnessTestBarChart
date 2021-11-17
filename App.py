@@ -160,11 +160,13 @@ def main():
                     st.write(wholedata)
                     
                     supplement_type = wholedata.groupby(['Supplement'])['Quantity'].sum()   
-                    total_price = wholedata.groupby(['Supplement'])['Total Price (RM)'].sum()  
+                    total_price = wholedata.groupby(['Supplement'])['Total Price (RM)'].sum()
+                    sport = wholedata.groupby(['Sport'],['Supplement'])['Quantity'].sum()
+                    st.write(sport)
                     legend_type = wholedata.groupby('Supplement').groups
                  
-                    st.subheader("From "+ startdate +" to "+ enddate+" Total Quantity of Supplement Given")
-                    fig, ax = plt.subplots(nrows=1, ncols=2)    
+
+                    fig, ax = plt.subplots(nrows=2, ncols=2)    
                     ax[0].pie(supplement_type,labels=supplement_type, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.6, textprops={'fontsize': 8})
                     ax[1].pie(total_price,labels=total_price, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.6, textprops={'fontsize': 8})
                     ax[0].legend(legend_type, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
