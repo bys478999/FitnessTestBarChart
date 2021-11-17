@@ -161,6 +161,7 @@ def main():
                     
                     supplement_type = wholedata.groupby(['Supplement'])['Quantity'].sum()
                     st.write(supplement_type)
+                    st.pyplot(supplement_type)
                     
                     
                     total_price = wholedata.groupby(['Supplement'])['Total Price (RM)'].sum()
