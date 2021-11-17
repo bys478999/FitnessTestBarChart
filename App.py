@@ -152,9 +152,9 @@ def main():
                     st.header("Supplement")
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Sheet1')
                     df['Date'] = pd.to_datetime(df['Date'], format="%d/%m/%Y")
-                    fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(6, 4)) 
-                    startdate = ax[0,0].text_input("Chose the start date(year/month/day):")
-                    enddate = ax[0,1].text_input("Chose the end date(year/month/day):")
+                    col1, col2 = st.columns(2)
+                    startdate = col1.text_input("Chose the start date(year/month/day):")
+                    enddate = col2.text_input("Chose the end date(year/month/day):")
                     mask = (df['Date'] >= startdate) & (df['Date'] <= enddate)
                     wholedata = df.loc[mask]
                     st.write(wholedata)
