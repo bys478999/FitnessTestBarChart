@@ -169,8 +169,8 @@ def main():
                     ax[1].pie(total_price,labels=total_price, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.6, textprops={'fontsize': 8})
                     ax[0].legend(legend_type, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
                     ax[1].legend(legend_type, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
-                    ax[0].set_title("Total amount of supplement given (unit)")
-                    ax[1].set_title("Total value of supplement (RM)")
+                    ax[0].set_title("Total amount of supplement given (unit) "+ "from "+startdate+" to "+enddate)
+                    ax[1].set_title("Total value of supplement (RM)"+ "from "+startdate+" to "+enddate)
                     fig.tight_layout()
                     st.pyplot(fig)
                    
