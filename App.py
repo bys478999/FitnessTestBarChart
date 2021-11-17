@@ -162,7 +162,7 @@ def main():
                     supplement_type = wholedata.groupby(['Supplement'])['Quantity'].sum()   
                     total_price = wholedata.groupby(['Supplement'])['Total Price (RM)'].sum()
                     sport = wholedata.groupby(['Sports','Supplement'])['Quantity'].sum()
-                    st.write(sport)
+                    
                     legend_type = wholedata.groupby('Supplement').groups
                  
 
@@ -175,6 +175,8 @@ def main():
                     ax[1].set_title("Total value of supplement (RM)"+ "\nfrom "+startdate+" to "+enddate)
                     fig.tight_layout()
                     st.pyplot(fig)
+                    st.subheader("Sports that given supplement"+ "\nfrom "+startdate+" to "+enddate)
+                    st.write(sport)
                    
 
                     
