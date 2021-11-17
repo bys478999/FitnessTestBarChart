@@ -175,7 +175,7 @@ def main():
                     ax[1].set_title("Total value of supplement (RM)"+ "\nfrom "+startdate+" to "+enddate)
                     fig.tight_layout()
                     st.pyplot(fig)
-                    st.subheader("Sports that given supplement"+ "from "+startdate+" to "+enddate)
+                    st.subheader("Sports that given supplement"+ " from "+startdate+" to "+enddate)
                     st.write(sport)
                    
 
