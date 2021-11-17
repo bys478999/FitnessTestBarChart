@@ -158,6 +158,9 @@ def main():
                     mask = (df['Date'] >= startdate) & (df['Date'] <= enddate)
                     wholedata = df.loc[mask]
                     st.write(wholedata)
+                    
+                    supplement_type = mask.groupby(['Supplement'])['Quantity'].count()
+                    st.write(supplement_type)
                  
                   
                    
