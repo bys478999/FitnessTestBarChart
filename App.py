@@ -181,7 +181,7 @@ def main():
                     sportchosen = st.selectbox('Chose the sport', wholedata['Sports'].drop_duplicates())
                     selectedsport = wholedata.loc[df['Sports']==sportchosen]
                     filtersport = selectedsport.groupby(['Supplement','Name'])['Quantity','Total Price (RM)'].sum()
-                    st.subheader("Supplement taken by "+sportchosen+ " from "+startdate+" to "+enddate)
+                    st.subheader("Supplement taken by "+sportchosen+ " ("+startdate+" to "+enddate+")")
                     st.write(filtersport)
                     
                  
