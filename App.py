@@ -166,7 +166,7 @@ def main():
                     total_price = wholedata.groupby(['Supplement'])['Total Price (RM)'].sum()
                     st.write(total_price)
                  
-                   fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(6, 4))    
+                   fig, ax = plt.subplots(nrows=1, ncols=2)    
                    ax[0].pie(supplement_type,labels=supplement_type, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.6, textprops={'fontsize': 8})
                    ax[1].pie(total_price,labels=total_price, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.6, textprops={'fontsize': 8})
                    ax.legend(p1, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
