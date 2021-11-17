@@ -179,7 +179,6 @@ def main():
                     fig.tight_layout()
                     st.pyplot(fig)
                     
-                    st.subheader("Sports that given supplement"+ " from "+startdate+" to "+enddate)
                     fig, ax = plt.subplots(nrows=1, ncols=2)    
                     ax[0].pie( sport_quantity,labels= sport_quantity, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
                     ax[1].pie(sport_quantity_2,labels=sport_quantity_2, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
@@ -189,6 +188,7 @@ def main():
                     ax[1].set_title("Sports that given supplement (RM)"+ " \nfrom "+startdate+" to "+enddate)
                     fig.tight_layout()
                     st.pyplot(fig)
+                    st.subheader("Sports that given supplement"+ " from "+startdate+" to "+enddate)
                     st.write(sport)
                     
                     sportchosen = st.selectbox('Chose the sport', wholedata['Sports'].drop_duplicates())
