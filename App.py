@@ -166,6 +166,7 @@ def main():
                     sport_quantity_2 = wholedata.groupby(['Sports'])['Total Price (RM)'].sum()
                     
                     legend_type = wholedata.groupby('Supplement').groups
+                    legend_type_2 = wholedata.groupby('Sports').groups
                  
 
                     fig, ax = plt.subplots(nrows=1, ncols=2)    
@@ -182,10 +183,10 @@ def main():
                     fig, ax = plt.subplots(nrows=1, ncols=2)    
                     ax[0].pie( sport_quantity,labels= sport_quantity, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.6, textprops={'fontsize': 8})
                     ax[1].pie(sport_quantity_2,labels=sport_quantity_2, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.6, textprops={'fontsize': 8})
-                    ax[0].legend(legend_type, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
-                    ax[1].legend(legend_type, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
-                    ax[0].set_title("Total amount of supplement given (unit) "+ "\nfrom "+startdate+" to "+enddate)
-                    ax[1].set_title("Total value of supplement (RM)"+ "\nfrom "+startdate+" to "+enddate)
+                    ax[0].legend(legend_type_2, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
+                    ax[1].legend(legend_type_2, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
+                    ax[0].set_title("Sports that given supplement (unit)"+ " \nfrom "+startdate+" to "+enddate)
+                    ax[1].set_title("Sports that given supplement (RM)"+ " \nfrom "+startdate+" to "+enddate)
                     fig.tight_layout()
                     st.pyplot(fig)
                     st.write(sport)
