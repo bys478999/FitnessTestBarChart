@@ -161,7 +161,7 @@ def main():
                     
                     supplement_type = wholedata.groupby(['Supplement'])['Quantity'].sum()   
                     total_price = wholedata.groupby(['Supplement'])['Total Price (RM)'].sum()
-                    sport = wholedata.groupby(['Sport'],['Supplement'])['Quantity'].sum()
+                    sport = wholedata.groupby(['Sport','Supplement'])['Quantity'].sum()
                     st.write(sport)
                     legend_type = wholedata.groupby('Supplement').groups
                  
