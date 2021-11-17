@@ -178,7 +178,9 @@ def main():
                     st.subheader("Sports that given supplement"+ " from "+startdate+" to "+enddate)
                     st.write(sport)
                     
-                    sportchosen = st.selectbox('Chose the sport', wholedata['Sports'].drop_duplicates())  
+                    sportchosen = st.selectbox('Chose the sport', wholedata['Sports'].drop_duplicates())
+                    filtersport = sportchosen.groupby(['Supplement','Name'])['Quantity','Total Price (RM)'].sum()
+                    st.table(filtersport)
                     
                    
 
