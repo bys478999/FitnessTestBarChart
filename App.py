@@ -159,7 +159,7 @@ def main():
                     wholedata = df.loc[mask]
                     st.write(wholedata)
                     
-                    supplement_type = mask.groupby(['Supplement'])['Quantity'].count()
+                    supplement_type = mask.groupby(['Name'])['Quantity'].count()
                     st.write(supplement_type)
                  
                   
