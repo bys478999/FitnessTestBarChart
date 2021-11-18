@@ -61,7 +61,6 @@ def main():
        if st.sidebar.checkbox("Login"): 
             if password == st.secrets["password"]:
                    sheet_id = st.secrets[username]
-                   st.header("Body Mechanics Service")
                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
                    chosen = df.rename(columns={'Month': 'Total Cases'})
                    a = chosen.groupby(['Year'])['Total Cases'].count()
@@ -152,9 +151,14 @@ def main():
           if st.sidebar.checkbox("Login"): 
                if password == st.secrets["password"]:
                     sheet_id = st.secrets[username]
-                    st.header("Attendance")
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Attendance')
                     st.write(df)
+                    col1, col2 = st.columns(2)
+                    startdate = col1.text_input("Chose the start date(year/month/day):")
+                    enddate = col2.text_input("Chose the end date(year/month/day):")
+                    period = (df['Date'] >= startdate) & (df['Date'] <= enddate)
+                    wholedata = df.loc[period]
+                    st.write(wholedata)
     
     
     elif choice == "Supplement":
@@ -164,7 +168,6 @@ def main():
           if st.sidebar.checkbox("Login"): 
                if password == st.secrets["password"]:
                     sheet_id = st.secrets[username]
-                    st.header("Supplement")
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Sheet1')
                     df['Date'] = pd.to_datetime(df['Date'], format="%d/%m/%Y")
                     col1, col2 = st.columns(2)
