@@ -169,7 +169,7 @@ def main():
                     st.write(bygender)
                     st.write(bystatus)
                     st.write(bydate)
-                    st.write(year)
+                    st.write(byday)
     
     
     
