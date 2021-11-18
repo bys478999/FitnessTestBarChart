@@ -189,8 +189,8 @@ def main():
                     ax[1].pie(purpose,labels=purpose, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
                     ax[0].legend(legend_type_3, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
                     ax[1].legend(legend_type_4, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
-                    ax[0].set_title("Total amount of supplement given (gender) "+ "\nfrom "+startdate+" to "+enddate)
-                    ax[1].set_title("Total amount of supplement given (purpose) "+ "\nfrom "+startdate+" to "+enddate)
+                    ax[0].set_title("Total amount of supplement given \n(gender) "+ "\nfrom "+startdate+" to "+enddate)
+                    ax[1].set_title("Total amount of supplement given \n(purpose) "+ "\nfrom "+startdate+" to "+enddate)
                     fig.tight_layout()
                     st.pyplot(fig)
                     
