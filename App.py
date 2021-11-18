@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 def main():
     st.title("""Sports Science & Sports Medicine Website""")
-    menu = ["Home","Data Analysis","Body Mechanics", "Supplement"]
+    menu = ["Home","Data Analysis","Body Mechanics", "Gym Attendance","Supplement"]
     choice = st.sidebar.selectbox("Menu",menu)
 
     if choice == "Home":
