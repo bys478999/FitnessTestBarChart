@@ -144,6 +144,19 @@ def main():
                    ca = chosen_athlete.groupby(['Month','Injury Part'],sort=False, as_index=False)['Case'].count()
                    st.table(ca)
                    
+    
+    elif choice == "Gym Attendance":
+          st.header("Gym Attendance Section")
+          username = st.sidebar.text_input("Username")
+          password = st.sidebar.text_input("Password", type='password')
+          if st.sidebar.checkbox("Login"): 
+               if password == st.secrets["password"]:
+                    sheet_id = st.secrets[username]
+                    st.header("Attendance")
+                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Sheet1')
+                    st.write(df)
+    
+    
     elif choice == "Supplement":
           st.header("Supplement Section")
           username = st.sidebar.text_input("Username")
