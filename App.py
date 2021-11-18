@@ -152,13 +152,20 @@ def main():
                if password == st.secrets["password"]:
                     sheet_id = st.secrets[username]
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Attendance')
-                    st.write(df)
                     col1, col2 = st.columns(2)
                     startdate = col1.text_input("Chose the start date(year/month/day):")
                     enddate = col2.text_input("Chose the end date(year/month/day):")
                     period = (df['DATE'] >= startdate) & (df['DATE'] <= enddate)
                     wholedata = df.loc[period]
                     st.write(wholedata)
+                    bysport = wholedata.groupby(['DATE'])['SPORT'].count()
+                    bygender = wholedata.groupby(['DATE'])['GENDER'].count()
+                    bystatus = wholedata.groupby(['DATE'])['STATUS'].count()
+                    bydate = wholedata.groupby(['DATE'])['GENDER'].count()
+                    st.write(bysport)
+                    st.write(bygender)
+                    st.write(bystatus)
+    
     
     
     elif choice == "Supplement":
