@@ -162,11 +162,16 @@ def main():
                     supplement_type = wholedata.groupby(['Supplement'])['Quantity'].sum()   
                     total_price = wholedata.groupby(['Supplement'])['Total Price (RM)'].sum()
                     sport = wholedata.groupby(['Sports','Supplement'])['Quantity','Total Price (RM)'].sum()
+                    gender = wholedata.groupby(['Gender'])[Quantity'].sum()
+                    purpose = wholedata.groupby(['Purpose'])[Quantity'].sum()                                    
                     sport_quantity = wholedata.groupby(['Sports'])['Quantity'].sum()
                     sport_quantity_2 = wholedata.groupby(['Sports'])['Total Price (RM)'].sum()
                     
                     legend_type = wholedata.groupby('Supplement').groups
                     legend_type_2 = wholedata.groupby('Sports').groups
+                    legend_type_3= wholedata.groupby('Gender').groups
+                    legend_type_4 = wholedata.groupby('Purpose').groups                                        
+                                                             
                  
 
                     fig, ax = plt.subplots(nrows=1, ncols=2)    
@@ -178,6 +183,18 @@ def main():
                     ax[1].set_title("Total value of supplement (RM)"+ "\nfrom "+startdate+" to "+enddate)
                     fig.tight_layout()
                     st.pyplot(fig)
+                    
+                    fig, ax = plt.subplots(nrows=1, ncols=2)    
+                    ax[0].pie(gender,labels=gender, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
+                    ax[1].pie(purpose,labels=purpose, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
+                    ax[0].legend(legend_type_3, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
+                    ax[1].legend(legend_type_4, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
+                    ax[0].set_title("Total amount of supplement given (unit) "+ "\nfrom "+startdate+" to "+enddate)
+                    ax[1].set_title("Total value of supplement (RM)"+ "\nfrom "+startdate+" to "+enddate)
+                    fig.tight_layout()
+                    st.pyplot(fig)
+                    
+                    
                     
                     fig, ax = plt.subplots(nrows=1, ncols=2)    
                     ax[0].pie( sport_quantity,labels= sport_quantity, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
