@@ -158,13 +158,14 @@ def main():
                     period = (df['DATE'] >= startdate) & (df['DATE'] <= enddate)
                     wholedata = df.loc[period]
                     st.write(wholedata)
-                    bysport = wholedata.groupby(['DATE'])['SPORT'].count()
-                    bygender = wholedata.groupby(['DATE'])['GENDER'].count()
-                    bystatus = wholedata.groupby(['DATE'])['STATUS'].count()
-                    bydate = wholedata.groupby(['DATE'])['GENDER'].count()
+                    bysport = wholedata.groupby(['SPORT'])['NAME'].count()
+                    bygender = wholedata.groupby(['GENDER'])['NAME'].count()
+                    bystatus = wholedata.groupby(['STATUS'])['NAME'].count()
+                    bydate = wholedata.groupby(['DATE'])['NAME'].count()
                     st.write(bysport)
                     st.write(bygender)
                     st.write(bystatus)
+                    st.write(bydate)
     
     
     
