@@ -55,6 +55,7 @@ def main():
                 st.warning("Incorrect username/password")
 
     elif choice == "Body Mechanics":
+       st.header("Body Mechanics Section")
        username = st.sidebar.text_input("Username")
        password = st.sidebar.text_input("Password", type='password')
        if st.sidebar.checkbox("Login"): 
@@ -144,6 +145,7 @@ def main():
                    st.table(ca)
                    
     elif choice == "Supplement":
+          st.header("Supplement Section")
           username = st.sidebar.text_input("Username")
           password = st.sidebar.text_input("Password", type='password')
           if st.sidebar.checkbox("Login"): 
