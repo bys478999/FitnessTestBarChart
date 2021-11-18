@@ -156,7 +156,7 @@ def main():
                     startdate = col1.text_input("Chose the start date(year/month/day):")
                     enddate = col2.text_input("Chose the end date(year/month/day):")
                     df['DATE'] = pd.to_datetime(df['DATE'], format="%d/%m/%Y")
-                    year = df['Date'].dt.year
+                    year = df['DATE'].dt.year
                     period = (df['DATE'] >= startdate) & (df['DATE'] <= enddate)
                     wholedata = df.loc[period]
                     st.write(wholedata)
