@@ -169,6 +169,8 @@ def main():
                     legend_type = wholedata.groupby('SPORT').groups
                     legend_type_2 = wholedata.groupby('GENDER').groups
                     legend_type_3 = wholedata.groupby('STATUS').groups
+                    legend_type_4 = wholedata.groupby('DATE').groups
+                    legend_type_5 = wholedata.groupby(year).groups
                     st.write(bysport)
                     st.write(bygender)
                     st.write(bystatus)
@@ -189,6 +191,16 @@ def main():
                     ax[1].legend(legend_type_3, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
                     ax[0].set_title("Total usage (Gender)"+ "\nfrom "+startdate+" to "+enddate)
                     ax[1].set_title("Total usage (Status)"+ "\nfrom "+startdate+" to "+enddate)
+                    fig.tight_layout()
+                    st.pyplot(fig)
+                    
+                    fig, ax = plt.subplots(nrows=1, ncols=2)    
+                    ax[0].pie(bydate,labels=bydate, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
+                    ax[1].pie(byday,labels=byday, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
+                    ax[0].legend(legend_type_4, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
+                    ax[1].legend(legend_type_5, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
+                    ax[0].set_title("Total usage (Date)"+ "\nfrom "+startdate+" to "+enddate)
+                    ax[1].set_title("Total usage (Day)"+ "\nfrom "+startdate+" to "+enddate)
                     fig.tight_layout()
                     st.pyplot(fig)
     
