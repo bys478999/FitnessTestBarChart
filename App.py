@@ -164,7 +164,7 @@ def main():
                     bygender = wholedata.groupby(['GENDER'])['NAME'].count()
                     bystatus = wholedata.groupby(['STATUS'])['NAME'].count()
                     bydate = wholedata.groupby(['DATE'])['NAME'].count()
-                    byday = wholedata.groupby(['DATE',year])['NAME'].count()
+                    byday = wholedata.groupby(['DATE'])[year].count()
                     st.write(bysport)
                     st.write(bygender)
                     st.write(bystatus)
