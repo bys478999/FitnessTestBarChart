@@ -171,11 +171,7 @@ def main():
                     legend_type_3 = wholedata.groupby('STATUS').groups
                     legend_type_4 = wholedata.groupby('DATE').groups
                     legend_type_5 = wholedata.groupby(year).groups
-                    st.write(bysport)
-                    st.write(bygender)
-                    st.write(bystatus)
-                    st.write(bydate)
-                    st.write(byday)
+        
                     
                     fig, ax = plt.subplots(nrows=1, ncols=1)    
                     ax.pie(bysport,labels=bysport, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.8, textprops={'fontsize': 8})             
