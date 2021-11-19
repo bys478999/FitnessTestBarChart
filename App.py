@@ -174,9 +174,9 @@ def main():
                     st.write(byday)
                     
                     fig, ax = plt.subplots(nrows=1, ncols=1)    
-                    ax[0].pie(bysport,labels=bysport, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})             
-                    ax[0].legend(legend_type, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')                 
-                    ax[0].set_title("Total usage (SPORT)"+ "\nfrom "+startdate+" to "+enddate)
+                    ax.pie(bysport,labels=bysport, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})             
+                    ax.legend(legend_type, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')                 
+                    ax.set_title("Total usage (SPORT)"+ "\nfrom "+startdate+" to "+enddate)
                     fig.tight_layout()
                     st.pyplot(fig)
     
