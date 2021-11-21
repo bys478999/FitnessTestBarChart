@@ -204,6 +204,7 @@ def main():
                     chosen = wholedata.loc[df['SPORT'] == select_sport]
                     chosen_sport = chosen.groupby(['NAME'])['DATE'].count()
                     st.write(chosen_sport)
+                    st.bar_chart(chosen_sport)
     
     
     elif choice == "Supplement":
