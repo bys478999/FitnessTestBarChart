@@ -173,7 +173,7 @@ def main():
                     legend_type_4 = wholedata.groupby('DATE').groups
                     legend_type_5 = wholedata.groupby(year).groups
                     st.write(bydate)
-                    
+                    st.write("Total usage (By Date)"+ "\nfrom "+startdate+" to "+enddate)
                     st.line_chart(bydate)
                     
                     fig, ax = plt.subplots(nrows=1, ncols=1)    
