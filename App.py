@@ -18,10 +18,7 @@ def main():
        username = st.sidebar.text_input("Username")
        password = st.sidebar.text_input("Password", type='password')
        if st.sidebar.checkbox("Login"): 
-            if password == st.secrets["password"] and username == st.secrets["username"]:
-                components.html(""" 
-                 <h1 style = "color:yellow; background-color:blue" >Welcome to Sports Science & Sports Medicine</h1>
-                 <p><h2 style = "color:black";>Aim</h2></p>)             
+            if password == st.secrets["password"] and username == st.secrets["username"]:            
                 image = Image.open('ussps.jpg')
                 st.image(image, caption='Photo with intership students')
                 st.video('https://www.youtube.com/watch?v=iRAKIcJ_9HM&list=PLNU1HqjHb92rscpN1h-HflhQRaunwDFbD')
