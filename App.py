@@ -175,7 +175,7 @@ def main():
                     
                     fig, ax = plt.subplots(nrows=1, ncols=1)    
                     ax.plot(legend_type_4, bydate)                             
-                    ax.title("Total usage (Sport)"+ "\nfrom "+startdate+" to "+enddate)
+                    ax.set_title("Total usage (Sport)"+ "\nfrom "+startdate+" to "+enddate)
                     st.pyplot(fig)
                     
                     fig, ax = plt.subplots(nrows=1, ncols=1)    
