@@ -174,10 +174,8 @@ def main():
                     st.write(bydate)
                     
                     fig, ax = plt.subplots(nrows=1, ncols=1)    
-                    ax.plot(x=legend_type_4,y=bydate)             
-                    ax.legend(legend_type_4, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')                 
-                    ax.set_title("Total usage (Sport)"+ "\nfrom "+startdate+" to "+enddate)
-                    fig.tight_layout()
+                    ax.plot(legend_type_4, bydate)                             
+                    ax.title("Total usage (Sport)"+ "\nfrom "+startdate+" to "+enddate)
                     st.pyplot(fig)
                     
                     fig, ax = plt.subplots(nrows=1, ncols=1)    
