@@ -199,12 +199,6 @@ def main():
                     fig.tight_layout()
                     st.pyplot(fig)
                     
-                    select_date = st.selectbox('Chose the date', legend_type_4)
-                    chosen = wholedata.loc[df['DATE'] == select_date]
-                    chosen_2 = chosen.rename(columns={'NAME': 'USAGE'})
-                    chosen_date = chosen_2.groupby(['SPORT'])['USAGE'].count()
-                    st.subheader("Total usage at "+select_date)
-                    st.bar_chart(chosen_date)
                     
                     select_sport = st.selectbox('Chose the sport', legend_type)
                     chosen = wholedata.loc[df['SPORT'] == select_sport]
