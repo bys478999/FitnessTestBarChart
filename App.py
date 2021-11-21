@@ -172,7 +172,6 @@ def main():
                     legend_type_3 = wholedata.groupby('STATUS').groups
                     legend_type_4 = wholedata.groupby('DATE').groups
                     legend_type_5 = wholedata.groupby(year).groups
-                    st.write(bydate)
                     st.subheader("Total usage from "+startdate+" to "+enddate)
                     st.line_chart(bydate)
                     
@@ -204,7 +203,6 @@ def main():
                     chosen = wholedata.loc[df['SPORT'] == select_sport]
                     chosen_2 = chosen.rename(columns={'DATE': 'USAGE'})
                     chosen_sport = chosen_2.groupby(['NAME'])['USAGE'].count()
-                    st.write(chosen_sport)
                     st.bar_chart(chosen_sport)
     
     
