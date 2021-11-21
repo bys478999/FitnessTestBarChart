@@ -174,7 +174,7 @@ def main():
                     legend_type_5 = wholedata.groupby(year).groups
                     st.write(bydate)
                     
-                    st.line_chart(bydate,bydate_2)
+                    st.line_chart([bydate,bydate_2)]
                     
                     fig, ax = plt.subplots(nrows=1, ncols=1)    
                     ax.pie(bysport,labels=bysport, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.8, textprops={'fontsize': 8})             
