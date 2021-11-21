@@ -200,7 +200,9 @@ def main():
                     fig.tight_layout()
                     st.pyplot(fig)
                     
-                    sportchosen = st.selectbox('Chose the sport', legend_type)
+                    select_sport = st.selectbox('Chose the sport', legend_type)
+                    chosen_sport = select_sport.groupby(['NAME'])['DATE'].count()
+                    st.write(chosen_sport)
     
     
     elif choice == "Supplement":
