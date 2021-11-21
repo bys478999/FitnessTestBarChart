@@ -201,7 +201,8 @@ def main():
                     st.pyplot(fig)
                     
                     select_sport = st.selectbox('Chose the sport', legend_type)
-                    chosen_sport = select_sport.groupby(['NAME'])['DATE'].count()
+                    chosen = wholedata.loc[df['SPORT'] == select_sport]
+                    chosen_sport = chosen.groupby(['NAME'])['DATE'].count()
                     st.write(chosen_sport)
     
     
