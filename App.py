@@ -203,7 +203,7 @@ def main():
                     chosen = wholedata.loc[df['DATE'] == select_date]
                     chosen_2 = chosen.rename(columns={'NAME': 'USAGE'})
                     chosen_date = chosen_2.groupby(['SPORT'])['USAGE'].count()
-                    st.subheader("Total usage by "+select_date+ " from "+startdate+" to "+enddate)
+                    st.subheader("Total usage at "+select_date)
                     st.bar_chart(chosen_date)
                     
                     select_sport = st.selectbox('Chose the sport', legend_type)
