@@ -173,10 +173,7 @@ def main():
                     legend_type_5 = wholedata.groupby(year).groups
                     st.write(bydate)
                     
-                    fig, ax = plt.subplots(nrows=1, ncols=1)    
-                    ax.plot(legend_type_4, bydate)                             
-                    ax.set_title("Total usage (Sport)"+ "\nfrom "+startdate+" to "+enddate)
-                    st.plot(fig)
+                    st.line_chart(bydate)
                     
                     fig, ax = plt.subplots(nrows=1, ncols=1)    
                     ax.pie(bysport,labels=bysport, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.8, textprops={'fontsize': 8})             
