@@ -165,6 +165,7 @@ def main():
                     bygender = wholedata.groupby(['GENDER'])['NAME'].count()
                     bystatus = wholedata.groupby(['STATUS'])['NAME'].count()
                     bydate = wholedata.groupby(['DATE'])['NAME'].count()
+                    bydate_2 = bydate.rename(columns={'NAME': 'USAGE'})
                     byday = wholedata.groupby([year])['NAME'].count()
                     legend_type = wholedata.groupby('SPORT').groups
                     legend_type_2 = wholedata.groupby('GENDER').groups
@@ -173,7 +174,7 @@ def main():
                     legend_type_5 = wholedata.groupby(year).groups
                     st.write(bydate)
                     
-                    st.line_chart(bydate)
+                    st.line_chart(bydate_2)
                     
                     fig, ax = plt.subplots(nrows=1, ncols=1)    
                     ax.pie(bysport,labels=bysport, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.8, textprops={'fontsize': 8})             
