@@ -171,7 +171,13 @@ def main():
                     legend_type_3 = wholedata.groupby('STATUS').groups
                     legend_type_4 = wholedata.groupby('DATE').groups
                     legend_type_5 = wholedata.groupby(year).groups
-                    st.pyplot(bydate)
+                    st.write(bydate)
+                    fig, ax = plt.subplots(nrows=1, ncols=1)    
+                    ax.plot(legend_type_4,bydate textprops={'fontsize': 8})             
+                    ax.legend(legend_type_4, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')                 
+                    ax.set_title("Total usage (Sport)"+ "\nfrom "+startdate+" to "+enddate)
+                    fig.tight_layout()
+                    st.pyplot(fig)
                     
                     fig, ax = plt.subplots(nrows=1, ncols=1)    
                     ax.pie(bysport,labels=bysport, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.8, textprops={'fontsize': 8})             
