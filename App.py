@@ -202,7 +202,8 @@ def main():
                     
                     select_sport = st.selectbox('Chose the sport', legend_type)
                     chosen = wholedata.loc[df['SPORT'] == select_sport]
-                    chosen_sport = chosen.groupby(['NAME'])['DATE'].count()
+                    chosen_2 = chosen.rename(columns={'DATE': 'USAGE'})
+                    chosen_sport = chosen_2.groupby(['NAME'])['USAGE'].count()
                     st.write(chosen_sport)
                     st.bar_chart(chosen_sport)
     
