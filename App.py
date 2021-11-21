@@ -192,13 +192,10 @@ def main():
                     fig.tight_layout()
                     st.pyplot(fig)
                     
-                    fig, ax = plt.subplots(nrows=1, ncols=2)    
-                    ax[0].pie(bydate,labels=bydate, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
-                    ax[1].pie(byday,labels=byday, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
-                    ax[0].legend(legend_type_4, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
-                    ax[1].legend(legend_type_5, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
-                    ax[0].set_title("Total usage (Date)"+ "\nfrom "+startdate+" to "+enddate)
-                    ax[1].set_title("Total usage (Day)"+ "\nfrom "+startdate+" to "+enddate)
+                    fig, ax = plt.subplots(nrows=1, ncols=1)    
+                    ax.pie(byday,labels=byday, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
+                    ax.legend(legend_type_5, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
+                    ax.set_title("Total usage (Day)"+ "\nfrom "+startdate+" to "+enddate)
                     fig.tight_layout()
                     st.pyplot(fig)
     
