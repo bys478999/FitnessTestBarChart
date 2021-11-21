@@ -154,7 +154,7 @@ def main():
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Attendance')
                     col1, col2 = st.columns(2)
                     startdate1 = col1.text_input("Chose the start date(year/month/day):")
-                    startdate = st.date_input( "When's your birthday", datetime.date())
+                    startdate = st.date_input( "When's your birthday", datetime.date(2021,11,1))
                     enddate = col2.text_input("Chose the end date(year/month/day):")
                     df['DATE'] = pd.to_datetime(df['DATE'], format="%d/%m/%Y")
                     year = df['DATE'].dt.day_name()
