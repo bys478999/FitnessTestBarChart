@@ -165,7 +165,7 @@ def main():
                     bygender = wholedata.groupby(['GENDER'])['NAME'].count()
                     bystatus = wholedata.groupby(['STATUS'])['NAME'].count()
                     bydate_2 = wholedata.rename(columns={'NAME': 'USAGE'})
-                    bydate = bydate_2.groupby(['DATE'])['NAME'].count()
+                    bydate = bydate_2.groupby(['DATE'])['USAGE'].count()
                     byday = wholedata.groupby([year])['NAME'].count()
                     legend_type = wholedata.groupby('SPORT').groups
                     legend_type_2 = wholedata.groupby('GENDER').groups
