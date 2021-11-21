@@ -199,7 +199,8 @@ def main():
                     ax.set_title("Total usage (Day)"+ "\nfrom "+startdate+" to "+enddate)
                     fig.tight_layout()
                     st.pyplot(fig)
-    
+                    
+                    sportchosen = st.selectbox('Chose the sport', legend_type)
     
     
     elif choice == "Supplement":
