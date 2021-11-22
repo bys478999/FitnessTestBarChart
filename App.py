@@ -15,12 +15,7 @@ def main():
 
     if choice == "Home":
        st.header("Home Page")
-       username = st.sidebar.text_input("Username")
-       password = st.sidebar.text_input("Password", type='password')
-       if st.sidebar.checkbox("Login"): 
-            if password == st.secrets["password"] and username == st.secrets["username"]:            
-                image = Image.open('ussps.jpg')
-                col1, col2, col3, col4, col5 = st.columns(5) 
+       col1, col2, col3, col4, col5 = st.columns(5) 
                 image_1 = Image.open('1-Penang State Logo (Png).png')
                 image_2 = Image.open('2-Penang Black Panther (Png).png')
                 image_3 = Image.open('3-MSN Approved (Png).png')
@@ -31,6 +26,11 @@ def main():
                 col2.image(image_3, caption='MSN Logo')
                 col5.image(image_4, caption='Penang 2030 Logo')
                 col1.image(image_5, caption='Logo Sports For All')
+       username = st.sidebar.text_input("Username")
+       password = st.sidebar.text_input("Password", type='password')
+       if st.sidebar.checkbox("Login"): 
+            if password == st.secrets["password"] and username == st.secrets["username"]:            
+                image = Image.open('ussps.jpg')
                 st.image(image, caption='Photo with intership students')
                 col1, col2, col3 = st.columns(3) 
                 st.subheader('Nutrition Education Video')
