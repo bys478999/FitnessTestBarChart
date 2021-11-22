@@ -75,7 +75,9 @@ def main():
        col2.image(image_2)
        col3.image(image_3)
        col4.image(image_4)
-       st.video(bodymec(TNT).mp4)
+       video_file = open(bodymec(TNT).mp4', 'rb')
+       video_bytes = video_file.read()
+       st.video(video_bytes)
        if st.sidebar.checkbox("Login"): 
             if password == st.secrets["password"]:
                    sheet_id = st.secrets[username]
