@@ -66,6 +66,15 @@ def main():
        st.header("Body Mechanics Section")
        username = st.sidebar.text_input("Username")
        password = st.sidebar.text_input("Password", type='password')
+       col1, col2, col3, col4 = st.columns(4) 
+       image_1 = Image.open('msnppbodymec1.PNG')
+       image_2 = Image.open('msnppbodymec2.PNG')
+       image_3 = Image.open('msnppbodymec3.PNG')
+       image_4 = Image.open('msnppbodymec4.PNG')
+       col1.image(image_1)
+       col2.image(image_2)
+       col3.image(image_3)
+       col4.image(image_4)
        if st.sidebar.checkbox("Login"): 
             if password == st.secrets["password"]:
                    sheet_id = st.secrets[username]
