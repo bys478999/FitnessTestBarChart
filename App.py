@@ -75,7 +75,7 @@ def main():
        col2.image(image_2)
        col3.image(image_3)
        col4.image(image_4)
-       video_file = open(bodymec(TNT).mp4')
+       video_file = open('bodymec(TNT).mp4')
        video_bytes = video_file.read()
        st.video(video_bytes)
        if st.sidebar.checkbox("Login"): 
