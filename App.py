@@ -6,6 +6,11 @@ from PIL import Image
 import pandas as pd
 import matplotlib.pyplot as plt
 
+st.set_page_config(
+   page_title="Sports Science & Sports Medicine",
+   page_icon="3-MSN Approved (Png).png",
+   layout="wide",
+   initial_sidebar_state="expanded",)
 
 
 def main():
