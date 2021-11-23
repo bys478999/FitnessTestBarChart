@@ -17,8 +17,8 @@ def main():
     st.title("""Sports Science & Sports Medicine Website""")
     menu = ["Home","Data Analysis","Body Mechanics", "Gym Attendance","Supplement"]
     col1, col2 = st.columns(2) 
-    col1.sidebar.image('3-MSN Approved (Png).png')
-    col2.sidebar.image('2-Penang Black Panther (Png).png')
+    col1.sidebar.image('3-MSN Approved (Png).png',use_column_width=True)
+    col2.sidebar.image('2-Penang Black Panther (Png).png', use_column_width=True)
     choice = st.sidebar.selectbox("Menu",menu)
 
     if choice == "Home":
