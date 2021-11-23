@@ -12,7 +12,7 @@ st.set_page_config(
    layout="wide",
    initial_sidebar_state="expanded",)
 
-
+@st.cache
 def main():
     st.title("""Sports Science & Sports Medicine Website""")
     menu = ["Home","Data Analysis","Body Mechanics", "Gym Attendance","Supplement"]
