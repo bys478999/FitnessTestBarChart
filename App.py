@@ -19,7 +19,6 @@ def main():
     st.sidebar.image('3-MSN Approved (Png).png')
     choice = st.sidebar.selectbox("Menu",menu)
       
-    @st.cache  
     if choice == "Home":
        st.header("Home Page")
        col1, col2, col3, col4, col5 = st.columns(5) 
