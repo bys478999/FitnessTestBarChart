@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(
    page_title="Sports Science & Sports Medicine",
-   page_icon="3-MSN Approved (Png).png",
+   page_icon="msnpp.png",
    layout="wide",
    initial_sidebar_state="expanded",)
 
@@ -16,17 +16,17 @@ st.set_page_config(
 def main():
     st.title("""Sports Science & Sports Medicine Website""")
     menu = ["Home","Data Analysis","Body Mechanics", "Gym Attendance","Supplement"]
-    st.sidebar.image('3-MSN Approved (Png).png')
+    st.sidebar.image('msnpp.png')
     choice = st.sidebar.selectbox("Menu",menu)
       
     if choice == "Home":
        st.header("Home Page")
        col1, col2, col3, col4, col5 = st.columns(5) 
-       image_1 = Image.open('1-Penang State Logo (Png).png')
-       image_2 = Image.open('2-Penang Black Panther (Png).png')
-       image_3 = Image.open('3-MSN Approved (Png).png')
-       image_4 = Image.open('4-Penang 2030 Logo Gold Colour.png')
-       image_5 = Image.open('5-Logo Sports For All (Png).png')
+       image_1 = Image.open('penang.png')
+       image_2 = Image.open('blackpanther.png')
+       image_3 = Image.open('msnpp.png')
+       image_4 = Image.open('penang2030.png')
+       image_5 = Image.open('sportforall.png')
        col3.image(image_1, caption='Penang State Logo')
        col4.image(image_2, caption='Penang Black Panther')
        col2.image(image_3, caption='MSN Logo')
