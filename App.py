@@ -16,6 +16,7 @@ st.set_page_config(
 def main():
     st.title("""Sports Science & Sports Medicine Website""")
     menu = ["Home","Data Analysis","Body Mechanics", "Gym Attendance","Supplement"]
+    st.sidebar.image('3-MSN Approved (Png).png')
     choice = st.sidebar.selectbox("Menu",menu)
 
     if choice == "Home":
