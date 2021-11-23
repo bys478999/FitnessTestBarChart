@@ -12,13 +12,14 @@ st.set_page_config(
    layout="wide",
    initial_sidebar_state="expanded",)
 
-@st.cache
+
 def main():
     st.title("""Sports Science & Sports Medicine Website""")
     menu = ["Home","Data Analysis","Body Mechanics", "Gym Attendance","Supplement"]
     st.sidebar.image('3-MSN Approved (Png).png')
     choice = st.sidebar.selectbox("Menu",menu)
-
+      
+    @st.cache  
     if choice == "Home":
        st.header("Home Page")
        col1, col2, col3, col4, col5 = st.columns(5) 
