@@ -42,7 +42,7 @@ def app():
                 width = st.sidebar.slider("plot width", 1., 15., 10.)
                 height = st.sidebar.slider("plot height", 1., 10., 5.)
                 xx = st.sidebar.slider("bottom Y-axis", 0., 40., 0.)
-                yy = st.sidebar.slider("upper Y-axis", 0., 40., 35.)
+                yy = st.sidebar.slider("upper Y-axis", 0., 100., 35.)
                 fig, ax = plt.subplots(figsize=(width, height))
                 ax = plt.bar(x, y, color=cc, width=0.5)
                 for i in range(len(x)):
@@ -271,7 +271,7 @@ def app():
                 width = st.sidebar.slider("plot width", 1., 20., 15.)
                 height = st.sidebar.slider("plot height", 1., 10., 5.)
                 xx = st.sidebar.slider("bottom Y-axis", 0., 20., 0.)
-                yy = st.sidebar.slider("upper Y-axis", 0., 20., 15.)
+                yy = st.sidebar.slider("upper Y-axis", 0., 40., 15.)
                 fig, ax = plt.subplots(figsize=(width, height))
                 ax = plt.bar(x_axis - 0.2, y6, width=0.2, color=cc)
                 for i in range(len(x)):
