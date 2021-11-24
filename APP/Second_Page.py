@@ -43,7 +43,7 @@ def app():
                 width = st.sidebar.slider("plot width", 1., 15., 10.)
                 height = st.sidebar.slider("plot height", 1., 10., 5.)
                 xx = st.sidebar.slider("bottom Y-axis", 0., 100., 0.)
-                yy = st.sidebar.slider("upper Y-axis", min_value=0., max_value=100., 0.)
+                yy = st.sidebar.slider("upper Y-axis", min_value, max_value, 0.)
                 fig, ax = plt.subplots(figsize=(width, height))
                 ax = plt.bar(x_axis - 0.2, y, color=cc, width=0.25)
                 for i in range(len(x)):
