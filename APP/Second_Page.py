@@ -65,7 +65,7 @@ def app():
                 plt.xticks(x_axis, x, rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
                 plt.title("BMI")
                 plt.ylabel("BMI Score")
-                plt.ylim(xx, 50)
+                plt.ylim(xx, yy)
                 BMI1 = mpatches.Patch(color='green', label='Underweight (' + '<' + str(a_BMI) + ')')
                 BMI2 = mpatches.Patch(color='lime', label='Normal (' + str(b_BMI) + '-' + str(b1_BMI) + ')')
                 BMI3 = mpatches.Patch(color='yellow', label='Overweight (' + str(c_BMI) + '-' + str(c1_BMI) + ')')
