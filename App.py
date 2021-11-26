@@ -230,6 +230,7 @@ def main():
                     chosen_sport = chosen_2.groupby(['NAME'])['USAGE'].count()
                     st.subheader("Total usage by "+select_sport+ " from "+startdate+" to "+enddate)
                     st.bar_chart(chosen_sport)
+                    st.write(chosen_sport)
     
     
     elif choice == "Supplement":
