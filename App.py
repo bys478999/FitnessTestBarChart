@@ -183,7 +183,7 @@ def main():
                    replaceG1 = chosen_sport.loc[df['Name'] == athlete]
                    chosen_athlete = replaceG1.rename(columns={'Gender': 'Usage'})
                    ca = chosen_athlete.groupby(['Month','Injury Part'],sort=False, as_index=False)['Usage'].count()
-                   ca1 = chosen_athlete.groupby(['Month'])['Usage'].count()
+                   ca1 = chosen_athlete.groupby(['Month'],sort=False)['Usage'].count()
                    x_axis1 = replaceG1['Month'].drop_duplicates()
                    fig, ax = plt.subplots(nrows=1, ncols=1,figsize=(6, 4))   
                    ax.plot(x_axis1,ca1, marker='^', color='blue', mec='red', ls='--')
