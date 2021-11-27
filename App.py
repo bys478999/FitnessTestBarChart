@@ -162,10 +162,19 @@ def main():
                    chosen_sport2 = replaceG.rename(columns={'Name': 'Case'})
                    cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Case'].count()
                    cs2 = chosen_sport2.groupby(['Month'],sort=False)['Case'].count()
-                   st.line_chart(cs2)
-                   st.table(cs2)
-                   st.table(cs)
+                   x_axis = replaceG['Month'].drop_duplicates()
+                   fig.ax = plt.subplots(nrows=1, ncols=1)   
+                   ax.plot(x1,cs2, marker='^', color='blue', mec='red', ls='--')
+                   ax.set_title("Bodymechanics Service")
+                   ax.set_xlabel('Year')
+                   ax.set_ylabel('Case')
+                   st.pyplot(fig)
+                  
         
+                  
+                  
+                  
+                  
                   
                    athlete = st.selectbox('Chose Athlete', chosen_sport['Name'].drop_duplicates())
                    replaceG1 = chosen_sport.loc[df['Name'] == athlete]
