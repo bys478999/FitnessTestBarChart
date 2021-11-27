@@ -164,7 +164,7 @@ def main():
                    cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Case'].count()
                    cs2 = chosen_sport2.groupby(['Month'],sort=False)['Case'].count()
                    cs3 = chosen_sport.groupby(['Name'])['Case'].count()
-                   cs4 = chosen_sport.groupby(['Name'])['Cost(RM)'].count()
+                   cs4 = chosen_sport3.groupby(['Name'])['Cost(RM)'].count()
                    x_axis = replaceG['Month'].drop_duplicates()
                    fig, ax = plt.subplots(nrows=1, ncols=1,figsize=(6, 4))   
                    ax.plot(x_axis,cs2, marker='^', color='blue', mec='red', ls='--')
