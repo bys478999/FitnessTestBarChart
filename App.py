@@ -163,14 +163,13 @@ def main():
                    st.table(cs)
                    monthdetail = replaceG.groupby('Month').groups
                    namedetail = replaceG.groupby('Name').groups 
-
+                   st.write(monthdetail)
                    
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))
                    ax.bar(monthdetail, namedetail) 
                    ax.set_ylabel('Scores')
                    ax.set_title('Scores by group and gender')
                    st.pyplot(fig)
-
 
                   
                   
