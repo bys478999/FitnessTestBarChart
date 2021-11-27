@@ -166,8 +166,6 @@ def main():
                    st.table(monthdetail)
                    st.table(namedetail)
 
-                    datedetail = chosen[['DATE','NAME','GENDER','AGE','STATUS']]
-                    st.write(datedetail)
                   
                   
                    athlete = st.selectbox('Chose Athlete', chosen_sport['Name'].drop_duplicates())
