@@ -86,9 +86,9 @@ def main():
             if password == st.secrets["password"]:
                    sheet_id = st.secrets[username]
                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
-                   chosen = df.rename(columns={'Month': 'Total Cases'})
-                   a = chosen.groupby(['Year'])['Total Cases'].count()
-                   table_in_year = chosen.groupby(['Year'],sort=False,as_index=False)['Total Cases'].count()
+                   chosen = df.rename(columns={'Month': 'Total Usage'})
+                   a = chosen.groupby(['Year'])['Total Usage'].count()
+                   table_in_year = chosen.groupby(['Year'],sort=False,as_index=False)['Total Usage'].count()
                    col1, col2 = st.columns(2)   
                    col1.table(table_in_year)
                    x1 = df['Year'].drop_duplicates()
@@ -97,23 +97,23 @@ def main():
                    ax.plot(x1,y1, marker='^', color='blue', mec='red', ls='--')
                    ax.set_title("Bodymechanics Service")
                    ax.set_xlabel('Year')
-                   ax.set_ylabel('Case')
+                   ax.set_ylabel('Usage')
                    col2.pyplot(fig)
                    
                                 
                    year = st.selectbox('Chose The Year', df['Year'].drop_duplicates())
                    col1, col2 = st.columns(2)
                    selected_year = df.loc[df['Year'] == year]
-                   selected = selected_year.rename(columns={'Name': 'Case'})
+                   selected = selected_year.rename(columns={'Name': 'Usage'})
                    b= selected.groupby(['Month'], sort=False,as_index=False)['Case'].count()
-                   y= selected.groupby(['Month'], sort=False)['Case'].count()
+                   y= selected.groupby(['Month'], sort=False)['Usage'].count()
                    x = selected['Month'].drop_duplicates()
                    col1.table(b)
                    fig, ax = plt.subplots(nrows=1, ncols=1)   
                    ax.plot(x,y, marker='o', color='blue', mec='red', ls=':')
                    ax.set_title("Cases in year " + year)
                    ax.set_xlabel('Month')
-                   ax.set_ylabel('Case')
+                   ax.set_ylabel('Usage')
                    col2.pyplot(fig)
                     
                    month = st.selectbox('Chose The Month', df['Month'].drop_duplicates())       
@@ -130,7 +130,7 @@ def main():
                    p4 = selected_month.groupby('Name').groups
                    
                 
-                   st.subheader('Cases by Gender & Status' + '(' +month +'/'+year+')')    
+                   st.subheader('Usage by Gender & Status' + '(' +month +'/'+year+')')    
                    color =  ["green", "red"]
                    ax[0].pie(y1,labels=y1, colors = color, autopct='%1.1f%%' )
                    ax[1].pie(y2,labels=y2, autopct='%1.1f%%')
@@ -139,7 +139,7 @@ def main():
                    fig.tight_layout()
                    st.pyplot(fig)
                    
-                   st.subheader('Cases by Sports' + '(' +month +'/'+year+')') 
+                   st.subheader('Usage by Sports' + '(' +month +'/'+year+')') 
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))    
                    ax.pie(y,labels=y, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.6, textprops={'fontsize': 8})
                    ax.legend(p1, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
@@ -147,7 +147,7 @@ def main():
                    st.pyplot(fig)
                     
                     
-                   st.subheader('Cases by Patient' + '(' +month +'/'+year+')') 
+                   st.subheader('Usage by Patient' + '(' +month +'/'+year+')') 
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))    
                    ax.pie(y3,labels=y3)
                    ax.legend(p4, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
@@ -158,11 +158,11 @@ def main():
                    st.subheader(' Sports' + '('+year+')')
                    sport = st.selectbox('Chose The Sport', df['Sport'].drop_duplicates())  
                    replaceG = selected_year.loc[df['Sport'] == sport]
-                   chosen_sport = replaceG.rename(columns={'Gender': 'Case'})
-                   chosen_sport2 = replaceG.rename(columns={'Name': 'Case'})
+                   chosen_sport = replaceG.rename(columns={'Gender': 'Usage'})
+                   chosen_sport2 = replaceG.rename(columns={'Name': 'Usage'})
                    chosen_sport3 = replaceG.rename(columns={'Gender': 'Cost(RM)'})
                    chosen_sport4 = replaceG.rename(columns={'Gender': 'Usage'})
-                   cs2 = chosen_sport2.groupby(['Month'],sort=False)['Case'].count()
+                   cs2 = chosen_sport2.groupby(['Month'],sort=False)['Usage'].count()
                    cs3 = chosen_sport4.groupby(['Name'])['Usage'].count()
                    cs4 = chosen_sport3.groupby(['Name'])['Cost(RM)'].count()
                    x_axis = replaceG['Month'].drop_duplicates()
@@ -182,8 +182,8 @@ def main():
                   
                    athlete = st.selectbox('Chose Athlete', chosen_sport['Name'].drop_duplicates())
                    replaceG1 = chosen_sport.loc[df['Name'] == athlete]
-                   chosen_athlete = replaceG1.rename(columns={'Gender': 'Case'})
-                   ca = chosen_athlete.groupby(['Month','Injury Part'],sort=False, as_index=False)['Case'].count()
+                   chosen_athlete = replaceG1.rename(columns={'Gender': 'Usage'})
+                   ca = chosen_athlete.groupby(['Month','Injury Part'],sort=False, as_index=False)['Usage'].count()
                    st.table(ca)
                    
     
