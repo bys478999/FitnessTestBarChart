@@ -160,6 +160,8 @@ def main():
                    replaceG = selected_year.loc[df['Sport'] == sport]
                    chosen_sport = replaceG.rename(columns={'Gender': 'Case'})
                    cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Case'].count()
+                   cs2 = chosen_sport.groupby(['Month'],sort=False, as_index=False)['Name'].count()
+                   st.line_chart(cs2)
                    st.table(cs)
         
                   
