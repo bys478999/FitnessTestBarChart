@@ -160,9 +160,11 @@ def main():
                    replaceG = selected_year.loc[df['Sport'] == sport]
                    chosen_sport = replaceG.rename(columns={'Gender': 'Case'})
                    chosen_sport2 = replaceG.rename(columns={'Name': 'Case'})
+                   chosen_sport3 = replaceG.rename(columns={'Gender': 'Cost (RM)'})
                    cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Case'].count()
                    cs2 = chosen_sport2.groupby(['Month'],sort=False)['Case'].count()
                    cs3 = chosen_sport.groupby(['Name'])['Case'].count()
+                   cs4 = chosen_sport.groupby(['Name'])['Cost(RM)'].count()
                    x_axis = replaceG['Month'].drop_duplicates()
                    fig, ax = plt.subplots(nrows=1, ncols=1,figsize=(6, 4))   
                    ax.plot(x_axis,cs2, marker='^', color='blue', mec='red', ls='--')
@@ -171,7 +173,8 @@ def main():
                    ax.set_ylabel('Usage (Per Entry)')
                    st.pyplot(fig)
                    st.bar_chart(cs3)
-                   paid = cs3 * 100
+                   paid = cs4 * 100
+                   st.subheader("Total Cost (RM)")
                    st.table(paid)
                    
                   
