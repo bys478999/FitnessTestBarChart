@@ -163,11 +163,11 @@ def main():
                    cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Case'].count()
                    cs2 = chosen_sport2.groupby(['Month'],sort=False)['Case'].count()
                    x_axis = replaceG['Month'].drop_duplicates()
-                   fig, ax = plt.subplots(nrows=1, ncols=1,figsize=(4, 2))   
+                   fig, ax = plt.subplots(nrows=1, ncols=1,figsize=(6, 4))   
                    ax.plot(x_axis,cs2, marker='^', color='blue', mec='red', ls='--')
-                   ax.set_title(sport + " ("+ year+")",fontsize=8)
-                   ax.set_xlabel('Month',fontsize=8)
-                   ax.set_ylabel('Usage (Per Entry)',fontsize=8)
+                   ax.set_title(sport + " ("+ year+")")
+                   ax.set_xlabel('Month')
+                   ax.set_ylabel('Usage (Per Entry)')
                    st.pyplot(fig)
                   
                   
