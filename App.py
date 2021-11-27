@@ -161,8 +161,8 @@ def main():
                    chosen_sport = replaceG.rename(columns={'Gender': 'Case'})
                    cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Case'].count()
                    st.table(cs)
-                   monthdetail = replaceG[['Month']]
-                   namedetail = chosen_sport.groupby(['Month'])
+                   monthdetail = replaceG['Month'].drop_duplicates()
+                   namedetail = chosen_sport.groupby(['Month'])['Name'].count()
                    st.write(monthdetail)
                    st.write(namedetail)
 
