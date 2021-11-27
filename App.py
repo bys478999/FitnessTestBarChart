@@ -105,7 +105,7 @@ def main():
                    col1, col2 = st.columns(2)
                    selected_year = df.loc[df['Year'] == year]
                    selected = selected_year.rename(columns={'Name': 'Usage'})
-                   b= selected.groupby(['Month'], sort=False,as_index=False)['Case'].count()
+                   b= selected.groupby(['Month'], sort=False,as_index=False)['Usage'].count()
                    y= selected.groupby(['Month'], sort=False)['Usage'].count()
                    x = selected['Month'].drop_duplicates()
                    col1.table(b)
