@@ -163,6 +163,7 @@ def main():
                    cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Case'].count()
                    cs2 = chosen_sport2.groupby(['Month'],sort=False)['Case'].count()
                    st.line_chart(cs2)
+                   st.table(cs2)
                    st.table(cs)
         
                   
