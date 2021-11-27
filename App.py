@@ -165,6 +165,7 @@ def main():
                    namedetail = chosen_sport.groupby(['Month'])['Name'].count()
                    st.write(monthdetail)
                    st.write(namedetail)
+                   st.line_chart(cs)
 
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))
                    ax.bar(monthdetail, namedetail, width==0.3) 
