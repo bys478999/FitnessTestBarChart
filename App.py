@@ -176,6 +176,8 @@ def main():
                    paid = cs4 * 100
                    st.subheader("Total Cost (RM)")
                    st.table(paid)
+                   totalpaid = paid.sum(axis=0)
+                   st.table(totalpaid)
 
                   
                   
