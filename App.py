@@ -163,7 +163,7 @@ def main():
                    cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Case'].count()
                    cs2 = chosen_sport2.groupby(['Month'],sort=False)['Case'].count()
                    x_axis = replaceG['Month'].drop_duplicates()
-                   fig.ax = plt.subplots(nrows=1, ncols=1)   
+                   fig, ax = plt.subplots(nrows=1, ncols=1)   
                    ax.plot(x_axis,cs2, marker='^', color='blue', mec='red', ls='--')
                    ax.set_title("Bodymechanics Service")
                    ax.set_xlabel('Year')
