@@ -163,8 +163,7 @@ def main():
                    st.table(cs)
                    monthdetail = replaceG.groupby('Month').groups
                    namedetail = replaceG.groupby('Name').groups 
-                   st.table(monthdetail)
-                   st.table(namedetail)
+
                    
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))
                    ax.bar(monthdetail, namedetail) 
