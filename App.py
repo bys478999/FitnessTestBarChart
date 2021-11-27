@@ -161,7 +161,7 @@ def main():
                    chosen_sport = replaceG.rename(columns={'Gender': 'Case'})
                    cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Case'].count()
                    cs2 = chosen_sport.groupby(['Month'])['Name'].count()
-                   st.line_chart(cs2)
+                   st.line_chart(cs2, width=0.8)
                    st.table(cs)
         
                   
