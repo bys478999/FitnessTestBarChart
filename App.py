@@ -162,7 +162,7 @@ def main():
                    chosen_sport2 = replaceG.rename(columns={'Name': 'Case'})
                    cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Case'].count()
                    cs2 = chosen_sport2.groupby(['Month'],sort=False)['Case'].count()
-                   cs3 = chosen_sport.groupby(['Name'],sort=False, as_index=False)['Case'].count()
+                   cs3 = chosen_sport.groupby(['Name'])['Case'].count()
                    x_axis = replaceG['Month'].drop_duplicates()
                    fig, ax = plt.subplots(nrows=1, ncols=1,figsize=(6, 4))   
                    ax.plot(x_axis,cs2, marker='^', color='blue', mec='red', ls='--')
