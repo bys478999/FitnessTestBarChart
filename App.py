@@ -165,9 +165,9 @@ def main():
                    namedetail = replaceG[['Name']]
                    st.write(monthdetail)
                    st.write(namedetail)
-                   st.bar_chart(cs)
+
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))
-                   ax.bar(monthdetail, namedetail) 
+                   ax.bar(monthdetail, namedetail, width==0.3) 
                    ax.set_ylabel('Scores')
                    ax.set_title('Scores by group and gender')
                    st.pyplot(fig)
