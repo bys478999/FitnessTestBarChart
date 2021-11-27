@@ -176,11 +176,8 @@ def main():
                    paid = cs4 * 100
                    st.subheader("Total Cost (RM)")
                    st.table(paid)
-                   totalpaid = paid.sum(axis=0)
-                   st.table(totalpaid)
 
-                  
-                  
+   
                   
                    athlete = st.selectbox('Chose Athlete', chosen_sport['Name'].drop_duplicates())
                    replaceG1 = chosen_sport.loc[df['Name'] == athlete]
