@@ -162,12 +162,12 @@ def main():
                    cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Case'].count()
                    st.table(cs)
                    monthdetail = replaceG[['Month']]
-                   namedetail = replaceG[['Name']]
+                   namedetail = chosen_sport.groupby(['Month'])['Name'].count()
                    st.write(monthdetail)
                    st.write(namedetail)
 
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))
-                   ax = plt.bar(monthdetail, namedetail, width==0.3) 
+                   ax.bar(monthdetail, namedetail, width==0.3) 
                    ax.set_ylabel('Scores')
                    ax.set_title('Scores by group and gender')
                    st.pyplot(fig)
