@@ -164,6 +164,7 @@ def main():
                    monthdetail = replaceG.groupby('Month').groups
                    namedetail = replaceG.groupby('Name').groups 
                    st.write(monthdetail)
+                   st.write(namedetail)
                    
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))
                    ax.bar(monthdetail, namedetail) 
