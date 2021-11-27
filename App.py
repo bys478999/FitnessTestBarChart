@@ -165,7 +165,7 @@ def main():
                    x_axis = replaceG['Month'].drop_duplicates()
                    fig, ax = plt.subplots(nrows=1, ncols=1)   
                    ax.plot(x_axis,cs2, marker='^', color='blue', mec='red', ls='--')
-                   ax.set_title(sport + " ("+ selected_year+")")
+                   ax.set_title(sport + " ("+ year+")")
                    ax.set_xlabel('Month')
                    ax.set_ylabel('Usage (Per Entry)')
                    st.pyplot(fig)
