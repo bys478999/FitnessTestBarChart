@@ -160,7 +160,7 @@ def main():
                    replaceG = selected_year.loc[df['Sport'] == sport]
                    chosen_sport = replaceG.rename(columns={'Gender': 'Case'})
                    chosen_sport2 = replaceG.rename(columns={'Name': 'Case'})
-                   chosen_sport3 = replaceG.rename(columns={'Gender': 'Cost (RM)'})
+                   chosen_sport3 = replaceG.rename(columns={'Gender': 'Cost(RM)'})
                    cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Case'].count()
                    cs2 = chosen_sport2.groupby(['Month'],sort=False)['Case'].count()
                    cs3 = chosen_sport.groupby(['Name'])['Case'].count()
