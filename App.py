@@ -161,6 +161,15 @@ def main():
                    chosen_sport = replaceG.rename(columns={'Gender': 'Case'})
                    cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Case'].count()
                    st.table(cs)
+                   monthdetail = replaceG[['Month']]
+                   namedetail = replaceG[['Name']] 
+                   st.table(monthdetail)
+                   st.table(namedetail)
+
+                    datedetail = chosen[['DATE','NAME','GENDER','AGE','STATUS']]
+                    st.write(datedetail)
+                  
+                  
                    athlete = st.selectbox('Chose Athlete', chosen_sport['Name'].drop_duplicates())
                    replaceG1 = chosen_sport.loc[df['Name'] == athlete]
                    chosen_athlete = replaceG1.rename(columns={'Gender': 'Case'})
