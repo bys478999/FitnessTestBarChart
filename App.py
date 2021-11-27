@@ -167,7 +167,7 @@ def main():
                    st.table(namedetail)
                    
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))
-                   ax.bar(x=monthdetail, y=namedetail) 
+                   ax.bar(monthdetail, namedetail) 
                    ax.set_ylabel('Scores')
                    ax.set_title('Scores by group and gender')
                    st.pyplot(fig)
