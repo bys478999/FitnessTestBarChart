@@ -165,11 +165,11 @@ def main():
                    namedetail = replaceG[['Name']] 
                    st.table(monthdetail)
                    st.table(namedetail)
+                   
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))
-                   ax.bar(monthdetail, namedetail) 
+                   ax.bar(x=monthdetail, y=namedetail) 
                    ax.set_ylabel('Scores')
                    ax.set_title('Scores by group and gender')
-                   ax.legend()
                    st.pyplot(fig)
 
 
