@@ -177,7 +177,8 @@ def main():
                    st.subheader("Total Cost (RM)")
                    st.table(paid)
                    cs4['Cost(RM)'] = cs4.sum(axis=0)
-                   st.table(cs4['Cost(RM)'])
+                   total_paid = cs4['Cost(RM)']
+                   st.table(total_paid)
                    
                   
                   
