@@ -161,20 +161,7 @@ def main():
                    chosen_sport = replaceG.rename(columns={'Gender': 'Case'})
                    cs = chosen_sport.groupby(['Month','Name'],sort=False, as_index=False)['Case'].count()
                    st.table(cs)
-                   monthdetail = replaceG['Month'].drop_duplicates()
-                   namedetail = chosen_sport.groupby(['Month'])['Name'].count()
-                   st.write(monthdetail)
-                   st.write(namedetail)
-                   st.line_chart(cs)
-
-                   fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))
-                   ax.bar(monthdetail, namedetail, width==0.3) 
-                   ax.set_ylabel('Scores')
-                   ax.set_title('Scores by group and gender')
-                   st.pyplot(fig)
-                  
-
-                  
+        
                   
                    athlete = st.selectbox('Chose Athlete', chosen_sport['Name'].drop_duplicates())
                    replaceG1 = chosen_sport.loc[df['Name'] == athlete]
