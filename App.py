@@ -171,6 +171,8 @@ def main():
                    ax.set_ylabel('Usage (Per Entry)')
                    st.pyplot(fig)
                    st.bar_chart(cs3)
+                   paid = cs3 * 100
+                   st.table(paid)
                    
                   
                   
