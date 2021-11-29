@@ -346,12 +346,12 @@ def main():
                     startdate = col1.date_input("Chose the start date(year/month/day):")
                     enddate = col2.date_input("Chose the end date(year/month/day):")
                     df['DATE'] = pd.to_datetime(df['DATE'], format="%d/%m/%Y")
-                    period = df.loc[df['DATE'] >=startdate and df['DATE'] <=enddate ]
+                    period = (df['Date'] >= startdate) & (df['Date'] <= enddate)
+                    selected_period = df.loc(period)
                     st.subheader("Assessment and Treatment")
-                    st.write(period)
+                    st.write(selected_period)
                     st.subheader("Rehabilitation")
                     st.write(df1) 
-
 
                     
 
