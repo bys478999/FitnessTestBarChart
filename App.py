@@ -351,8 +351,7 @@ def main():
                     st.subheader("Rehabilitation")
                     st.write(df1) 
 
-                       mask = (df['Date'] >= startdate) & (df['Date'] <= enddate)
-                    wholedata = df.loc[mask]
+
                     
 
 
