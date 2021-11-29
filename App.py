@@ -340,7 +340,7 @@ def main():
           if st.sidebar.checkbox("Login"): 
                if password == st.secrets["password"]:
                     sheet_id = st.secrets[username]
-                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Sheet 2')
+                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Database')
                     st.write(df)
                  
 
