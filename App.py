@@ -15,7 +15,7 @@ st.set_page_config(
 
 def main():
     st.title("""Sports Science & Sports Medicine Website""")
-    menu = ["Home","Data Analysis","Body Mechanics", "Gym Attendance","Supplement"]
+    menu = ["Home","Data Analysis","Body Mechanics", "Gym Attendance","Supplement","Sports Rehab"]
     st.sidebar.image('msnpp.png')
     choice = st.sidebar.selectbox("Menu",menu)
       
@@ -330,7 +330,18 @@ def main():
                     filtersport = selectedsport.groupby(['Supplement','Name'])['Quantity','Total Price (RM)'].sum()
                     st.subheader("Supplement taken by "+sportchosen+ " ("+startdate+" to "+enddate+")")
                     st.write(filtersport)
-                    
+                 
+    
+    
+    elif choice == "Sports Rehab":
+          st.header("Sports Rehabilitation Section")
+          username = st.sidebar.text_input("Username")
+          password = st.sidebar.text_input("Password", type='password')
+          if st.sidebar.checkbox("Login"): 
+               if password == st.secrets["password"]:
+                    sheet_id = st.secrets[username]
+                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Sheet 2')
+                    st.write(df)
                  
 
                     
