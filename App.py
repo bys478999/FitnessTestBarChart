@@ -341,10 +341,11 @@ def main():
                if password == st.secrets["password"]:
                     sheet_id = st.secrets[username]
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Database')
+                    df1 = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Database1')
                     st.subheader("Assessment and Treatment")
                     st.write(df)
                     st.subheader("Rehabilitation")
-                 
+                    st.write(df1) 
 
                     
 
