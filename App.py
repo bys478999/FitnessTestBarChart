@@ -346,14 +346,14 @@ def main():
                     col1, col2 = st.columns(2)
                     startdate = col1.date_input("Chose the start date(year/month/day):")
                     enddate = col2.date_input("Chose the end date(year/month/day):")
-                    period = (df['DATE'] ==startdate) or (df['DATE'] == enddate)
-                    selected_period = df.loc(period)
+                    period = df[(df['DATE'] >= startdate) & (df['DATE'] <= enddate)]   
+                    #selected_period = df.loc(period)
                     st.subheader("Assessment and Treatment")
                     st.write(selected_period)
                     st.subheader("Rehabilitation")
                     st.write(df1) 
 
-                    
+               df = df[(df['closing_price'] >= 99) & (df['closing_price'] <= 101)]     
 
 
 if __name__ == '__main__':
