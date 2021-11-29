@@ -342,6 +342,9 @@ def main():
                     sheet_id = st.secrets[username]
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Database')
                     df1 = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Database1')
+                    col1, col2 = st.columns(2)
+                    startdate = col1.date_input("Chose the start date(year/month/day):")
+                    enddate = col2.date_input("Chose the end date(year/month/day):")
                     st.subheader("Assessment and Treatment")
                     st.write(df)
                     st.subheader("Rehabilitation")
