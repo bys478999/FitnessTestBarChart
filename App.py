@@ -345,11 +345,14 @@ def main():
                     col1, col2 = st.columns(2)
                     startdate = col1.date_input("Chose the start date(year/month/day):")
                     enddate = col2.date_input("Chose the end date(year/month/day):")
+                    period = df.loc[df['DATE'] ] >=startdate and df.loc[df['DATE'] ] <=enddate
                     st.subheader("Assessment and Treatment")
-                    st.write(df)
+                    st.write(period)
                     st.subheader("Rehabilitation")
                     st.write(df1) 
 
+                       mask = (df['Date'] >= startdate) & (df['Date'] <= enddate)
+                    wholedata = df.loc[mask]
                     
 
 
