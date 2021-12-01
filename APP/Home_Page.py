@@ -44,9 +44,9 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 40., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 100., 35.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(sorted(x), sorted(y), color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5)
                 for i in range(len(x)):
-                    plt.text(sorted(i), y[i], y[i], ha="center", va="bottom", fontsize="medium")
+                    plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
                 plt.title("BMI")
                 plt.ylabel("BMI Score")
@@ -75,7 +75,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 40., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 40., 30.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, sorted(y), color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -112,7 +112,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 100., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 100., 50.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, sorted(y), color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -151,7 +151,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 100., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 100., 40.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, sorted(y), color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -190,7 +190,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 400., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 400., 300.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, sorted(y), color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -229,7 +229,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 120., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 120., 70.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, sorted(y), color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -273,7 +273,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 20., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 40., 15.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x_axis - 0.2, sorted(y6), width=0.2, color=cc)
+                ax = plt.bar(x_axis - 0.2, y6, width=0.2, color=cc)
                 for i in range(len(x)):
                     plt.text(i - 0.25, y6[i], y6[i], ha="left", va="bottom", fontsize="medium", rotation='vertical')
                 y61 = round(df['ILLINOIS/R'].astype(float), 2)
@@ -290,7 +290,7 @@ def app():
                     else:
                         cc[n] = 'red'
 
-                ax = plt.bar(x_axis + 0.2, sorted(y61), width=0.2, color=cc)
+                ax = plt.bar(x_axis + 0.2, y61, width=0.2, color=cc)
                 for i in range(len(x)):
                     plt.text(i + 0.25, y61[i], y61[i], ha="right", va="bottom", fontsize="medium", rotation='vertical')
                 plt.xticks(x_axis, x, rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -330,7 +330,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 70., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 70., 40.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, sorted(y), color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -369,7 +369,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 5., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 5., 3.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, sorted(y), color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -408,7 +408,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 6., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 6., 5.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, sorted(y), color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -447,7 +447,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 15., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 15., 8.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, sorted(y), color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -486,7 +486,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 150., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 150., 100.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, sorted(y), color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -525,7 +525,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 20., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 20., 15.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, sorted(y), color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
