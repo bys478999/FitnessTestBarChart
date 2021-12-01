@@ -44,7 +44,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 40., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 100., 35.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, y, color=cc, width=0.5)
+                ax = plt.bar(x, sorted(y), color=cc, width=0.5)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
