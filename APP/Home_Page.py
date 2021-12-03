@@ -21,6 +21,7 @@ def app():
                 st.dataframe(df['NAME'])
 
             elif y == 'BMI':
+                sorted_y = df.sort_values(by=['BMI'], inplace=True)
                 x = df['NAME']
                 y = round(df['BMI'].astype(float), 2)
                 cc = ['colors'] * len(y)
@@ -44,7 +45,6 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 40., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 100., 35.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                sorted_y = df.sort_values(by=['BMI'], inplace=True)
                 ax = plt.bar(x, y, data=sorted_y, color=cc, width=0.5)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
