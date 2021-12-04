@@ -12,7 +12,9 @@ def app():
     file = st.file_uploader("Chose a file")
     if file is not None:
         df = pd.read_excel(file)
+        sortedy = df.sort_values(by=['BMI'], inplace=True)
         st.dataframe(round(df, 2))
+        st.dataframe(round(srotedy, 2))
         st.sidebar.header('Fitness Test')
         y_value = st.sidebar.selectbox('Test', df.columns)
 
