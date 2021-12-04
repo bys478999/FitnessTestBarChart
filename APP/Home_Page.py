@@ -22,7 +22,7 @@ def app():
 
             elif y == 'BMI':
                 sorted_y = df.sort_values(by=['BMI'], inplace=True)
-                x = df['NAME']
+                x = sorted_y['NAME']
                 y = round(df['BMI'].astype(float), 2)
                 cc = ['colors'] * len(y)
                 a_BMI = 18.5
