@@ -46,8 +46,9 @@ def app():
                 yy = st.sidebar.slider("upper Y-axis", 0., 100., 35.)
                 fig, ax = plt.subplots(figsize=(width, height))
                 ax = plt.bar(x, y, data=sorted_y, color=cc, width=0.5)
-                for i in range(len(x)):
-                    plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
+                ax.bar_label(ax, fmt='%.2f')
+                #for i in range(len(x)):
+                    #plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
                 plt.title("BMI")
                 plt.ylabel("BMI Score")
