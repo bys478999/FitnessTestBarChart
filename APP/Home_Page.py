@@ -25,6 +25,7 @@ def app():
                 st.dataframe(sorted_y)
                 x = sorted_y['NAME']
                 y = round(sorted_y['BMI'].astype(float), 2)
+                st.dataframe(y)
                 cc = ['colors'] * len(y)
                 a_BMI = 18.5
                 b_BMI = 18.5
