@@ -49,7 +49,7 @@ def app():
                 fig, ax = plt.subplots(figsize=(width, height))
                 ax = plt.bar(x, y, data=sorted_y, color=cc, width=0.5) 
                 for i in range(len(x)):
-                    plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
+                    plt.text(i, y[i], i, ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
                 plt.title("BMI")
                 plt.ylabel("BMI Score")
