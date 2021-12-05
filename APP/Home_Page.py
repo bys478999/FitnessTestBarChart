@@ -25,7 +25,6 @@ def app():
                 st.dataframe(sorted_y)
                 x = sorted_y['NAME']
                 y = round(sorted_y['BMI'].astype(float), 2)
-                ysorted = sorted_y['BMI']
                 st.dataframe(x)
                 cc = ['colors'] * len(y)
                 a_BMI = 18.5
@@ -50,7 +49,7 @@ def app():
                 fig, ax = plt.subplots(figsize=(width, height))
                 ax = plt.bar(x, y, data=sorted_y, color=cc, width=0.5) 
                 for i in range(len(x)):
-                    plt.text(i, y[i], ysorted, ha="center", va="bottom", fontsize="medium")
+                    plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
                 plt.title("BMI")
                 plt.ylabel("BMI Score")
