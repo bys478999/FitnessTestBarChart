@@ -22,10 +22,8 @@ def app():
 
             elif y == 'BMI':
                 sorted_y = df.sort_values(by=['BMI'], inplace=False, ignore_index=True)
-                st.dataframe(sorted_y)
                 x = sorted_y['NAME']
                 y = round(sorted_y['BMI'].astype(float), 2)
-                st.dataframe(x)
                 cc = ['colors'] * len(y)
                 a_BMI = 18.5
                 b_BMI = 18.5
@@ -63,8 +61,9 @@ def app():
                 st.set_option('deprecation.showPyplotGlobalUse', False)  # erase the warning
 
             elif y == 'BODY FAT':
-                x = df['NAME']
-                y = round(df['BODY FAT'].astype(float), 2)
+                sorted_y = df.sort_values(by=['BODY FAT'], inplace=False, ignore_index=True)
+                x = sorted_y['NAME']
+                y = round(sorted_y['BODY FAT'].astype(float), 2)
                 cc = ['colors'] * len(y)
                 a_BF = 20
                 b_BF = 19
@@ -78,7 +77,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 40., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 40., 30.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, y, color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5, data=sorted_y)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
