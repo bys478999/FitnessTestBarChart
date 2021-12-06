@@ -91,8 +91,9 @@ def app():
                 st.set_option('deprecation.showPyplotGlobalUse', False)  # erase the warning
 
             elif y == 'MAXIMUM PUSH UP':
-                x = df['NAME']
-                y = round(df['MAXIMUM PUSH UP'].astype(float), 2)
+                sorted_y = df.sort_values(by=['MAXIMUM PUSH UP'], inplace=False, ignore_index=True)
+                x = sorted_y['NAME']
+                y = round(sorted_y['MAXIMUM PUSH UP'].astype(float), 2)
                 cc = ['colors'] * len(y)
                 a_MPU = 1
                 b_MPU = 2
@@ -114,7 +115,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 100., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 100., 50.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, y, color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5, data=sorted_y)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -130,8 +131,9 @@ def app():
                 st.set_option('deprecation.showPyplotGlobalUse', False)  # erase the warning
 
             elif y == '1 MIN SIT UP':
-                x = df['NAME']
-                y = round(df['1 MIN SIT UP'].astype(float), 2)
+                sorted_y = df.sort_values(by=['1 MIN SIT UP'], inplace=False, ignore_index=True)
+                x = sorted_y['NAME']
+                y = round(sorted_y['1 MIN SIT UP'].astype(float), 2)
                 cc = ['colors'] * len(y)
                 a_MSU = 1
                 b_MSU = 2
@@ -153,7 +155,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 100., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 100., 40.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, y, color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5, data=sorted_y)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -169,8 +171,9 @@ def app():
                 st.set_option('deprecation.showPyplotGlobalUse', False)  # erase the warning
 
             elif y == 'SBJ':
-                x = df['NAME']
-                y = round(df['SBJ'].astype(float), 2)
+                sorted_y = df.sort_values(by=['BMI'], inplace=False, ignore_index=True)
+                x = sorted_y['NAME']
+                y = round(sorted_y['SBJ'].astype(float), 2)
                 cc = ['colors'] * len(y)
                 a_SBJ = 195
                 b_SBJ = 195
@@ -192,7 +195,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 400., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 400., 300.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, y, color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5, data=sorted_y)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -208,8 +211,9 @@ def app():
                 st.set_option('deprecation.showPyplotGlobalUse', False)  # erase the warning
 
             elif y == 'CMJ':
-                x = df['NAME']
-                y = round(df['CMJ'].astype(float), 2)
+                sorted_y = df.sort_values(by=['BMI'], inplace=False, ignore_index=True)
+                x = sorted_y['NAME']
+                y = round(sorted_y['CMJ'].astype(float), 2)
                 cc = ['colors'] * len(y)
                 a_CMJ = 41
                 b_CMJ = 41
@@ -231,7 +235,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 120., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 120., 70.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, y, color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5, data=sorted_y)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -309,8 +313,9 @@ def app():
                 st.set_option('deprecation.showPyplotGlobalUse', False)  # erase the warning
 
             elif y == 'SIT & REACH':
-                x = df['NAME']
-                y = round(df['SIT & REACH'].astype(float), 2)
+                sorted_y = df.sort_values(by=['SIT & REACH'], inplace=False, ignore_index=True)
+                x = sorted_y['NAME']
+                y = round(sorted_y['SIT & REACH'].astype(float), 2)
                 cc = ['colors'] * len(y)
                 a_SR = 34
                 b_SR = 34
@@ -332,7 +337,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 70., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 70., 40.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, y, color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5, data=sorted_y)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -348,8 +353,9 @@ def app():
                 st.set_option('deprecation.showPyplotGlobalUse', False)  # erase the warning
 
             elif y == '10 M SPRINT':
-                x = df['NAME']
-                y = round(df['10 M SPRINT'].astype(float), 2)
+                sorted_y = df.sort_values(by=['10 M SPRINT'], inplace=False, ignore_index=True)
+                x = sorted_y['NAME']
+                y = round(sorted_y['10 M SPRINT'].astype(float), 2)
                 cc = ['colors'] * len(y)
                 a_10M = 1.86
                 b_10M = 1.80
@@ -371,7 +377,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 5., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 5., 3.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, y, color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5, data=sorted_y)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -387,8 +393,9 @@ def app():
                 st.set_option('deprecation.showPyplotGlobalUse', False)  # erase the warning
 
             elif y == '20 M SPRINT':
-                x = df['NAME']
-                y = round(df['20 M SPRINT'].astype(float), 2)
+                sorted_y = df.sort_values(by=['20 M SPRINT'], inplace=False, ignore_index=True)
+                x = sorted_y['NAME']
+                y = round(sorted_y['20 M SPRINT'].astype(float), 2)
                 cc = ['colors'] * len(y)
                 a_20M = 3.5
                 b_20M = 3.28
@@ -410,7 +417,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 6., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 6., 5.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, y, color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5, data=sorted_y)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -426,8 +433,9 @@ def app():
                 st.set_option('deprecation.showPyplotGlobalUse', False)  # erase the warning
 
             elif y == '40 M SPRINT':
-                x = df['NAME']
-                y = round(df['40 M SPRINT'].astype(float), 2)
+                sorted_y = df.sort_values(by=['40 M SPRINT'], inplace=False, ignore_index=True)
+                x = sorted_y['NAME']
+                y = round(sorted_y['40 M SPRINT'].astype(float), 2)
                 cc = ['colors'] * len(y)
                 a_40M = 3.5
                 b_40M = 3.28
@@ -449,7 +457,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 15., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 15., 8.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, y, color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5, data=sorted_y)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -465,8 +473,9 @@ def app():
                 st.set_option('deprecation.showPyplotGlobalUse', False)  # erase the warning
 
             elif y == 'TOTAL':
-                x = df['NAME']
-                y = round(df['TOTAL'].astype(float), 2)
+                sorted_y = df.sort_values(by=['TOTAL'], inplace=False, ignore_index=True)
+                x = sorted_y['NAME']
+                y = round(sorted_y['TOTAL'].astype(float), 2)
                 cc = ['colors'] * len(y)
                 a_HG = 71.7
                 b_HG = 71.7
@@ -488,7 +497,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 150., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 150., 100.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, y, color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5, data=sorted_y)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
@@ -504,8 +513,9 @@ def app():
                 st.set_option('deprecation.showPyplotGlobalUse', False)  # erase the warning
 
             elif y == 'YOYO TEST':
-                x = df['NAME']
-                y = round(df['YOYO TEST'].astype(float), 2)
+                sorted_y = df.sort_values(by=['YOYO TEST'], inplace=False, ignore_index=True)
+                x = sorted_y['NAME']
+                y = round(sorted_y['YOYO TEST'].astype(float), 2)
                 cc = ['colors'] * len(y)
                 a_YY = 8.01
                 b_YY = 8.01
@@ -527,7 +537,7 @@ def app():
                 xx = st.sidebar.slider("bottom Y-axis", 0., 20., 0.)
                 yy = st.sidebar.slider("upper Y-axis", 0., 20., 15.)
                 fig, ax = plt.subplots(figsize=(width, height))
-                ax = plt.bar(x, y, color=cc, width=0.5)
+                ax = plt.bar(x, y, color=cc, width=0.5, data=sorted_y)
                 for i in range(len(x)):
                     plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                 plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
