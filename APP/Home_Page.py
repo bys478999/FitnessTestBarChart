@@ -21,7 +21,7 @@ def app():
                 st.dataframe(df['NAME'])
 
             elif y == 'BMI':
-                sorted_y = df.sort_values(by=['BMI'], inplace=False)
+                sorted_y = df.sort_values(by=['BMI'], inplace=False, ignore_index=False)
                 st.dataframe(sorted_y)
                 x = sorted_y['NAME']
                 y = round(sorted_y['BMI'].astype(float), 2)
