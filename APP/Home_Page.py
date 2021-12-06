@@ -171,7 +171,7 @@ def app():
                 st.set_option('deprecation.showPyplotGlobalUse', False)  # erase the warning
 
             elif y == 'SBJ':
-                sorted_y = df.sort_values(by=['BMI'], inplace=False, ignore_index=True)
+                sorted_y = df.sort_values(by=['SBJ'], inplace=False, ignore_index=True)
                 x = sorted_y['NAME']
                 y = round(sorted_y['SBJ'].astype(float), 2)
                 cc = ['colors'] * len(y)
@@ -211,7 +211,7 @@ def app():
                 st.set_option('deprecation.showPyplotGlobalUse', False)  # erase the warning
 
             elif y == 'CMJ':
-                sorted_y = df.sort_values(by=['BMI'], inplace=False, ignore_index=True)
+                sorted_y = df.sort_values(by=['CMJ'], inplace=False, ignore_index=True)
                 x = sorted_y['NAME']
                 y = round(sorted_y['CMJ'].astype(float), 2)
                 cc = ['colors'] * len(y)
