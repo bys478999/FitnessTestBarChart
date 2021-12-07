@@ -352,7 +352,7 @@ def main():
                     st.write(type(startdate))
                     st.subheader("Rehabilitation")
                     st.write(type(enddate))
-                    st.write(selected_period)
+                    st.write(df['DATE'])
 
 
 
