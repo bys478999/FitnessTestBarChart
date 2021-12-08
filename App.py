@@ -347,9 +347,10 @@ def main():
                     col1, col2 = st.columns(2)
                     startdate = col1.text_input("Chose the start date(year/month/day):")
                     enddate = col2.text_input("Chose the end date(year/month/day):")
-                    period = (df['DATE'] >= startdate) & (df['DATE'] <= enddate)   
+                    period = (df['DATE'] >= startdate) & (df['DATE'] <= enddate) 
+                    period_2 = (df1['DATE'] >= startdate) & (df1['DATE'] <= enddate) 
                     selected_period = df.loc[period]
-                    selected_period_2 = df1.loc[period]
+                    selected_period_2 = df1.loc[period_2]
                     st.subheader("Assessment and Treatment")
                     st.write(selected_period)
                     st.subheader("Rehabilitation")
