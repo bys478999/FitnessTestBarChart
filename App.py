@@ -348,10 +348,11 @@ def main():
                     enddate = col2.text_input("Chose the end date(year/month/day):")
                     period = (df['DATE'] >= startdate) & (df['DATE'] <= enddate)   
                     selected_period = df.loc[period]
+                    selected_period_2 = df1.loc[period]
                     st.subheader("Assessment and Treatment")
                     st.write(selected_period)
                     st.subheader("Rehabilitation")
-                    st.write(enddate)
+                    st.write(selected_period_2)
 
 
 
