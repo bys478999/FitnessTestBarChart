@@ -343,6 +343,7 @@ def main():
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Database')
                     df1 = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Database1')
                     df['DATE'] = pd.to_datetime(df['DATE'], '%Y/%m/%d')
+                    df1['DATE'] = pd.to_datetime(df1['DATE'], '%Y/%m/%d')
                     col1, col2 = st.columns(2)
                     startdate = col1.text_input("Chose the start date(year/month/day):")
                     enddate = col2.text_input("Chose the end date(year/month/day):")
@@ -352,7 +353,7 @@ def main():
                     st.subheader("Assessment and Treatment")
                     st.write(selected_period)
                     st.subheader("Rehabilitation")
-                    #st.write(selected_period_2)
+                    st.write(selected_period_2)
 
 
 
