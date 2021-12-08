@@ -349,10 +349,9 @@ def main():
                     period = (df['DATE'] >= startdate) & (df['DATE'] <= enddate)   
                     selected_period = df.loc[period]
                     st.subheader("Assessment and Treatment")
-                    st.write(type(selected_period))
+                    st.write(selected_period)
                     st.subheader("Rehabilitation")
-                    st.write(type(enddate))
-                    st.write(df['DATE'])
+                    st.write(enddate)
 
 
 
