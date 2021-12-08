@@ -352,7 +352,7 @@ def main():
                     st.subheader("Assessment and Treatment")
                     st.write(selected_period)
                     st.subheader("Rehabilitation")
-                    st.write(selected_period_2)
+                    #st.write(selected_period_2)
 
 
 
