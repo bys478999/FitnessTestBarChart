@@ -353,7 +353,7 @@ def main():
                     selected_1 = selected_period[['DATE','NAME','GENDER','STATUS','SPORT','INJURY PART_1','INJURY PART_2','FINDING','ACTION']]
                     selected_period_2 = df1.loc[period_2]
                     st.subheader("Assessment and Treatment")
-                    st.write(selected_period)
+                    st.write(selected_1)
                     st.subheader("Rehabilitation")
                     st.write(selected_period_2)
 
