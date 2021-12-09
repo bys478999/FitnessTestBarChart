@@ -363,8 +363,7 @@ def main():
                     st.write(selected_sport)
                     st.download_button(
                     label="Download data as CSV",
-                    data=selected_sport,
-                    mime='text/csv',
+                    data=selected_sport
                     )
 
 
