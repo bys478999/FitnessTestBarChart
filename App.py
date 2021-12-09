@@ -350,6 +350,7 @@ def main():
                     period = (df['DATE'] >= startdate) & (df['DATE'] <= enddate) 
                     period_2 = (df1['DATE'] >= startdate) & (df1['DATE'] <= enddate) 
                     selected_period = df.loc[period]
+                    selected_1 = selected_period[['DATE','NAME','GENDER','STATUS','SPORT','INJURY PART_1','INJURY PART_2','FINDING','ACTION']]
                     selected_period_2 = df1.loc[period_2]
                     st.subheader("Assessment and Treatment")
                     st.write(selected_period)
