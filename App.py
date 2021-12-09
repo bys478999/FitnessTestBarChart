@@ -361,10 +361,7 @@ def main():
                     sport = df.loc[df['SPORT']==chosen_sport]
                     selected_sport = sport[['DATE','NAME','GENDER','STATUS','INJURY PART_1','INJURY PART_2','FINDING','ACTION']]
                     st.write(selected_sport)
-                    st.download_button(
-                    label="Download data as CSV",
-                    data=selected_sport
-                    )
+
 
 
 
