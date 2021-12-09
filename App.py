@@ -358,7 +358,7 @@ def main():
                     st.write(selected_period_2)
                     st.subheader("Injury Report")
                     chosen_sport = st.selectbox('Chose The Sport', df['SPORT'].drop_duplicates())
-                    selected_sport = df.loc[chosen_sport]
+                    selected_sport = df.loc[df['SPORT']==chosen_sport]
                     st.write(selected_sport)
 
 
