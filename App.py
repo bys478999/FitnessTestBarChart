@@ -364,11 +364,9 @@ def main():
                     @st.cache
                     def convert_df(selected_sport):
                         return df.to_csv().encode('utf-8')
-                    csv = convert_df(my_large_df)
                     st.download_button(
                     label="Download data as CSV",
                     data=csv,
-                    file_name='large_df.csv',
                     mime='text/csv',
                     )
 
