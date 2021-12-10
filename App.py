@@ -356,7 +356,7 @@ def main():
                     st.write(selected_1)
                     st.subheader("Rehabilitation ("+"from"+startdate+" to "+enddate+")")
                     st.write(selected_period_2)
-                    st.subheader("Injury Report")
+                    st.subheader("Injury Report ("+"from"+startdate+" to "+enddate+")")
                     chosen_sport = st.selectbox('Chose The Sport', selected_period['SPORT'].drop_duplicates())
                     sport = selected_period.loc[df['SPORT']==chosen_sport]
                     selected_sport = sport[['DATE','NAME','GENDER','STATUS','INJURY PART_1','INJURY PART_2','FINDING','ACTION']]
