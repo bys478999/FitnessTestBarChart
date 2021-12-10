@@ -364,7 +364,7 @@ def main():
                     st.write(selected_sport)
                     st.download_button(label='Download the dataframe',data=selected_sport.to_csv(),mime='text/csv', file_name='Injury Report.csv')
                     sport['combine'] = sport['INJURY PART_1'] + '' + sport['INJURY PART_2']
-                    st.write(sport)
+                    st.table(sport)
 
 
 
