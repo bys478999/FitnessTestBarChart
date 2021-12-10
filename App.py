@@ -357,7 +357,8 @@ def main():
                     st.subheader("Rehabilitation ("+"from "+startdate+" to "+enddate+")")
                     st.write(selected_period_2)
                     st.subheader("Injury Report ("+"from "+startdate+" to "+enddate+")")
-                    chosen_sport = st.selectbox('Chose The Sport', selected_period['SPORT'].drop_duplicates())
+                    selectperiod = selected_period.sort_values(by=['SPORT'], inplace=False, ignore_index=True)
+                    chosen_sport = st.selectbox('Chose The Sport', selectedperiod['SPORT'].drop_duplicates())
                     sport = selected_period.loc[df['SPORT']==chosen_sport]
                     selected_sport = sport[['DATE','NAME','GENDER','STATUS','INJURY PART_1','INJURY PART_2','FINDING','ACTION']]
                     st.write(selected_sport)
