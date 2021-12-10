@@ -352,9 +352,9 @@ def main():
                     selected_period = df.loc[period]
                     selected_1 = selected_period[['DATE','NAME','GENDER','STATUS','SPORT','INJURY PART_1','INJURY PART_2','FINDING','ACTION']]
                     selected_period_2 = df1.loc[period_2]
-                    st.subheader("Assessment and Treatment")
+                    st.subheader("Assessment and Treatment ("+"from"+startdate+" to "+enddate+")")
                     st.write(selected_1)
-                    st.subheader("Rehabilitation")
+                    st.subheader("Rehabilitation ("+"from"+startdate+" to "+enddate+")")
                     st.write(selected_period_2)
                     st.subheader("Injury Report")
                     chosen_sport = st.selectbox('Chose The Sport', selected_period['SPORT'].drop_duplicates())
