@@ -363,6 +363,8 @@ def main():
                     selected_sport = sport[['DATE','NAME','GENDER','STATUS','INJURY PART_1','INJURY PART_2','FINDING','ACTION']]
                     st.write(selected_sport)
                     st.download_button(label='Download the dataframe',data=selected_sport.to_csv(),mime='text/csv', file_name='Injury Report.csv')
+                    sport['combine'] = sport['INJURY PART_1'] + sport['INJURY PART_2']
+                    st.write(sport)
 
 
 
