@@ -360,7 +360,7 @@ def main():
                     selectperiod = selected_period.sort_values(by=['SPORT'], inplace=False, ignore_index=True)
                     chosen_sport = st.selectbox('Chose The Sport', selectperiod['SPORT'].drop_duplicates())
                     sport = selected_period.loc[df['SPORT']==chosen_sport]
-                    sport['Injury Part'] = sport['INJURY PART_1'] + ' & ' + sport['INJURY PART_2']
+                    sport['INJURY PART'] = sport['INJURY PART_1'] + ' & ' + sport['INJURY PART_2']
                     selected_sport = sport[['DATE','NAME','GENDER','STATUS','INJURY PART','FINDING','ACTION']]
                     st.write(selected_sport)
                     st.download_button(label='Download the dataframe',data=selected_sport.to_csv(),mime='text/csv', file_name='Injury Report.csv')
