@@ -358,8 +358,7 @@ def main():
                     st.write(selected_period_2)
                     st.subheader("Injury Report")
                     chosen_sport = st.selectbox('Chose The Sport', df['SPORT'].drop_duplicates())
-                    chosen_year = st.selectbox('Chose The Sport', df['DATE'].drop_duplicates())
-                    sport = df.loc[(df['SPORT']==chosen_sport) & (df['DATE']>=chosen_year)]
+                    sport = df.loc[(selected_period['SPORT']==chosen_sport]
                     selected_sport = sport[['DATE','NAME','GENDER','STATUS','INJURY PART_1','INJURY PART_2','FINDING','ACTION']]
                     st.write(selected_sport)
                     st.download_button(label='Download the dataframe',data=selected_sport.to_csv(),mime='text/csv', file_name='Injury Report.csv')
