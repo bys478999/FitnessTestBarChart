@@ -91,8 +91,7 @@ def main():
                    table_in_year = chosen.groupby(['Year'],sort=False,as_index=False)['Total Usage'].count()
                    col1, col2 = st.columns(2)   
                    col1.table(table_in_year)
-                   x1 = df['Year'].drop_duplicates().astype(int)
-                   st.write(df['Year'].dtypes)
+                   x1 = df['Year'].drop_duplicates()
                    y1 = a
                    fig, ax = plt.subplots(nrows=1, ncols=1)   
                    ax.plot(x1,y1, marker='^', color='blue', mec='red', ls='--')
