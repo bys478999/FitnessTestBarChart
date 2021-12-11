@@ -353,9 +353,9 @@ def main():
                     selected_period['INJURY PART'] = selected_period['INJURY PART_1'] + ' / ' + selected_period['INJURY PART_2'].fillna('')
                     selected_1 = selected_period[['DATE','NAME','GENDER','STATUS','SPORT','INJURY PART','FINDING','ACTION']]
                     selected_period_2 = df1.loc[period_2]
-                    selected_period_2['INJURY PART'] = selected_period_2['INJURY PART_1'] + ' / ' + selected_period_2['INJURY PART_2'].fillna('')
+                    selected_period_2['INJURY PART'] = selected_period_2['INJURY PART1'] + ' / ' + selected_period_2['INJURY PART2'].fillna('')
                     selected_period_2['MODALITIES'] = selected_period_2['MODALITIES1'] + ' / ' +selected_period_2['MODALITIES2']+' / '+selected_period_2['MODALITIES3']+' / '+selected_period_2['MODALITIES4']+' / '+selected_period_2['MODALITIES5']+' / '+selected_period_2['MODALITIES6'].fillna('')
-                    rehab = selected_period_2[['DATE','NAME','GENDER','STATUS','SPORT','INJURY PART','FINDING','MODALITIES']]
+                    rehab = selected_period_2[['DATE','NAME','GENDER','STATUS','SPORT','INJURY PART','EXERCISE','MODALITIES']]
                     st.subheader("Assessment and Treatment ("+"from "+startdate+" to "+enddate+")")
                     st.write(selected_1)
                     st.subheader("Rehabilitation ("+"from "+startdate+" to "+enddate+")")
