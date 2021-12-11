@@ -165,7 +165,8 @@ def main():
                    cs2 = chosen_sport2.groupby(['Month'],sort=False)['Usage'].count()
                    cs3 = chosen_sport4.groupby(['Name'])['Usage'].count()
                    cs4 = chosen_sport3.groupby(['Name'])['Cost(RM)'].count()*100
-                   change = cs4.astype(int)
+                   change = cs4.astype(int)                                         #change all dataframe into integer#
+                   total_cost = change.sum()
                    x_axis = replaceG['Month'].drop_duplicates()
                    fig, ax = plt.subplots(nrows=1, ncols=1,figsize=(6, 4))   
                    ax.plot(x_axis,cs2, marker='^', color='blue', mec='red', ls='--')
@@ -176,8 +177,7 @@ def main():
                    st.bar_chart(cs3)
                    st.subheader("Total Cost (RM)")
                    st.table(cs4)
-                   total_cost = change.sum()
-                   st.write(total_cost)
+                   st.table(total_cost)
                      
 
 
