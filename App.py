@@ -335,7 +335,7 @@ def main():
                     total_cost = cost.sum()
                     total_quantity = quantity.sum()
                     st.subheader(str(total_quantity+" supplements (RM"+total_cost+") taken by "+sportchosen+ " ("+startdate+" to "+enddate+")")
-
+                    st.write(filtersport)
 
                  
     
