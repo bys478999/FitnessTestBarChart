@@ -175,6 +175,8 @@ def main():
                    st.bar_chart(cs3)
                    st.subheader("Total Cost (RM)")
                    st.table(cs4)
+                   total_cost = cs4.sum()
+                   st.table(total_cost)
 
 
 
