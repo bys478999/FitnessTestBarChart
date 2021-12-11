@@ -366,7 +366,8 @@ def main():
                     sport = selected_period.loc[df['SPORT']==chosen_sport]
                     sport['INJURY PART'] = sport['INJURY PART_1'] + ' / ' + sport['INJURY PART_2'].fillna('')
                     selected_sport = sport[['DATE','NAME','GENDER','STATUS','INJURY PART','FINDING','ACTION']]
-                    common_injury = sport.groupby(['INJURY PART','NAME'])['GENDER'].count()
+                    sport = sport.rename(columns={'GENDER': 'COUNT'})
+                    common_injury = sport.groupby(['INJURY PART','NAME'])['COUNT'].count()
                     st.write(selected_sport)
                     st.write(common_injury)
                     st.download_button(label='Download the dataframe',data=selected_sport.to_csv(),mime='text/csv', file_name='Injury Report.csv')
