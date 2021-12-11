@@ -358,9 +358,10 @@ def main():
                     rehab = selected_period_2[['DATE','NAME','GENDER','STATUS','SPORT','INJURY PART','EXERCISE','MODALITIES']]
                     st.subheader("Assessment and Treatment ("+"from "+startdate+" to "+enddate+")")
                     st.write(selected_1)
-                    x = selected_period.groupby('INJURY PART').groups
+                    x = selected_period.groupby('SPORT')['NAME'].count()
                     y = selected_period.groupby('INJURY PART')['SPORT'].count()
                     st.bar_chart(y)
+                    st.bar_chart(x) 
                     st.subheader("Rehabilitation ("+"from "+startdate+" to "+enddate+")")
                     st.write(rehab)
                     st.subheader("Injury Report ("+"from "+startdate+" to "+enddate+")")
