@@ -173,10 +173,9 @@ def main():
                    ax.set_ylabel('Usage (Per Entry)')
                    st.pyplot(fig)
                    st.bar_chart(cs3)
-                   total_cost = paid.sum(axis=0)
                    st.subheader("Total Cost (RM)")
                    st.table(cs4)
-                   st.table(total_cost)
+
 
 
    
