@@ -355,10 +355,11 @@ def main():
                     selected_period_2 = df1.loc[period_2]
                     selected_period_2['INJURY PART'] = selected_period_2['INJURY PART_1'] + ' / ' + selected_period_2['INJURY PART_2'].fillna('')
                     selected_period_2['MODALITIES'] = selected_period_2['MODALITIES1'] + ' / ' +selected_period_2['MODALITIES2']+' / '+selected_period_2['MODALITIES3']+' / '+selected_period_2['MODALITIES4']+' / '+selected_period_2['MODALITIES5']+' / '+selected_period_2['MODALITIES6'].fillna('')
+                    rehab = selected_period_2[['DATE','NAME','GENDER','STATUS','SPORT','INJURY PART','FINDING','MODALITIES']]
                     st.subheader("Assessment and Treatment ("+"from "+startdate+" to "+enddate+")")
                     st.write(selected_1)
                     st.subheader("Rehabilitation ("+"from "+startdate+" to "+enddate+")")
-                    st.write(selected_period_2)
+                    st.write(rehab)
                     st.subheader("Injury Report ("+"from "+startdate+" to "+enddate+")")
                     selectperiod = selected_period.sort_values(by=['SPORT'], inplace=False, ignore_index=True)
                     chosen_sport = st.selectbox('Chose The Sport', selectperiod['SPORT'].drop_duplicates())
