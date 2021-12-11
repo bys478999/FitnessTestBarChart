@@ -174,9 +174,9 @@ def main():
                    ax.set_ylabel('Usage (Per Entry)')
                    st.pyplot(fig)
                    st.bar_chart(cs3)
-                   st.subheader("Total Cost (RM)")
-                   st.table(cs4)
                    st.subheader('Total cost spent on '+sport+ ' (RM '+str(total_cost)+') in '+year)
+                   st.table(cs4)
+
                      
 
 
