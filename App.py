@@ -164,7 +164,7 @@ def main():
                    chosen_sport4 = replaceG.rename(columns={'Gender': 'Usage'})
                    cs2 = chosen_sport2.groupby(['Month'],sort=False)['Usage'].count()
                    cs3 = chosen_sport4.groupby(['Name'])['Usage'].count()
-                   cs4 = chosen_sport3.groupby(['Name'])['Cost(RM)'].count()*100
+                   cs4 = chosen_sport3.groupby(['Name'])['Cost(RM)'].count()*100.apply(str)
                    x_axis = replaceG['Month'].drop_duplicates()
                    fig, ax = plt.subplots(nrows=1, ncols=1,figsize=(6, 4))   
                    ax.plot(x_axis,cs2, marker='^', color='blue', mec='red', ls='--')
@@ -178,9 +178,6 @@ def main():
                    st.write(cs4.dtypes)
 
 
-
-
-   
                   
                    athlete = st.selectbox('Chose Athlete', chosen_sport['Name'].drop_duplicates())
                    replaceG1 = chosen_sport.loc[df['Name'] == athlete]
@@ -351,7 +348,7 @@ def main():
                     startdate = col1.text_input("Chose the start date(year/month/day):")
                     enddate = col2.text_input("Chose the end date(year/month/day):")
                     period = (df['DATE'] >= startdate) & (df['DATE'] <= enddate) 
-                    period_2 = (df1['DATE'] >= startdate) & (df1['DATE'] <= enddate) 
+                    period_2 = (df1['DATE'] >= startdate) & (df1['DATE'] <= enddate)                   
                     selected_period = df.loc[period]
                     selected_period['INJURY PART'] = selected_period['INJURY PART_1'] + ' / ' + selected_period['INJURY PART_2'].fillna('')
                     selected_1 = selected_period[['DATE','NAME','GENDER','STATUS','SPORT','INJURY PART','FINDING','ACTION']]
@@ -362,13 +359,13 @@ def main():
                     st.subheader("Assessment and Treatment ("+"from "+startdate+" to "+enddate+")")
                     st.write(selected_1)
                     x = selected_period.groupby('SPORT')['NAME'].count()
-                    y = selected_period.groupby('INJURY PART')['SPORT'].count()
+                    y = selected_period.groupby('INJURY PART')['SPORT'].count()                          
                     st.subheader("Case Reported By Injury Part")
                     st.bar_chart(y)
                     st.subheader("Case Reported By Sport")
                     st.bar_chart(x) 
                     st.subheader("Rehabilitation ("+"from "+startdate+" to "+enddate+")")
-                    st.write(rehab)
+                    st.write(rehab)                                      
                     st.subheader("Injury Report ("+"from "+startdate+" to "+enddate+")")
                     selectperiod = selected_period.sort_values(by=['SPORT'], inplace=False, ignore_index=True)
                     chosen_sport = st.selectbox('Chose The Sport', selectperiod['SPORT'].drop_duplicates())
