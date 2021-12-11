@@ -86,8 +86,8 @@ def main():
             if password == st.secrets["password"]:
                    sheet_id = st.secrets[username]
                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
-                   df["Year"] = df["Year"].str.replace(",","").astype(float)
-                   df["Age"] = df["Age"].str.replace(".","").astype(float)
+                   df["Year"] = df["Year"].str.replace(",","")
+                   df["Age"] = df["Age"].str.replace(".","")
                    chosen = df.rename(columns={'Month': 'Total Usage'})
                    a = chosen.groupby(['Year'])['Total Usage'].count()
                    table_in_year = chosen.groupby(['Year'],sort=False,as_index=False)['Total Usage'].count()
