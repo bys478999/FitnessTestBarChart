@@ -334,7 +334,7 @@ def main():
                     cost = selectedsport.groupby(['Supplement','Name'])['Total Price (RM)'].sum()
                     total_cost = cost.sum()
                     total_quantity = quantity.sum()
-                    st.subheader(total_quantity+" supplements (RM"+total_cost+") taken by "+sportchosen+ " ("+startdate+" to "+enddate+")")
+                    st.subheader(str(total_quantity)+" supplements (RM"+str(total_cost)+") taken by "+sportchosen+ " ("+startdate+" to "+enddate+")")
                     st.write(filtersport)
 
                  
