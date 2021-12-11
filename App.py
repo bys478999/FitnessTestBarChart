@@ -164,7 +164,7 @@ def main():
                    chosen_sport4 = replaceG.rename(columns={'Gender': 'Usage'})
                    cs2 = chosen_sport2.groupby(['Month'],sort=False)['Usage'].count()
                    cs3 = chosen_sport4.groupby(['Name'])['Usage'].count()
-                   cs4 = chosen_sport3.groupby(['Name'])['Cost(RM)'].count()*100
+                   cs4 = chosen_sport3.groupby(['Name'])['Cost(RM)'].count()*100.sum()
                    x_axis = replaceG['Month'].drop_duplicates()
                    fig, ax = plt.subplots(nrows=1, ncols=1,figsize=(6, 4))   
                    ax.plot(x_axis,cs2, marker='^', color='blue', mec='red', ls='--')
@@ -173,10 +173,9 @@ def main():
                    ax.set_ylabel('Usage (Per Entry)')
                    st.pyplot(fig)
                    st.bar_chart(cs3)
-                   paid = cs4 * 100
                    total_cost = paid.sum(axis=0)
                    st.subheader("Total Cost (RM)")
-                   st.table(paid)
+                   st.table(cs4)
                    st.table(total_cost)
 
 
