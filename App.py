@@ -174,7 +174,7 @@ def main():
                    st.pyplot(fig)
                    st.bar_chart(cs3)
                    paid = cs4 * 100
-                   total_cost = paid.sum()
+                   total_cost = cs4.sum()
                    st.subheader("Total Cost (RM)")
                    st.table(paid)
                    st.table(total_cost)
