@@ -175,8 +175,10 @@ def main():
                    st.pyplot(fig)
                    st.bar_chart(cs3)
                    st.subheader("Total Cost (RM)")
-                   st.table(change)
-                   st.write(change.dtypes)
+                   st.table(cs4)
+                   total_cost = change.sum()
+                   st.write(total_cost)
+                     
 
 
                   
