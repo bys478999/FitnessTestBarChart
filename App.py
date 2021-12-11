@@ -336,7 +336,7 @@ def main():
                     st.subheader("Supplement taken by "+sportchosen+ " ("+startdate+" to "+enddate+")")
                     st.write(filtersport)
                     st.write(total_cost)
-                    st.write(quantiy)
+                    st.write(quantity)
                     st.write(cost)
                  
     
