@@ -408,7 +408,18 @@ def main():
                     st.write(sport)
                     st.write(gender)
                     st.write(purpose)
-
+                    legend_type = selected_period.groupby('Sport').groups
+                    legend_type_2 = selected_period.groupby('Gender').groups
+                    
+                    fig, ax = plt.subplots(nrows=1, ncols=2)    
+                    ax[0].pie(sport,labels=sport, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.8, textprops={'fontsize': 8})             
+                    ax[0].legend(legend_type, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')                 
+                    ax[0].set_title("Total usage (Sport)"+ "\nfrom "+startdate+" to "+enddate)
+                    ax[1].pie(gender,labels=gender, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.8, textprops={'fontsize': 8})             
+                    ax[1].legend(legend_type_2, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')                 
+                    ax[1].set_title("Total usage (Gender)"+ "\nfrom "+startdate+" to "+enddate)
+                    fig.tight_layout()
+                    st.pyplot(fig)
 
 if __name__ == '__main__':
     main()
