@@ -396,6 +396,13 @@ def main():
                     sheet_id = st.secrets[username]
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Sheet1')
                     st.write(df)
+                    df['Date'] = pd.to_datetime(df['Date'], '%Y/%m/%d')
+                    col1, col2 = st.columns(2)
+                    startdate = col1.text_input("Chose the start date(year/month/day):")
+                    enddate = col2.text_input("Chose the end date(year/month/day):")
+                    period = (df['Date'] >= startdate) & (df['Date'] <= enddate) 
+                    selected_period = df.loc[period]
+                    st.write(selected_period)
 
 
 
