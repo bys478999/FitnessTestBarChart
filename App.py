@@ -426,7 +426,8 @@ def main():
                     ax.pie(purpose,labels=purpose, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.8, textprops={'fontsize': 8})             
                     ax.legend(legend_type_3, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')                 
                     ax.set_title("Purpose"+ "\nfrom "+startdate+" to "+enddate)
-                     
+                    fig.tight_layout()
+                    st.pyplot(fig)
                      
                      
 if __name__ == '__main__':
