@@ -434,6 +434,7 @@ def main():
                     sport_data = the_sport[['Date','Name','Gender','Age','Purpose','Current Weight', 'Target Weight','Difference','Service','Remark']]
                     st.subheader('Nutrition Service Report Between '+startdate+' & '+enddate+'For '+chosen_sport)
                     st.write(sport_data)
+                    st.download_button(label='Download the dataframe',data=sport_data.to_csv(),mime='text/csv', file_name='Sports Nutrition Report.csv')
                      
 if __name__ == '__main__':
     main()
