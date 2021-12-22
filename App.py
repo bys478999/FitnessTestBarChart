@@ -430,10 +430,10 @@ def main():
                     fig.tight_layout()
                     st.pyplot(fig)
                      
-                     
-                    chosen_sport = st.selectbox('Chose The Sport', selected_period['Sports'].drop_duplicates())
+                    selectperiod = selected_period.sort_values(by=['Sports'], inplace=False, ignore_index=True) 
+                    chosen_sport = st.selectbox('Chose The Sport', selectedperiod['Sports'].drop_duplicates())
                     the_sport = selected_period.loc[df['Sports']==chosen_sport]
-                    sport_data = df.loc[the_sport]
+                    sport_data = the_sport[['Date','Name','Gender','Age','Purpose','Current Weight', 'Target Weight','Service','Remark']]
                     st.write(sport_data)
                      
 if __name__ == '__main__':
