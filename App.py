@@ -15,7 +15,7 @@ st.set_page_config(
 
 def main():
     st.title("""Sports Science & Sports Medicine Website""")
-    menu = ["Home","Data Analysis","Body Mechanics", "Gym Attendance","Supplement","Sports Rehab"]
+    menu = ["Home","Data Analysis","Body Mechanics", "Gym Attendance","Supplement","Sports Rehab","Sports Nutrition"]
     st.sidebar.image('msnpp.png')
     choice = st.sidebar.selectbox("Menu",menu)
       
@@ -387,7 +387,15 @@ def main():
                     st.download_button(label='Download the dataframe',data=common_injury.to_csv(),mime='text/csv', file_name='Injury Report.csv')
                     
                     
-
+     elif choice == "Sports Nutrition":
+          st.header("Sports Nutrition Section")
+          username = st.sidebar.text_input("Username")
+          password = st.sidebar.text_input("Password", type='password')
+          if st.sidebar.checkbox("Login"): 
+               if password == st.secrets["password"]:
+                    sheet_id = st.secrets[username]
+                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Sheet1')
+                    st.write(df)
 
 
 
