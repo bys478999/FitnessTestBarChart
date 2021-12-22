@@ -401,7 +401,7 @@ def main():
                     enddate = col2.text_input("Chose the end date(year/month/day):")
                     period = (df['Date'] >= startdate) & (df['Date'] <= enddate) 
                     selected_period = df.loc[period]
-                    st.subheader('Nutrition Service Report Between '+startdate+' & '+enddate)
+                    st.subheader('Nutrition Service Report From '+startdate+' To '+enddate)
                     st.write(selected_period)
                     st.download_button(label='Download the dataframe',data=selected_period.to_csv(),mime='text/csv', file_name='Sports Nutrition Report.csv')
                     sport = selected_period.groupby(['Sports'])['Name'].count()
@@ -432,9 +432,26 @@ def main():
                     chosen_sport = st.selectbox('Chose The Sport', selectperiod['Sports'].drop_duplicates())
                     the_sport = selected_period.loc[df['Sports']==chosen_sport]
                     sport_data = the_sport[['Date','Name','Gender','Age','Purpose','Current Weight', 'Target Weight','Difference','Service','Remark']]
-                    st.subheader('Nutrition Service Report Between '+startdate+' & '+enddate+'For '+chosen_sport)
+                    st.subheader('Nutrition Service Report From '+startdate+' To '+enddate+'For '+chosen_sport)
                     st.write(sport_data)
                     st.download_button(label='Download the dataframe',data=sport_data.to_csv(),mime='text/csv', file_name='Sports Nutrition Report.csv')
+                    gender_2 = sport_data.groupby(['Gender'])['Name'].count()
+                    purpose_2 = sport_data.groupby(['Purpose'])['Name'].count()
+                    legend_type_4 = sport_data.groupby('Gender').groups
+                    legend_type_5 = sport_data.groupby('Purpose').groups
+                  
+                    fig, ax = plt.subplots(nrows=1, ncols=2)    
+                    ax[0].pie(gender_2,labels=gender_2, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.8, textprops={'fontsize': 8})             
+                    ax[0].legend(legend_type_4, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')                 
+                    ax[0].set_title("Service Given (Gender)"+ "\nfrom "+startdate+" to "+enddate)
+                    ax[1].pie(purpose_2,labels=purpose_2, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.8, textprops={'fontsize': 8})             
+                    ax[1].legend(legend_type_5, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')                 
+                    ax[1].set_title("Purpose For Coming"+ "\nfrom "+startdate+" to "+enddate)
+                    fig.tight_layout()
+                    st.pyplot(fig)
+                  
+                  
+                  
                      
 if __name__ == '__main__':
     main()
