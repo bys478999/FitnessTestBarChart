@@ -401,14 +401,12 @@ def main():
                     enddate = col2.text_input("Chose the end date(year/month/day):")
                     period = (df['Date'] >= startdate) & (df['Date'] <= enddate) 
                     selected_period = df.loc[period]
+                    st.subheader('Nutrition Service Report Between '+startdate+' & '+enddate)
                     st.write(selected_period)
                     st.download_button(label='Download the dataframe',data=selected_period.to_csv(),mime='text/csv', file_name='Sports Nutrition Report.csv')
                     sport = selected_period.groupby(['Sports'])['Name'].count()
                     gender = selected_period.groupby(['Gender'])['Name'].count()
                     purpose = selected_period.groupby(['purpose'])['Name'].count()
-                    st.write(sport)
-                    st.write(gender)
-                    st.write(purpose)
                     legend_type = selected_period.groupby('Sports').groups
                     legend_type_2 = selected_period.groupby('Gender').groups
                     legend_type_3 = selected_period.groupby('Purpose').groups
@@ -434,6 +432,7 @@ def main():
                     chosen_sport = st.selectbox('Chose The Sport', selectperiod['Sports'].drop_duplicates())
                     the_sport = selected_period.loc[df['Sports']==chosen_sport]
                     sport_data = the_sport[['Date','Name','Gender','Age','Purpose','Current Weight', 'Target Weight','Service','Remark']]
+                    st.subheader('Nutrition Service Report Between '+startdate+' & '+enddate+'For '+chosen_sport)
                     st.write(sport_data)
                      
 if __name__ == '__main__':
