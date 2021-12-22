@@ -402,8 +402,12 @@ def main():
                     period = (df['Date'] >= startdate) & (df['Date'] <= enddate) 
                     selected_period = df.loc[period]
                     st.write(selected_period)
-                    
-
+                    sport = selected_period.groupby('Sport')['Name'].count()
+                    gender = selected_period.groupby('Gender')['Name'].count()
+                    purpose = selected_period.groupby('purpose')['Name'].count()
+                    st.write(sport)
+                    st.write(gender)
+                    st.write(purpose)
 
 
 if __name__ == '__main__':
