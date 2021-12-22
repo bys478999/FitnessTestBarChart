@@ -410,6 +410,7 @@ def main():
                     st.write(purpose)
                     legend_type = selected_period.groupby('Sports').groups
                     legend_type_2 = selected_period.groupby('Gender').groups
+                    legend_type_3 = selected_period.groupby('Purpose').groups
                     
                     fig, ax = plt.subplots(nrows=1, ncols=2)    
                     ax[0].pie(sport,labels=sport, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.8, textprops={'fontsize': 8})             
@@ -421,6 +422,13 @@ def main():
                     fig.tight_layout()
                     st.pyplot(fig)
 
+                    fig, ax = plt.subplots(nrows=1, ncols=1)    
+                    ax.pie(purpose,labels=purpose, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.8, textprops={'fontsize': 8})             
+                    ax.legend(legend_type_3, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')                 
+                    ax.set_title("Purpose"+ "\nfrom "+startdate+" to "+enddate)
+                     
+                     
+                     
 if __name__ == '__main__':
     main()
 
