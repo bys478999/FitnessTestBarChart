@@ -431,7 +431,7 @@ def main():
                     selectperiod = selected_period.sort_values(by=['Sports'], inplace=False, ignore_index=True) 
                     chosen_sport = st.selectbox('Chose The Sport', selectperiod['Sports'].drop_duplicates())
                     the_sport = selected_period.loc[df['Sports']==chosen_sport]
-                    sport_data = the_sport[['Date','Name','Gender','Age','Purpose','Current Weight', 'Target Weight','Service','Remark']]
+                    sport_data = the_sport[['Date','Name','Gender','Age','Purpose','Current Weight', 'Target Weight','Difference','Service','Remark']]
                     st.subheader('Nutrition Service Report Between '+startdate+' & '+enddate+'For '+chosen_sport)
                     st.write(sport_data)
                      
