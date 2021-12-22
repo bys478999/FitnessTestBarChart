@@ -402,6 +402,7 @@ def main():
                     period = (df['Date'] >= startdate) & (df['Date'] <= enddate) 
                     selected_period = df.loc[period]
                     st.write(selected_period)
+                    st.download_button(label='Download the dataframe',data=selected_period.to_csv(),mime='text/csv', file_name='Sports Nutrition Report.csv')
                     sport = selected_period.groupby(['Sports'])['Name'].count()
                     gender = selected_period.groupby(['Gender'])['Name'].count()
                     purpose = selected_period.groupby(['purpose'])['Name'].count()
@@ -429,6 +430,11 @@ def main():
                     fig.tight_layout()
                     st.pyplot(fig)
                      
+                     
+                    chosen_sport = st.selectbox('Chose The Sport', selected_period['Sports'].drop_duplicates())
+                    the_sport = selected_period.loc[df['Sports']==chosen_sport]
+                    sport_data = df.loc[the_sport]
+                    st.write(sport_data)
                      
 if __name__ == '__main__':
     main()
