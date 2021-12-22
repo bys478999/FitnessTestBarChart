@@ -431,7 +431,7 @@ def main():
                     st.pyplot(fig)
                      
                     selectperiod = selected_period.sort_values(by=['Sports'], inplace=False, ignore_index=True) 
-                    chosen_sport = st.selectbox('Chose The Sport', selectedperiod['Sports'].drop_duplicates())
+                    chosen_sport = st.selectbox('Chose The Sport', selectperiod['Sports'].drop_duplicates())
                     the_sport = selected_period.loc[df['Sports']==chosen_sport]
                     sport_data = the_sport[['Date','Name','Gender','Age','Purpose','Current Weight', 'Target Weight','Service','Remark']]
                     st.write(sport_data)
