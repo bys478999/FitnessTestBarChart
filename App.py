@@ -402,13 +402,13 @@ def main():
                     period = (df['Date'] >= startdate) & (df['Date'] <= enddate) 
                     selected_period = df.loc[period]
                     st.write(selected_period)
-                    sport = selected_period.groupby(['Sport'])['Name'].count()
+                    sport = selected_period.groupby(['Sports'])['Name'].count()
                     gender = selected_period.groupby(['Gender'])['Name'].count()
                     purpose = selected_period.groupby(['purpose'])['Name'].count()
                     st.write(sport)
                     st.write(gender)
                     st.write(purpose)
-                    legend_type = selected_period.groupby('Sport').groups
+                    legend_type = selected_period.groupby('Sports').groups
                     legend_type_2 = selected_period.groupby('Gender').groups
                     
                     fig, ax = plt.subplots(nrows=1, ncols=2)    
