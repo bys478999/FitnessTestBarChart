@@ -387,7 +387,7 @@ def main():
                     st.download_button(label='Download the dataframe',data=common_injury.to_csv(),mime='text/csv', file_name='Injury Report.csv')
                     
                     
-     elif choice == "Sports Nutrition":
+    elif choice == "Sports Nutrition":
           st.header("Sports Nutrition Section")
           username = st.sidebar.text_input("Username")
           password = st.sidebar.text_input("Password", type='password')
