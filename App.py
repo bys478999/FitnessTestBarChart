@@ -99,7 +99,11 @@ def main():
                    ax.set_xlabel('Year')
                    ax.set_ylabel('Usage')
                    col2.pyplot(fig)
-                   
+                   Treatment = pd.DataFrame(df.Treatment.tolist()).stack()
+                   Treatment.index = Treatment.index.droplevel(-1)
+                   Treatment.name = 'Treatment'
+                   list = df.join(Treatment).groupby('Treatment').count()
+                   st.write(list)
                                 
                    year = st.selectbox('Chose The Year', df['Year'].drop_duplicates())
                    col1, col2 = st.columns(2)
