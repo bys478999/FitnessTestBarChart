@@ -133,7 +133,7 @@ def main():
                    
                 
                    st.subheader('Usage by Gender & Status' + '(' +month +'/'+year+')')    
-                   color =  [3354FF, 8433FF]
+                   color =  ['#3354FF', '#8433FF']
                    ax[0].pie(y1,labels=y1, colors = color, autopct='%1.1f%%' )
                    ax[1].pie(y2,labels=y2, autopct='%1.1f%%')
                    ax[0].legend(p2, loc='best')
