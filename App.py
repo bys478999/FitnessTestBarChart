@@ -119,6 +119,7 @@ def main():
                    month = st.selectbox('Chose The Month', df['Month'].drop_duplicates())       
                    selected_month = selected_year.loc[df['Month'] == month]
                    st.write(selected_month)
+                   st.download_button(label='Download the dataframe',data=selected_month.to_csv(),mime='text/csv', file_name='Bodymechanics Service Report.csv')
                    fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(8, 6))   
                    y = selected_month.groupby(['Sport'])['Month'].count()
                    p1 = selected_month.groupby('Sport').groups
