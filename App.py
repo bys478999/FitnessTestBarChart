@@ -169,9 +169,9 @@ def main():
                    modality = modalities.groupby(['Treatment'])['Name'].count()
                    legend_m = modalities.groupby('Treatment').groups
                    st.write(modality)
-                   st.subheader('Treatment Given' + '(' +month +'/'+year+')') 
+                   st.subheader('Common Therapeutic Modalities Used for Treatment' + '(' +month +'/'+year+')') 
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))    
-                   ax.pie(modality, colors = color, labels=modality)
+                   ax.pie(modality, colors = color, labels=modality, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.6, textprops={'fontsize': 8})
                    ax.legend(legend_m, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
                    fig.tight_layout()
                    st.pyplot(fig) 
