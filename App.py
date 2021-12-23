@@ -167,7 +167,14 @@ def main():
 
                    modalities = selected_month.assign(Treatment=selected_month.Treatment.str.split(",")).explode('Treatment')
                    modality = modalities.groupby(['Treatment'])['Name'].count()
+                   legend_m = modalities.groupby('Treatment').groups
                    st.write(modality)
+                   st.subheader('Treatment Given' + '(' +month +'/'+year+')') 
+                   fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))    
+                   ax.pie(modality, colors = color, labels=modality)
+                   ax.legend(legend_m, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
+                   fig.tight_layout()
+                   st.pyplot(fig) 
                   
                 
                    st.subheader(' Sports' + '('+year+')')
