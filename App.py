@@ -102,7 +102,7 @@ def main():
                    T = pd.DataFrame(df.Treatment.tolist()).stack()
                    T.index = T.index.droplevel(-1)
                    T.name = 'Treatment'
-                   list = df.join(T).groupby('Treatment').count()
+                   list = df.join(T).groupby('T').count()
                    st.write(list)
                                 
                    year = st.selectbox('Chose The Year', df['Year'].drop_duplicates())
