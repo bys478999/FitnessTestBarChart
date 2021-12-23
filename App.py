@@ -163,7 +163,10 @@ def main():
                    ax.legend(p4, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
                    fig.tight_layout()
                    st.pyplot(fig)   
-                
+                  
+                   modalities = selected_month.explode('Treatment')
+                   st.write(modalities)
+                  
                 
                    st.subheader(' Sports' + '('+year+')')
                    sport = st.selectbox('Chose The Sport', df['Sport'].drop_duplicates())  
