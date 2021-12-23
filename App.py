@@ -128,10 +128,12 @@ def main():
                    p3 = selected_month.groupby('Status').groups
                    y3 = selected_month.groupby(['Name'])['Month'].count()
                    p4 = selected_month.groupby('Name').groups
+                   y4 = selected_month.groupby(['Age'])['Month'].count()
+                   p5 = selected_month.groupby('Age').groups
                    
                 
                    st.subheader('Usage by Gender & Status' + '(' +month +'/'+year+')')    
-                   color =  ["green", "red"]
+                   color =  ["3354FF", "8433FF"]
                    ax[0].pie(y1,labels=y1, colors = color, autopct='%1.1f%%' )
                    ax[1].pie(y2,labels=y2, autopct='%1.1f%%')
                    ax[0].legend(p2, loc='best')
