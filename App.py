@@ -164,9 +164,10 @@ def main():
                    fig.tight_layout()
                    st.pyplot(fig)   
                   
-                   modalities = selected_month.explode('Treatment')
-                   abc = selected_month.assign(Treatment=selected_month.Treatment.str.split(",")).explode('Treatment')
-                   st.write(abc)
+
+                   modalities = selected_month.assign(Treatment=selected_month.Treatment.str.split(",")).explode('Treatment')
+                   modality = modalities.groupby(['Treatment'])['Name'].count()
+                   st.write(modality)
                   
                 
                    st.subheader(' Sports' + '('+year+')')
