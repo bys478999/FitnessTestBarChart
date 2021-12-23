@@ -166,7 +166,7 @@ def main():
                   
 
                    modalities = selected_month.assign(Treatment=selected_month.Treatment.str.split(",")).explode('Treatment')
-                   modality = modalities.groupby(['Treatment'])['Name'].count()
+                   modality = modalities.groupby(['Treatment'])['Year'].count()
                    legend_m = modalities.groupby('Treatment').groups
                    st.write(modality)
                    st.subheader('Common Therapeutic Modalities Used for Treatment' + '(' +month +'/'+year+')') 
