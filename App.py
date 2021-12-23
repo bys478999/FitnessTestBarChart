@@ -151,7 +151,7 @@ def main():
                     
                    st.subheader('Usage by Patient' + '(' +month +'/'+year+')') 
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))    
-                   ax.pie(y3,labels=y3)
+                   ax.pie(y3, colors = color, labels=y3)
                    ax.legend(p4, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
                    fig.tight_layout()
                    st.pyplot(fig)   
