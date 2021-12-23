@@ -165,7 +165,8 @@ def main():
                    st.pyplot(fig)   
                   
                    modalities = selected_month.explode('Treatment')
-                   st.write(modalities)
+                   abc = selected_month.assign(Treatment=selected_month.Treatment.str.split(",")).explode('Treatment')
+                   st.write(abc)
                   
                 
                    st.subheader(' Sports' + '('+year+')')
