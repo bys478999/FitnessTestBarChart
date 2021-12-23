@@ -144,7 +144,7 @@ def main():
                    st.subheader('Usage by Age' + '(' +month +'/'+year+')')    
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(10, 6))  
                    ax.pie(y4,labels=y4, colors = color, autopct='%1.1f%%',textprops={'fontsize': 8})
-                   ax.legend(p5, loc='best')
+                   ax.legend(p5, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
                    fig.tight_layout()
                    st.pyplot(fig)
                    
