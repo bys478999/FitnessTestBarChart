@@ -149,7 +149,7 @@ def main():
                    st.pyplot(fig)
                    
                    st.subheader('Usage by Sports' + '(' +month +'/'+year+')') 
-                   fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))    
+                   fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 6))    
                    ax.pie(y,labels=y, colors = color, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.6, textprops={'fontsize': 8})
                    ax.legend(p1, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
                    fig.tight_layout()
