@@ -119,7 +119,7 @@ def main():
                    month = st.selectbox('Chose The Month', df['Month'].drop_duplicates())       
                    selected_month = selected_year.loc[df['Month'] == month]
                    st.write(selected_month)
-                   fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(8, 6))   
+                   fig, ax = plt.subplots(nrows=1, ncols=3, figsize=(8, 6))   
                    y = selected_month.groupby(['Sport'])['Month'].count()
                    p1 = selected_month.groupby('Sport').groups
                    y1 = selected_month.groupby(['Gender'])['Month'].count()
@@ -132,12 +132,14 @@ def main():
                    p5 = selected_month.groupby('Age').groups
                    
                 
-                   st.subheader('Usage by Gender & Status' + '(' +month +'/'+year+')')    
+                   st.subheader('Usage by Gender, Status & Age' + '(' +month +'/'+year+')')    
                    color =  ['#3354FF', '#50FF33','#FFFE33','#33FFB7','#3354FF','#8733FF','#C533FF','#FF9333','#B6FF33','#33FF7F','#721601','#988943','#858984','#3F832E','#2D776A','#015089','#7567A9','#4B4A4E','#34600E','#E3A951']
                    ax[0].pie(y1,labels=y1, colors = color, autopct='%1.1f%%' )
                    ax[1].pie(y2,labels=y2, colors = color, autopct='%1.1f%%')
+                   ax[2].pie(y4,labels=y4, colors = color, autopct='%1.1f%%')
                    ax[0].legend(p2, loc='best')
                    ax[1].legend(p3, loc='best')
+                   ax[2].legend(p5, loc='best')
                    fig.tight_layout()
                    st.pyplot(fig)
                    
