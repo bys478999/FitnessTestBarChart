@@ -416,7 +416,7 @@ def main():
                     st.download_button(label='Download the dataframe',data=selected_period.to_csv(),mime='text/csv', file_name='Sports Nutrition Report.csv')
                     sport = selected_period.groupby(['Sports'])['Name'].count()
                     gender = selected_period.groupby(['Gender'])['Name'].count()
-                    purpose = selected_period.groupby(['purpose'])['Name'].count()
+                    purpose = selected_period.groupby(['Purpose'])['Name'].count()
                     legend_type = selected_period.groupby('Sports').groups
                     legend_type_2 = selected_period.groupby('Gender').groups
                     legend_type_3 = selected_period.groupby('Purpose').groups
