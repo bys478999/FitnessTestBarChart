@@ -165,10 +165,9 @@ def main():
                    st.pyplot(fig)   
                   
 
-                   modalities = selected_month.assign(Treatment=selected_month.Treatment.str.split(",")).explode('Treatment')
-                   m = modalities['Treatment'].str.strip()
-                   modality = m.groupby(['Treatment'])['Year'].count()
-                   legend_m = m.groupby('Treatment').groups
+                   modalities = selected_month.assign(Treatment=selected_month.Treatment.str.split(",")).explode('Treatment').strip()
+                   modality = modalities.groupby(['Treatment'])['Year'].count()
+                   legend_m = modalities.groupby('Treatment').groups
                    st.write(modality)
                    st.subheader('Common Therapeutic Modalities Used for Treatment' + '(' +month +'/'+year+')') 
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))    
