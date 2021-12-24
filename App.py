@@ -165,7 +165,7 @@ def main():
                    st.pyplot(fig)   
                   
 
-                   modalities = selected_month.assign(Treatment=selected_month.Treatment.str.split(",")).strip().explode('Treatment')
+                   modalities = selected_month.assign(Treatment=selected_month.Treatment.str.split(",")).explode('Treatment')
                    modality = modalities.groupby(['Treatment'])['Year'].count()
                    legend_m = modalities.groupby('Treatment').groups
                    st.write(modality)
