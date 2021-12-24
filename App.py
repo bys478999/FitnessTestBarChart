@@ -176,6 +176,17 @@ def main():
                    fig.tight_layout()
                    st.pyplot(fig) 
                   
+                  
+                   st.subheader('Common Injury Part' + '(' +month +'/'+year+')') 
+                   y5 = selected_month.groupby(['Injury Part'])['Month'].count()
+                   p6 = selected_month.groupby('Injury Part').groups
+                   fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(8, 6))   
+                   ax.pie(y5, colors = color, labels=y5, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.7, textprops={'fontsize': 8})
+                   ax.legend(p6, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
+                   fig.tight_layout()
+                   st.pyplot(fig) 
+                   
+                  
                 
                    st.subheader(' Sports' + '('+year+')')
                    sport = st.selectbox('Chose The Sport', df['Sport'].drop_duplicates())  
