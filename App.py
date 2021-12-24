@@ -167,6 +167,7 @@ def main():
 
                    modalities = selected_month.assign(Treatment=selected_month.Treatment.str.split(",")).explode('Treatment')
                    m = modalities['Treatment'].str.strip()
+                   st.write(m)
                    modality = m.groupby(['Treatment'])['Year'].count()
                    legend_m = m.groupby('Treatment').groups
                    st.write(modality)
