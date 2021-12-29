@@ -2,8 +2,15 @@ import streamlit as st
 import pandas as pd
 import openpyxl
 
-df1 = pd.read_excel('DATA BADMINTON (FOR COMPARISON).xlsx')
-df2 = pd.read_excel('Badminton Data (MALE).xlsx')
 
-a = (df1.merge(df2, left_on='NAME', right_on='NAME',suffixes=('_1', '_2'), how='outer'))
-a.to_excel(r'C:\\Users\\Bu\\pythonProject1\\prepostbadminton.xlsx')
+
+
+def app():
+    st.title('Merge Data')
+    file_1 = st.file_uploader("Chose a file for pre")
+    file_2= st.file_uploader("Chose a file for post")
+    if file_2 is not None:
+        df = pd.read_excel(file_1)
+        df1 = pd.read_excel(file_2)
+        a = (df1.merge(df2, left_on='NAME', right_on='NAME',suffixes=('_1', '_2'), how='outer'))
+        a.to_excel(r'C:\\Users\\Bu\\pythonProject1\\prepostbadminton.xlsx')
