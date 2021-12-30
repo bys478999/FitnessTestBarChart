@@ -16,5 +16,4 @@ def app():
         st.write(a)
         st.download_button(label='Download the dataframe',data=a.to_csv(),mime='text/csv', file_name='Pre & Post Test Comparison.csv')
         
-        a.to_excel(r'C:\\Users\\Bu\\pythonProject1\\prepostbadminton.xlsx')
         
