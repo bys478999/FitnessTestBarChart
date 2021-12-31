@@ -14,6 +14,5 @@ def app():
         df1 = pd.read_excel(file_2)
         a = df.merge(df1, left_on='NAME', right_on='NAME',suffixes=('_1', '_2'), how='outer')
         st.write(a)
-        st.download_button(label='Download the dataframe',data=a.to_xlsx(), file_name='Pre & Post Test Comparison.xlsx')
         st.download_button(label='Download the dataframe',data=a.to_csv(),mime='text/csv', file_name='Pre & Post Test Comparison.csv')
         
