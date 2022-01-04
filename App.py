@@ -381,8 +381,8 @@ def main():
                if password == st.secrets["password"]:
                     sheet_id = st.secrets[username]
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Database')
-                    df2 = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Database1')
-                    df1 = df2['EXERCISE'].replace('\n', ',')
+                    df1 = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Database1')
+                    df1 = df1['EXERCISE'].replace('\n', ',')
                     df['DATE'] = pd.to_datetime(df['DATE'], '%Y/%m/%d')
                     df1['DATE'] = pd.to_datetime(df1['DATE'], '%Y/%m/%d')
                     col1, col2 = st.columns(2)
