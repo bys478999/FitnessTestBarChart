@@ -112,8 +112,6 @@ def main():
                    col1.table(b)
                    fig, ax = plt.subplots(nrows=1, ncols=1)   
                    ax.plot(x,y, marker='o', color='blue', mec='red', ls=':')
-                   st.write(year)
-                   ax.set_title("Cases in year " +year)
                    ax.set_xlabel('Month')
                    ax.set_ylabel('Usage')
                    col2.pyplot(fig)
