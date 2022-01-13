@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 import openpyxl
 
 def app():
-    st.title('Bar Chart Maker')
+    st.title('Bar Chart Maker (Male)')
     file = st.file_uploader("Chose a file")
     if file is not None:
         df = pd.read_excel(file)
