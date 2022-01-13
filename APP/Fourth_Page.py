@@ -65,8 +65,8 @@ def app():
                 x = sorted_y['NAME']
                 y = round(sorted_y['BODY FAT'].astype(float), 2)
                 cc = ['colors'] * len(y)
-                a_BF = 20
-                b_BF = 19
+                a_BF = 30
+                b_BF = 29
                 for n, val in enumerate(y):
                     if val < a_BF:
                         cc[n] = 'green'
@@ -175,12 +175,12 @@ def app():
                 x = sorted_y['NAME']
                 y = round(sorted_y['SBJ'].astype(float), 2)
                 cc = ['colors'] * len(y)
-                a_SBJ = 195
-                b_SBJ = 195
-                b1_SBJ = 210
-                c_SBJ = 211
-                c1_SBJ = 228
-                d_SBJ = 228
+                a_SBJ = 150
+                b_SBJ = 150
+                b1_SBJ = 166
+                c_SBJ = 167
+                c1_SBJ = 183
+                d_SBJ = 183
                 for n, val in enumerate(y):
                     if val < a_SBJ:
                         cc[n] = 'green'
@@ -215,12 +215,12 @@ def app():
                 x = sorted_y['NAME']
                 y = round(sorted_y['CMJ'].astype(float), 2)
                 cc = ['colors'] * len(y)
-                a_CMJ = 41
-                b_CMJ = 41
-                b1_CMJ = 44
-                c_CMJ = 45
-                c1_CMJ = 50
-                d_CMJ = 50
+                a_CMJ = 28.5
+                b_CMJ = 28.5
+                b1_CMJ = 33.9
+                c_CMJ = 34
+                c1_CMJ = 38.5
+                d_CMJ = 38.5
                 for n, val in enumerate(y):
                     if val < a_CMJ:
                         cc[n] = 'green'
@@ -255,14 +255,14 @@ def app():
                 x_axis = np.arange(len(x))
                 y6 = round(df['ILLINOIS/L'].astype(float), 2)
                 cc = ['colors'] * len(y6)
-                a_AT = 18.3
-                b_AT = 18.2
-                b1_AT = 18.3
-                c_AT = 16.2
-                c1_AT = 18.1
-                d_AT = 15.2
-                d1_AT = 16.1
-                e_AT = 15.2
+                a_AT = 23.0
+                b_AT = 23.0
+                b1_AT = 21.8
+                c_AT = 21.7
+                c1_AT = 18.0
+                d_AT = 17.9
+                d1_AT = 17.0
+                e_AT = 17.0
                 for n, val in enumerate(y6):
                     if val > a_AT:
                         cc[n] = 'green'
@@ -319,10 +319,10 @@ def app():
                 cc = ['colors'] * len(y)
                 a_SR = 34
                 b_SR = 34
-                b1_SR = 39.5
-                c_SR = 40
-                c1_SR = 44
-                d_SR = 44
+                b1_SR = 37.0
+                c_SR = 37.5
+                c1_SR = 42.4
+                d_SR = 42.4
                 for n, val in enumerate(y):
                     if val < a_SR:
                         cc[n] = 'green'
@@ -357,12 +357,12 @@ def app():
                 x = sorted_y['NAME']
                 y = round(sorted_y['10 M SPRINT'].astype(float), 2)
                 cc = ['colors'] * len(y)
-                a_10M = 1.86
-                b_10M = 1.80
-                b1_10M = 1.86
-                c_10M = 1.73
-                c1_10M = 1.79
-                d_10M = 1.73
+                a_10M = 2.12
+                b_10M = 2.12
+                b1_10M = 2.05
+                c_10M = 2.04
+                c1_10M = 1.99
+                d_10M = 1.99
                 for n, val in enumerate(y):
                     if val > a_10M:
                         cc[n] = 'green'
@@ -397,12 +397,12 @@ def app():
                 x = sorted_y['NAME']
                 y = round(sorted_y['20 M SPRINT'].astype(float), 2)
                 cc = ['colors'] * len(y)
-                a_20M = 3.5
-                b_20M = 3.28
-                b1_20M = 3.5
-                c_20M = 3.15
-                c1_20M = 3.27
-                d_20M = 3.15
+                a_20M = 4.0
+                b_20M = 4.0
+                b1_20M = 3.84
+                c_20M = 3.83
+                c1_20M = 3.68
+                d_20M = 3.68
                 for n, val in enumerate(y):
                     if val > a_20M:
                         cc[n] = 'green'
@@ -477,12 +477,12 @@ def app():
                 x = sorted_y['NAME']
                 y = round(sorted_y['TOTAL'].astype(float), 2)
                 cc = ['colors'] * len(y)
-                a_HG = 71.7
-                b_HG = 71.7
-                b1_HG = 79.4
-                c_HG = 79.5
-                c1_HG = 89.4
-                d_HG = 89.4
+                a_HG = 46.9
+                b_HG = 46.9
+                b1_HG = 51.6
+                c_HG = 51.7
+                c1_HG = 56.1
+                d_HG = 56.1
                 for n, val in enumerate(y):
                     if val < a_HG:
                         cc[n] = 'green'
@@ -517,12 +517,12 @@ def app():
                 x = sorted_y['NAME']
                 y = round(sorted_y['YOYO TEST'].astype(float), 2)
                 cc = ['colors'] * len(y)
-                a_YY = 8.01
-                b_YY = 8.01
-                b1_YY = 9.11
-                c_YY = 10.01
-                c1_YY = 12.12
-                d_YY = 12.12
+                a_YY = 5.04
+                b_YY = 5.04
+                b1_YY = 6.02
+                c_YY = 6.03
+                c1_YY = 6.08
+                d_YY = 6.08
                 for n, val in enumerate(y):
                     if val < a_YY:
                         cc[n] = 'green'
