@@ -56,7 +56,8 @@ def main():
             if password == st.secrets["password_1"] and username == st.secrets["username_1"]:
                     app = MultiApp()
                     st.title('Fitness Test Web Application')
-                    app.add_app("Bar Chart Maker", Home_Page.app)
+                    app.add_app("Bar Chart Maker (Male)", Home_Page.app)
+                    app.add_app("Bar Chart Maker (Female)", Fourth_Page.app)
                     app.add_app("Bar Chart Maker (Data Comparison)", Second_Page.app)
                     app.add_app("Merge Data", Third_Page.app)
                     app.run()
