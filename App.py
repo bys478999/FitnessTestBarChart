@@ -1,6 +1,6 @@
 import streamlit as st
 from Multi_Page_App import MultiApp
-from APP import Home_Page, Second_Page, Third_Page, Fourth_Page
+from APP import Home_Page, Second_Page, Third_Page, Fourth_Page, Fifth_Page
 import streamlit.components.v1 as components
 from PIL import Image
 import pandas as pd
@@ -58,7 +58,8 @@ def main():
                     st.title('Fitness Test Web Application')
                     app.add_app("Bar Chart Maker (Male)", Home_Page.app)
                     app.add_app("Bar Chart Maker (Female)", Fourth_Page.app)
-                    app.add_app("Bar Chart Maker (Data Comparison)", Second_Page.app)
+                    app.add_app("Bar Chart Maker (Data Comparison for Male)", Second_Page.app)
+                    app.add_app("Bar Chart Maker (Data Comparison for Female)", Fifth_Page.app)
                     app.add_app("Merge Data", Third_Page.app)
                     app.run()
 
