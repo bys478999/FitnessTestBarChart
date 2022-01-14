@@ -335,7 +335,7 @@ def app():
                 x_axis = np.arange(len(x))
                 y = round(df['ILLINOIS/L_1'].astype(float), 2)
                 cc = ['colors'] * len(y)
-                 a_AT = 23.0
+                a_AT = 23.0
                 b_AT = 23.0
                 b1_AT = 21.8
                 c_AT = 21.7
@@ -482,7 +482,7 @@ def app():
                     plt.text(i - 0.25, y[i], y[i], ha="center", va="bottom", fontsize="medium", rotation="vertical")
                 y1 = round(df['SIT & REACH_2'].astype(float), 2)
                 cc = ['colors'] * len(y1)
-                 a_SR = 34
+                a_SR = 34
                 b_SR = 34
                 b1_SR = 37.0
                 c_SR = 37.5
