@@ -517,7 +517,7 @@ def app():
                 x_axis = np.arange(len(x))
                 y = round(df['10 M SPRINT_1'].astype(float), 2)
                 cc = ['colors'] * len(y)
-               a_10M = 2.12
+                a_10M = 2.12
                 b_10M = 2.12
                 b1_10M = 2.05
                 c_10M = 2.04
@@ -679,7 +679,7 @@ def app():
                 x_axis = np.arange(len(x))
                 y = round(df['TOTAL_1'].astype(float), 2)
                 cc = ['colors'] * len(y)
-                 a_HG = 46.9
+                a_HG = 46.9
                 b_HG = 46.9
                 b1_HG = 51.6
                 c_HG = 51.7
