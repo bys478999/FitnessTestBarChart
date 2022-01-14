@@ -457,7 +457,7 @@ def app():
                 x_axis = np.arange(len(x))
                 y = round(df['SIT & REACH_1'].astype(float), 2)
                 cc = ['colors'] * len(y)
-               a_SR = 34
+                a_SR = 34
                 b_SR = 34
                 b1_SR = 37.0
                 c_SR = 37.5
