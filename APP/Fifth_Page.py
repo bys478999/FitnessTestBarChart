@@ -571,7 +571,7 @@ def app():
                 x_axis = np.arange(len(x))
                 y = round(df['20 M SPRINT_1'].astype(float), 2)
                 cc = ['colors'] * len(y)
-               a_20M = 4.0
+                a_20M = 4.0
                 b_20M = 4.0
                 b1_20M = 3.84
                 c_20M = 3.83
