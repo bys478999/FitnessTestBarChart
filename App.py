@@ -181,8 +181,8 @@ def main():
                   
                   
                    st.subheader('Common Injury Part' + '(' +month +'/'+year+')') 
-                   y5 = selected_month.groupby(['Injury Part'])['Month'].count()
-                   p6 = selected_month.groupby('Injury Part').groups
+                   y5 = selected_month.groupby(['Injury_Part'])['Month'].count()
+                   p6 = selected_month.groupby('Injury_Part').groups
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))   
                    ax.pie(y5, colors = color, labels=y5, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.7, textprops={'fontsize': 8})
                    ax.legend(p6, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
@@ -190,9 +190,9 @@ def main():
                    st.pyplot(fig) 
                    
   
-                   bodypart = selected_month.assign(InjuryPart=selected_month.InjuryPart.str.split(", ")).explode('Injury Part')
-                   bp = bodypart.groupby(['Injury Part'])['Year'].count()
-                   legend_bp = bodypart.groupby('Injury Part').groups
+                   bodypart = selected_month.assign(Injury_Part=selected_month.Injury_Part.str.split(", ")).explode('Injury_Part')
+                   bp = bodypart.groupby(['Injury_Part'])['Year'].count()
+                   legend_bp = bodypart.groupby('Injury_Part').groups
                    st.subheader('Common Injury Part (Split)' + '(' +month +'/'+year+')') 
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))    
                    ax.pie(bp, colors = color, labels=bp, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.7, textprops={'fontsize': 8})
