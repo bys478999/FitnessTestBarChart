@@ -221,6 +221,7 @@ def main():
                    ax.plot(x_axis,cs2, marker='^', color='blue', mec='red', ls='--')
                    ax.set_title(sport + " ("+ year+")")
                    ax.set_xlabel('Month')
+                   plt.xticks(rotation=45)
                    ax.set_ylabel('Usage (Per Entry)')
                    st.pyplot(fig)
                    st.bar_chart(cs3)
