@@ -190,7 +190,7 @@ def main():
                    st.pyplot(fig) 
                    
   
-                   bodypart = selected_month.assign(Injury Part=selected_month.Injury Part.str.split(", ")).explode('Injury Part')
+                   bodypart = selected_month.assign(InjuryPart=selected_month.InjuryPart.str.split(", ")).explode('Injury Part')
                    bp = bodypart.groupby(['Injury Part'])['Year'].count()
                    legend_bp = bodypart.groupby('Injury Part').groups
                    st.subheader('Common Injury Part (Split)' + '(' +month +'/'+year+')') 
