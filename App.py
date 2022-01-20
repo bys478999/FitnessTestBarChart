@@ -181,13 +181,11 @@ def main():
                   
                   
                    st.subheader('Common Injury Part' + '(' +month +'/'+year+')') 
-                   y5 = selected_month.groupby(['Injury_Part'])['Month'].count()
-                   yy5 = y5.replace(', ','+')
+                   y5 = selected_month.groupby(['Injury_Part'])['Month'].count(
                    p6 = selected_month.groupby('Injury_Part').groups
-                   pp6 = p6.replace(', ','+')
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))   
-                   ax.pie(yy5, colors = color, labels=yy5, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.7, textprops={'fontsize': 8})
-                   ax.legend(pp6, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
+                   ax.pie(y5, colors = color, labels=y5, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.7, textprops={'fontsize': 8})
+                   ax.legend(p6, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
                    fig.tight_layout()
                    st.pyplot(fig) 
                    
