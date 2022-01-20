@@ -181,7 +181,7 @@ def main():
                   
                   
                    st.subheader('Common Injury Part' + '(' +month +'/'+year+')') 
-                   part = selected_month.replace(, , +)
+                   part = selected_month.replace(, , + )
                    y5 = part.groupby(['Injury_Part'])['Month'].count()
                    p6 = part.groupby('Injury_Part').groups
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))   
