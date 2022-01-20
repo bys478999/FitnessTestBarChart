@@ -189,6 +189,18 @@ def main():
                    fig.tight_layout()
                    st.pyplot(fig) 
                    
+  
+                   bodypart = selected_month.assign(Injury Part=selected_month.Injury_Part.str.split(", ")).explode('Injury Part')
+                   bp = bodypart.groupby(['Injury Part'])['Year'].count()
+                   legend_bp = bodypart.groupby('Injury Part').groups
+                   st.subheader('Common Injury Part (Split)' + '(' +month +'/'+year+')') 
+                   fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))    
+                   ax.pie(bp, colors = color, labels=bp, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.7, textprops={'fontsize': 8})
+                   ax.legend(legend_bp, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
+                   fig.tight_layout()
+                   st.pyplot(fig) 
+                     
+                     
                   
                 
                    st.subheader(' Sports' + '('+year+')')
