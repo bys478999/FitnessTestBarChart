@@ -183,7 +183,7 @@ def main():
                    st.subheader('Common Injury Part' + '(' +month +'/'+year+')') 
                    y5 = selected_month.groupby(['Injury_Part'])['Month'].count()
                    p6 = selected_month.groupby('Injury_Part').groups
-                   yy5 = y5.Series([]).str.replace(', ', '+', regex=False)
+                   yy5 = y5.Series([Injury_part]).str.replace(', ', '+', regex=False)
                    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(6, 4))   
                    ax.pie(yy5, colors = color, labels=yy5, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.7, textprops={'fontsize': 8})
                    ax.legend(p6, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
