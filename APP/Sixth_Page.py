@@ -9,9 +9,5 @@ import openpyxl
 
 def app():
     st.title('Fitness Test Result')
-    file = st.file_uploader("Chose a file")
-    if file is not None:
-        df = pd.read_excel(file)
-        st.dataframe(round(df, 2))
-        st.sidebar.header('Fitness Test')
-        y_value = st.sidebar.selectbox('Test', df.columns)
+    sheet_id = st.secrets[username]
+    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/1TC9AEUCek1gqyrkHFV92iCDHPphV3Ke3LkctMBJ8siE/export?format=xlsx")
