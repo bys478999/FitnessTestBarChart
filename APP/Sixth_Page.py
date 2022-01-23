@@ -10,6 +10,7 @@ import openpyxl
 def app():
     st.title('Fitness Test Result')
     password = st.text_input("Password", type='password')
-    sheet_id = st.secrets[password]
-    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
-    st.write(df)
+    if password == st.secrets[password_1]:
+        sheet_id = st.secret[fitness_test]
+        df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
+        st.write(df)
