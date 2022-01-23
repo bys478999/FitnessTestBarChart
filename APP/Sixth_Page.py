@@ -9,5 +9,7 @@ import openpyxl
 
 def app():
     st.title('Fitness Test Result')
-    sheet_id = st.secrets[username]
-    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/1TC9AEUCek1gqyrkHFV92iCDHPphV3Ke3LkctMBJ8siE/export?format=xlsx")
+    password = st.text_input("Password", type='password')
+    sheet_id = st.secrets[password]
+    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
+    st.write(df)
