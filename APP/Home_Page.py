@@ -517,12 +517,12 @@ def app():
                 x = sorted_y['NAME']
                 y = round(sorted_y['YOYO TEST'].astype(float), 2)
                 cc = ['colors'] * len(y)
-                a_YY = 8.01
-                b_YY = 8.01
-                b1_YY = 9.11
-                c_YY = 10.01
-                c1_YY = 12.12
-                d_YY = 12.12
+                a_YY = 10.07
+                b_YY = 10.07
+                b1_YY = 12.01
+                c_YY = 12.02
+                c1_YY = 13.08
+                d_YY = 13.08
                 for n, val in enumerate(y):
                     if val < a_YY:
                         cc[n] = 'green'
