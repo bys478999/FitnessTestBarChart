@@ -733,12 +733,12 @@ def app():
                 x_axis = np.arange(len(x))
                 y = round(df['YOYO TEST_1'].astype(float), 2)
                 cc = ['colors'] * len(y)
-                a_YY = 8.01
-                b_YY = 8.01
-                b1_YY = 9.11
-                c_YY = 10.01
-                c1_YY = 12.12
-                d_YY = 12.12
+                a_YY = 10.07
+                b_YY = 10.07
+                b1_YY = 12.01
+                c_YY = 12.02
+                c1_YY = 13.08
+                d_YY = 13.08
                 for n, val in enumerate(y):
                     if val < a_YY:
                         cc[n] = 'green'
@@ -758,12 +758,12 @@ def app():
                     plt.text(i - 0.25, y[i], y[i], ha="center", va="bottom", fontsize="medium", rotation="vertical")
                 y1 = round(df['YOYO TEST_2'].astype(float), 2)
                 cc = ['colors'] * len(y1)
-                a_YY = 8.01
-                b_YY = 8.01
-                b1_YY = 9.11
-                c_YY = 10.01
-                c1_YY = 12.12
-                d_YY = 12.12
+                a_YY = 10.07
+                b_YY = 10.07
+                b1_YY = 12.01
+                c_YY = 12.02
+                c1_YY = 13.08
+                d_YY = 13.08
                 for n, val in enumerate(y1):
                     if val < a_YY:
                         cc[n] = 'green'
