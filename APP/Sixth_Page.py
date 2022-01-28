@@ -9,6 +9,7 @@ import openpyxl
 
 def app():
     st.title('Fitness Test Result')
+    st.text_input("Pasword")
     password = st.text_input("Password", type='password')
     if password == st.secrets["password_1"]:
         sheet_id = st.secret[fitness_test]
