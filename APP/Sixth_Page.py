@@ -42,17 +42,17 @@ def app():
         st.subheader('Sit & Reach (cm)')
         st.write(sr)
         
-        10 = df[['YEAR','SPORT','NAME','GENDER','AGE','10 M SPRINT']].dropna()
+        10m = df[['YEAR','SPORT','NAME','GENDER','AGE','10 M SPRINT']].dropna()
         st.subheader('10 Meter Sprint (s)')
-        st.write(10)
+        st.write(10m)
         
-        20 = df[['YEAR','SPORT','NAME','GENDER','AGE','20 M SPRINT']].dropna()
+        20m = df[['YEAR','SPORT','NAME','GENDER','AGE','20 M SPRINT']].dropna()
         st.subheader('20 Meter Sprint (s)')
-        st.write(20)
+        st.write(20m)
         
-        40 = df[['YEAR','SPORT','NAME','GENDER','AGE','40 M SPRINT']].dropna()
+        40m = df[['YEAR','SPORT','NAME','GENDER','AGE','40 M SPRINT']].dropna()
         st.subheader('40 Meter Sprint (s)')
-        st.write(40)
+        st.write(40m)
         
         total = df[['YEAR','SPORT','NAME','GENDER','AGE','TOTAL']].dropna()
         st.subheader('Total Handgrip Strength (kg)')
