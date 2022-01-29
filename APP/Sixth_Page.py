@@ -13,6 +13,7 @@ def app():
     if password == st.secrets["password_1"]:
         sheet_id = st.secrets["fitness_test"]
         df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
+        st.subheader('Fitness Test Database')
         st.write(df)
         bf = df[['YEAR','SPORT','NAME','GENDER','AGE','BODY FAT']].dropna()
         st.subheader('Body Fat (%)')
@@ -62,27 +63,27 @@ def app():
         st.subheader('Beep Test')
         st.write(yy)
         
-        st.subheader('Filter Fitness Test Data')
+        st.header('Filter Fitness Test Data')
         menu = ["YEAR","CATEGORY","SPORT","GENDER"]
         choice = st.selectbox("Chose The Filter",menu)
         if choice == "YEAR":
                 value = st.selectbox('Chose The Year', df['YEAR'].drop_duplicates()) 
-                st.header('Filter by ('+choice+')')
+                st.subheader('Filter by ('+choice+')')
                 a = df.loc[(df[choice]==value)]
                 st.write(a)
         elif choice == "CATEGORY":
                 value = st.selectbox('Chose The Category', df['CATEGORY'].drop_duplicates()) 
-                st.header('Filter by ('+choice+')')
+                st.subheader('Filter by ('+choice+')')
                 a = df.loc[(df[choice]==value)]
                 st.write(a)
         elif choice == "SPORT":
                 value = st.selectbox('Chose The Sport', df['SPORT'].drop_duplicates()) 
-                st.header('Filter by ('+choice+')')
+                st.subheader('Filter by ('+choice+')')
                 a = df.loc[(df[choice]==value)]
                 st.write(a)   
         else:
                 value = st.selectbox('Chose The GENDER', df['GENDER'].drop_duplicates()) 
-                st.header('Filter by ('+choice+')')
+                st.subheader('Filter by ('+choice+')')
                 a = df.loc[(df[choice]==value)]
                 st.write(a)
         
