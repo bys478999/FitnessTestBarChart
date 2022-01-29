@@ -18,6 +18,16 @@ def app():
         bf = bodyfat.dropna()
         st.subheader('Body Fat (%)')
         st.write(bf)
+        
+        maximumpushup = df[['YEAR','SPORT','NAME','GENDER','AGE','MAXIMUM PUSH UP']]
+        mpu = maximumpushup.dropna()
+        st.subheader('Maximum Push Up (Repetition)')
+        st.write(mpu)
+        
+        situp = df[['YEAR','SPORT','NAME','GENDER','AGE','1 Min SIT UP']]
+        su = situp.dropna()
+        st.subheader('1 Minute Sit Up (Repetition)')
+        st.write(su)
     
     
     else:
