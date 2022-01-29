@@ -24,7 +24,7 @@ def app():
         st.subheader('Maximum Push Up (Repetition)')
         st.write(mpu)
         
-        situp = df[['YEAR','SPORT','NAME','GENDER','AGE','1 Min SIT UP']]
+        situp = df[['YEAR','SPORT','NAME','GENDER','AGE','1 MIN SIT UP']]
         su = situp.dropna()
         st.subheader('1 Minute Sit Up (Repetition)')
         st.write(su)
