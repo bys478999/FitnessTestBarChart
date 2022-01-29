@@ -62,10 +62,18 @@ def app():
         st.subheader('Beep Test')
         st.write(yy)
         
-        st.subheader('Chose the filter')
-        menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
-        choice = st.selectbox("Menu",menu)
+        st.subheader('Filter Fitness Test Data')
+        menu = ["YEAR","CATEGORY","SPORT","GENDER"]
+        choice = st.selectbox("Chose The Filter",menu)
+        value = st.text_input("value")
         st.header('Filter by ('+choice+')')
+        a = df.loc[(df[choice]==value)]
+        st.write(a)
+        menu_1 = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
+        choice = st.selectbox("Menu",menu)
+        
+        
+        
 
     
     else:
