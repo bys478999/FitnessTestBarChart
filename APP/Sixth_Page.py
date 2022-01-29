@@ -9,7 +9,7 @@ import openpyxl
 
 def app():
     st.title('Fitness Test Result')
-    password = st.text_input("Password", type='password')
+    password = st.text_input("Password")
     if password == st.secrets["password_1"]:
         sheet_id = st.secrets["fitness_test"]
         df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
