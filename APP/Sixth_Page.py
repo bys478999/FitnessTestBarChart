@@ -61,6 +61,12 @@ def app():
         yy = df[['YEAR','SPORT','NAME','GENDER','AGE','YOYO TEST']].dropna()
         st.subheader('Beep Test')
         st.write(yy)
+        
+        st.subheader('Chose the filter')
+        menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
+        choice = st.selectbox("Menu",menu)
+        st.header('Filter by ('+choice+')')
+
     
     else:
         st.warning("Incorrect Password")
