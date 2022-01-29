@@ -14,3 +14,7 @@ def app():
         sheet_id = st.secrets["fitness_test"]
         df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
         st.write(df)
+    
+    
+    else:
+        st.warning("Incorrect Password")
