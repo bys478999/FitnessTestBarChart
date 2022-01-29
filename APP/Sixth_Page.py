@@ -28,7 +28,10 @@ def app():
         su = situp.dropna()
         st.subheader('1 Minute Sit Up (Repetition)')
         st.write(su)
-    
+        
+        sbj = df[['YEAR','SPORT','NAME','GENDER','AGE','SBJ']].dropna()
+        st.subheader('Standing Broad Jump (cm)')
+        st.write(sbj)
     
     else:
         st.warning("Incorrect Password")
