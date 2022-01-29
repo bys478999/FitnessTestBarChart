@@ -65,14 +65,31 @@ def app():
         st.subheader('Filter Fitness Test Data')
         menu = ["YEAR","CATEGORY","SPORT","GENDER"]
         choice = st.selectbox("Chose The Filter",menu)
-        value = st.text_input("value")
-        st.header('Filter by ('+choice+')')
-        a = df.loc[(df[choice]==value)]
-        st.write(a)
+        if choice == YEAR:
+                value = st.selectbox('Chose The Year', df['YEAR'].drop_duplicates()) 
+                st.header('Filter by ('+choice+')')
+                a = df.loc[(df[choice]==value)]
+                st.write(a)
+        elif choice == CATEGORY:
+                value = st.selectbox('Chose The Category', df['CATEGORY'].drop_duplicates()) 
+                st.header('Filter by ('+choice+')')
+                a = df.loc[(df[choice]==value)]
+                st.write(a)
+        elif choice == SPORT:
+                value = st.selectbox('Chose The Sport', df['SPORT'].drop_duplicates()) 
+                st.header('Filter by ('+choice+')')
+                a = df.loc[(df[choice]==value)]
+                st.write(a)   
+        else:
+                value = st.selectbox('Chose The GENDER', df['GENDER'].drop_duplicates()) 
+                st.header('Filter by ('+choice+')')
+                a = df.loc[(df[choice]==value)]
+                st.write(a)
+        
         menu_1 = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
         choice = st.selectbox("Menu",menu)
         
-        
+        sport = st.selectbox('Chose The Sport', df['Sport'].drop_duplicates()) 
         
 
     
