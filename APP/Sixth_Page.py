@@ -15,8 +15,9 @@ def app():
         df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
         st.write(df)
         bodyfat = df[['YEAR','SPORT','NAME','GENDER','AGE','BODY FAT']]
+        bf = bodyfat.dropna()
         st.subheader('Body Fat (%)')
-        st.write(bodyfat)
+        st.write(bf)
     
     
     else:
