@@ -58,7 +58,7 @@ def app():
         st.subheader('Total Handgrip Strength (kg)')
         st.write(total)
         
-        yy = df[['YEAR','SPORT','NAME','GENDER','AGE','YOYO']].dropna()
+        yy = df[['YEAR','SPORT','NAME','GENDER','AGE','YOYO TEST']].dropna()
         st.subheader('Beep Test')
         st.write(yy)
     
