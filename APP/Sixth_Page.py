@@ -65,17 +65,17 @@ def app():
         st.subheader('Filter Fitness Test Data')
         menu = ["YEAR","CATEGORY","SPORT","GENDER"]
         choice = st.selectbox("Chose The Filter",menu)
-        if choice == YEAR:
+        if choice == "YEAR":
                 value = st.selectbox('Chose The Year', df['YEAR'].drop_duplicates()) 
                 st.header('Filter by ('+choice+')')
                 a = df.loc[(df[choice]==value)]
                 st.write(a)
-        elif choice == CATEGORY:
+        elif choice == "CATEGORY":
                 value = st.selectbox('Chose The Category', df['CATEGORY'].drop_duplicates()) 
                 st.header('Filter by ('+choice+')')
                 a = df.loc[(df[choice]==value)]
                 st.write(a)
-        elif choice == SPORT:
+        elif choice == "SPORT":
                 value = st.selectbox('Chose The Sport', df['SPORT'].drop_duplicates()) 
                 st.header('Filter by ('+choice+')')
                 a = df.loc[(df[choice]==value)]
@@ -89,8 +89,7 @@ def app():
         menu_1 = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
         choice = st.selectbox("Menu",menu)
         
-        sport = st.selectbox('Chose The Sport', df['Sport'].drop_duplicates()) 
-        
+
 
     
     else:
