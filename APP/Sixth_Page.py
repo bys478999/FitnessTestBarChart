@@ -70,7 +70,8 @@ def app():
        value = st.selectbox('Chose The '+choice, df[choice].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)]
-          st.write(a)
+          file = a[['NAME','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN SIT UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
+          st.write(file)
     elif chose == "2":
        col1, col2 = st.columns(2) 
        menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
@@ -81,7 +82,8 @@ def app():
        value2 = col22.selectbox('Chose The '+choice2, df[choice2].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)]
-          st.write(a)
+          file = a[['NAME','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN SIT UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
+          st.write(file)
     elif chose == "3":
        col1, col2, col3 = st.columns(3) 
        menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
@@ -94,7 +96,8 @@ def app():
        value3 = col33.selectbox('Chose The '+choice3, df[choice3].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)&(df[choice3]==value3)]
-          st.write(a)
+          file = a[['NAME','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN SIT UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
+          st.write(file)
     else:
        col1, col2, col3, col4 = st.columns(4) 
        menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
@@ -109,8 +112,7 @@ def app():
        value4 = col44.selectbox('Chose The '+choice3, df[choice4].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)&(df[choice3]==value3)&(df[choice4]==value4)]
-          file = a[['NAME','BMI','BODY FAT','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
-          file.to_excel('Karate Kata Data (FEMALE).xlsx', index=False)
+          file = a[['NAME','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN SIT UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
           st.write(file)
 
         
