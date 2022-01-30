@@ -85,6 +85,7 @@ def app():
         value4 = col44.selectbox('Chose The '+choice4, df[choice4].drop_duplicates())  
         if st.checkbox("Filter"):
                 a = df.loc[(df[choice1]==value1)&(df[choice2]==value2)&(df[choice3]==value3)&(df[choice4]==value4)]
+                file = a[['NAME','BMI','BODY FAT','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']]
                 st.write(a)
         
 
