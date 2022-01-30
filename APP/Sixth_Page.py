@@ -61,30 +61,56 @@ def app():
     st.subheader('Beep Test')
     st.write(yy)
         
-    st.header('Filter Fitness Test Data')
-    menu = ["YEAR","CATEGORY","SPORT","GENDER"]
-    choice = st.selectbox("Chose the filter",menu)
-    value = st.selectbox('Chose The '+choice, df[choice].drop_duplicates()) 
-    st.subheader('Filter by ('+choice+')')
-    a = df.loc[(df[choice]==value)]
-    st.write(a)
-
-        
-    col1, col2, col3, col4 = st.columns(4) 
-    menu_1 = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
-    choice1 = col1.selectbox("Filter(1)",menu_1)
-    choice2 = col2.selectbox("Filter(2)",menu_1)
-    choice3 = col3.selectbox("Filter(3)",menu_1)
-    choice4 = col4.selectbox("Filter(4)",menu_1)
-    col11, col22, col33, col44 = st.columns(4) 
-    value1 = col11.selectbox('Chose The '+choice1, df[choice1].drop_duplicates()) 
-    value2= col22.selectbox('Chose The '+choice2, df[choice2].drop_duplicates()) 
-    value3 = col33.selectbox('Chose The '+choice3, df[choice3].drop_duplicates())  
-    value4 = col44.selectbox('Chose The '+choice4, df[choice4].drop_duplicates())  
-    if st.checkbox("Filter"):
-       a = df.loc[(df[choice1]==value1)&(df[choice2]==value2)&(df[choice3]==value3)&(df[choice4]==value4)]
-       file = a[['NAME','BMI','BODY FAT','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']]
+    st.header('Filter Fitness Test Data')    
+    number = ["1","2","3","4"]
+    chose = st.selectbox("Chose how many filter you want:",number)
+    if chose == "1":
+       menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
+       choice = st.selectbox("Filter(1)",menu)
+       value = st.selectbox('Chose The '+choice, df[choice].drop_duplicates()) 
+       if st.checkbox("Done"):
+       a = df.loc[(df[choice]==value)]
        st.write(a)
+    elif chose == "2":
+       col1, col2 = st.columns(2) 
+       menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
+       choice = col1.selectbox("Filter(1)",menu)
+       choice2 = col2.selectbox("Filter(2)",menu)
+       col11, col22 = st.columns(2) 
+       value = col11.selectbox('Chose The '+choice, df[choice].drop_duplicates()) 
+       value2 = col22.selectbox('Chose The '+choice2, df[choice2].drop_duplicates()) 
+       if st.checkbox("Done"):
+       a = df.loc[(df[choice]==value)&df[choice2]==value2)]
+       st.write(a)
+    elif chose == "3":
+       col1, col2, col3 = st.columns(3) 
+       menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
+       choice = col1.selectbox("Filter(1)",menu)
+       choice2 = col2.selectbox("Filter(2)",menu)
+       choice3 = col3.selectbox("Filter(3)",menu)
+       col11, col22, col33 = st.columns(3) 
+       value = col11.selectbox('Chose The '+choice, df[choice].drop_duplicates()) 
+       value2 = col22.selectbox('Chose The '+choice2, df[choice2].drop_duplicates()) 
+       value3 = col33.selectbox('Chose The '+choice3, df[choice3].drop_duplicates()) 
+       if st.checkbox("Done"):
+       a = df.loc[(df[choice]==value)&df[choice2]==value2)&df[choice3]==value3)]
+       st.write(a)
+    else:
+       col1, col2, col3, col4 = st.columns(4) 
+       menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
+       choice = col1.selectbox("Filter(1)",menu)
+       choice2 = col2.selectbox("Filter(2)",menu)
+       choice3 = col3.selectbox("Filter(3)",menu)
+       choice4 = col4.selectbox("Filter(4)",menu)
+       col11, col22, col33, col44 = st.columns(4) 
+       value = col11.selectbox('Chose The '+choice, df[choice].drop_duplicates()) 
+       value2 = col22.selectbox('Chose The '+choice2, df[choice2].drop_duplicates()) 
+       value3 = col33.selectbox('Chose The '+choice3, df[choice3].drop_duplicates()) 
+       value4 = col44.selectbox('Chose The '+choice3, df[choice4].drop_duplicates()) 
+       if st.checkbox("Done"):
+       a = df.loc[(df[choice]==value)&df[choice2]==value2)&df[choice3]==value3)&df[choice4]==value4)]
+       st.write(a)
+
         
 
 
