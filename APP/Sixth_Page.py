@@ -72,6 +72,7 @@ def app():
           a = df.loc[(df[choice]==value)]
           file = a[['NAME','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN SIT UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
           st.write(file)
+          st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
     elif chose == "2":
        col1, col2 = st.columns(2) 
        menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
@@ -84,6 +85,7 @@ def app():
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)]
           file = a[['NAME','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN SIT UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
           st.write(file)
+          st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
     elif chose == "3":
        col1, col2, col3 = st.columns(3) 
        menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
@@ -98,6 +100,7 @@ def app():
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)&(df[choice3]==value3)]
           file = a[['NAME','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN SIT UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
           st.write(file)
+          st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
     else:
        col1, col2, col3, col4 = st.columns(4) 
        menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
@@ -114,6 +117,7 @@ def app():
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)&(df[choice3]==value3)&(df[choice4]==value4)]
           file = a[['NAME','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN SIT UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
           st.write(file)
+          st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
 
         
 
