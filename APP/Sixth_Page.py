@@ -89,10 +89,10 @@ def app():
         
         col1, col2, col3, col4 = st.columns(4) 
         menu_1 = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
-        choice1 = col1.selectbox("Menu",menu_1)
-        choice2 = col2.selectbox("Menu",menu_1)
-        choice3 = col3.selectbox("Menu",menu_1)
-        choice4 = col4.selectbox("Menu",menu_1)
+        choice1 = col1.selectbox("Filter(1)",menu_1)
+        choice2 = col2.selectbox("Filter(2)",menu_1)
+        choice3 = col3.selectbox("Filter(3)",menu_1)
+        choice4 = col4.selectbox("Filter(4)",menu_1)
         col11, col22, col33, col44 = st.columns(4) 
         value = col11.selectbox('Chose The '+choice1, df[choice1].drop_duplicates()) 
         value = col22.selectbox('Chose The '+choice2, df[choice2].drop_duplicates()) 
