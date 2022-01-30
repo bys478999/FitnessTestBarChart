@@ -109,7 +109,9 @@ def app():
        value4 = col44.selectbox('Chose The '+choice3, df[choice4].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)&(df[choice3]==value3)&(df[choice4]==value4)]
-          st.write(a)
+          file = a[['NAME','BMI','BODY FAT','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
+          file.to_excel('Karate Kata Data (FEMALE).xlsx', index=False)
+          st.write(file)
 
         
 
