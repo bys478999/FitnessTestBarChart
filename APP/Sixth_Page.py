@@ -94,12 +94,13 @@ def app():
         choice3 = col3.selectbox("Filter(3)",menu_1)
         choice4 = col4.selectbox("Filter(4)",menu_1)
         col11, col22, col33, col44 = st.columns(4) 
-        value = col11.selectbox('Chose The '+choice1, df[choice1].drop_duplicates()) 
-        value = col22.selectbox('Chose The '+choice2, df[choice2].drop_duplicates()) 
-        value = col33.selectbox('Chose The '+choice3, df[choice3].drop_duplicates())  
-        value = col44.selectbox('Chose The '+choice4, df[choice4].drop_duplicates())  
+        value1 = col11.selectbox('Chose The '+choice1, df[choice1].drop_duplicates()) 
+        value2= col22.selectbox('Chose The '+choice2, df[choice2].drop_duplicates()) 
+        value3 = col33.selectbox('Chose The '+choice3, df[choice3].drop_duplicates())  
+        value4 = col44.selectbox('Chose The '+choice4, df[choice4].drop_duplicates())  
         if st.checkbox("Filter"):
-                a = df.loc[(df['PHASE'].isin([1,2]))&(df['SPORT'].str.contains('ARCH|JU|BAS'))&(df['GENDER']=='MALE')]
+                a = df.loc[(df[choice1]==value1)&(df[choice2]==value2)&(df[choice3]==value3)&(df[choice4]==value4)]
+                st.write(a)
         
 
 
