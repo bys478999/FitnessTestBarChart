@@ -21,8 +21,8 @@ def app():
     st.subheader('Maximum Push Up (Repetition)')
     st.write(mpu)
         
-    su = df[['YEAR','SPORT','NAME','GENDER','AGE','1 MIN SIT UP']].dropna()
-    st.subheader('1 Minute Sit Up (Repetition)')
+    su = df[['YEAR','SPORT','NAME','GENDER','AGE','1 MIN CURL UP']].dropna()
+    st.subheader('1 Minute Curl Up (Repetition)')
     st.write(su)
         
     sbj = df[['YEAR','SPORT','NAME','GENDER','AGE','SBJ']].dropna()
@@ -70,7 +70,7 @@ def app():
        value = st.selectbox('Chose The '+choice, df[choice].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)]
-          file = a[['NAME','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN SIT UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
+          file = a[['NAME','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
           st.write(file)
           st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
     elif chose == "2":
@@ -83,7 +83,7 @@ def app():
        value2 = col22.selectbox('Chose The '+choice2, df[choice2].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)]
-          file = a[['NAME','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN SIT UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
+          file = a[['NAME','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
           st.write(file)
           st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
     elif chose == "3":
@@ -98,7 +98,7 @@ def app():
        value3 = col33.selectbox('Chose The '+choice3, df[choice3].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)&(df[choice3]==value3)]
-          file = a[['NAME','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN SIT UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
+          file = a[['NAME','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
           st.write(file)
           st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
     else:
@@ -115,7 +115,7 @@ def app():
        value4 = col44.selectbox('Chose The '+choice3, df[choice4].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)&(df[choice3]==value3)&(df[choice4]==value4)]
-          file = a[['NAME','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN SIT UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
+          file = a[['NAME','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
           st.write(file)
           st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
 
