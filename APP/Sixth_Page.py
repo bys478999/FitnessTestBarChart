@@ -63,7 +63,8 @@ def app():
     
     st.header('Fitness Test Data (Female)')
     female = df.loc[(df['GENDER']=='FEMALE')]
-    st.write(female)
+    f = female[['YEAR','SPORT','NAME','AGE','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','40 M SPRINT','YOYO TEST']] 
+    st.write(f)
     
     st.header('Filter Fitness Test Data')    
     number = ["1","2","3","4"]
