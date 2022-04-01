@@ -60,7 +60,11 @@ def app():
     yy = df[['YEAR','SPORT','NAME','GENDER','AGE','YOYO TEST']].dropna()
     st.subheader('Beep Test')
     st.write(yy)
-        
+    
+    st.header('Fitness Test Data (Female)'
+    female = df.loc[(df[GENDER]==FEMALE)]
+    st.write(female)
+    
     st.header('Filter Fitness Test Data')    
     number = ["1","2","3","4"]
     chose = st.selectbox("Chose how many filter you want:",number)
