@@ -61,7 +61,7 @@ def app():
     st.subheader('Beep Test')
     st.write(yy)
     
-    st.header('Fitness Test Data (Female)'
+    st.header('Fitness Test Data (Female)')
     female = df.loc[(df[GENDER]==FEMALE)]
     st.write(female)
     
