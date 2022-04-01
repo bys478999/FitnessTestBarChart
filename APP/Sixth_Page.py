@@ -62,7 +62,7 @@ def app():
     st.write(yy)
     
     st.header('Fitness Test Data (Female)')
-    female = df.loc[(df[GENDER]=="FEMALE")]
+    female = df.loc[(df['GENDER']=='FEMALE')]
     st.write(female)
     
     st.header('Filter Fitness Test Data')    
