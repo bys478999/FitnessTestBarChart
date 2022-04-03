@@ -60,11 +60,60 @@ def app():
     yy = df[['YEAR','SPORT','NAME','GENDER','AGE','YOYO TEST']].dropna()
     st.subheader('Beep Test')
     st.write(yy)
+        
+    
     
     st.header('Fitness Test Data (Female)')
     female = df.loc[(df['GENDER']=='FEMALE')]
-    f = female[['YEAR','SPORT','NAME','AGE','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','40 M SPRINT','YOYO TEST']] 
-    st.write(f)
+    bf = female[['YEAR','SPORT','NAME','GENDER','AGE','BODY FAT']].dropna()
+    st.subheader('Body Fat (%)')
+    st.write(bf)
+        
+    mpu = female[['YEAR','SPORT','NAME','GENDER','AGE','MAXIMUM PUSH UP']].dropna()
+    st.subheader('Maximum Push Up (Repetition)')
+    st.write(mpu)
+        
+    su = female[['YEAR','SPORT','NAME','GENDER','AGE','1 MIN CURL UP']].dropna()
+    st.subheader('1 Minute Curl Up (Repetition)')
+    st.write(su)
+        
+    sbj = female[['YEAR','SPORT','NAME','GENDER','AGE','SBJ']].dropna()
+    st.subheader('Standing Broad Jump (cm)')
+    st.write(sbj)
+        
+    cmj = female[['YEAR','SPORT','NAME','GENDER','AGE','CMJ']].dropna()
+    st.subheader('Counter Movement Jump (cm)')
+    st.write(cmj)
+        
+    agility = female[['YEAR','SPORT','NAME','GENDER','AGE','ILLINOIS']].dropna()
+    st.subheader('Illinois Test (s)')
+    st.write(agility)
+        
+    sr = female[['YEAR','SPORT','NAME','GENDER','AGE','SIT & REACH']].dropna()
+    st.subheader('Sit & Reach (cm)')
+    st.write(sr)
+        
+    ten = female[['YEAR','SPORT','NAME','GENDER','AGE','10 M SPRINT']].dropna()
+    st.subheader('10 Meter Sprint (s)')
+    st.write(ten)
+        
+    twenty = female[['YEAR','SPORT','NAME','GENDER','AGE','20 M SPRINT']].dropna()
+    st.subheader('20 Meter Sprint (s)')
+    st.write(twenty)
+        
+    forty = female[['YEAR','SPORT','NAME','GENDER','AGE','40 M SPRINT']].dropna()
+    st.subheader('40 Meter Sprint (s)')
+    st.write(forty)
+        
+    total = female[['YEAR','SPORT','NAME','GENDER','AGE','TOTAL']].dropna()
+    st.subheader('Total Handgrip Strength (kg)')
+    st.write(total)
+        
+    yy = female[['YEAR','SPORT','NAME','GENDER','AGE','YOYO TEST']].dropna()
+    st.subheader('Beep Test')
+    st.write(yy)
+    
+ 
     
     st.header('Filter Fitness Test Data')    
     number = ["1","2","3","4"]
