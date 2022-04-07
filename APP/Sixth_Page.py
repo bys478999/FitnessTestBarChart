@@ -13,6 +13,11 @@ def app():
     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx")
     st.subheader('Fitness Test Database')
     st.write(df)
+    
+    bmi = df[['YEAR','SPORT','NAME','GENDER','AGE','HEIGHT','WEIGHT','BMI']].dropna()
+    st.subheader('BMI')
+    st.write(bmi)
+    
     bf = df[['YEAR','SPORT','NAME','GENDER','AGE','BODY FAT']].dropna()
     st.subheader('Body Fat (%)')
     st.write(bf)
@@ -65,10 +70,15 @@ def app():
     
     st.header('Fitness Test Data (Female)')
     female = df.loc[(df['GENDER']=='FEMALE')]
+    
+    bmi = female[['YEAR','SPORT','NAME','GENDER','AGE','HEIGHT','WEIGHT','BMI']].dropna()
+    st.subheader('BMI')
+    st.write(bmi)
+    
     bf = female[['YEAR','SPORT','NAME','GENDER','AGE','BODY FAT']].dropna()
     st.subheader('Body Fat (%)')
     st.write(bf)
-        
+    
     mpu = female[['YEAR','SPORT','NAME','GENDER','AGE','MAXIMUM PUSH UP']].dropna()
     st.subheader('Maximum Push Up (Repetition)')
     st.write(mpu)
@@ -137,7 +147,7 @@ def app():
        value2 = col22.selectbox('Chose The '+choice2, df[choice2].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)]
-          file = a[['YEAR','SPORT','NAME','AGE','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','40 M SPRINT','YOYO TEST']] 
+          file = a[['YEAR','SPORT','NAME','AGE','HEIGHT','WEIGHT','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','40 M SPRINT','YOYO TEST']] 
           st.write(file)
           st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
     elif chose == "3":
@@ -152,7 +162,7 @@ def app():
        value3 = col33.selectbox('Chose The '+choice3, df[choice3].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)&(df[choice3]==value3)]
-          file = a[['YEAR','SPORT','NAME','AGE','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','40 M SPRINT','YOYO TEST']] 
+          file = a[['YEAR','SPORT','NAME','AGE','HEIGHT','WEIGHT','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','40 M SPRINT','YOYO TEST']] 
           st.write(file)
           st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
     else:
@@ -169,7 +179,7 @@ def app():
        value4 = col44.selectbox('Chose The '+choice3, df[choice4].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)&(df[choice3]==value3)&(df[choice4]==value4)]
-          file = a[['YEAR','SPORT','NAME','AGE','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
+          file = a[['YEAR','SPORT','NAME','AGE','HEIGHT','WEIGHT','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
           st.write(file)
           st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
 
