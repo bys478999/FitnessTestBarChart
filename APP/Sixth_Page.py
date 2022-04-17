@@ -15,8 +15,8 @@ def app():
     st.write(df)
     
     bmi = df[['YEAR','SPORT','NAME','GENDER','AGE','HEIGHT','WEIGHT','BMI']].dropna()
-    st.subheader('BMI')
-    st.markdown(bmi)
+    st.markdown('BMI')
+    st.write(bmi)
     
     bf = df[['YEAR','SPORT','NAME','GENDER','AGE','BODY FAT']].dropna()
     st.subheader('Body Fat (%)')
