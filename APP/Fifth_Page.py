@@ -407,13 +407,13 @@ def app():
                 for n, val in enumerate(y):
                    if val > a_AT:
                         cc[n] = 'green'
-                    elif val >= b1_AT and val <= b_AT:
+                   elif val >= b1_AT and val <= b_AT:
                         cc[n] = 'lime'
-                    elif val >= c1_AT and val <= c_AT:
+                   elif val >= c1_AT and val <= c_AT:
                         cc[n] = 'yellow'
-                    elif val >= d1_A and val <= d_AT:
+                   elif val >= d1_A and val <= d_AT:
                         cc[n] = 'darkgoldenrod'
-                    else:
+                   else:
                         cc[n] = 'red'
                 width = st.sidebar.slider("plot width", 1., 15., 10.)
                 height = st.sidebar.slider("plot height", 1., 10., 5.)
