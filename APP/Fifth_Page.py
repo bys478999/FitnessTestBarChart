@@ -346,11 +346,11 @@ def app():
                 for n, val in enumerate(y):
                     if val > a_AT:
                         cc[n] = 'green'
-                    elif val >= b_AT and val <= b1_AT:
+                    elif val <= b_AT and val >= b1_AT:
                         cc[n] = 'lime'
-                    elif val >= c_AT and val <= c1_AT:
+                    elif val <= c_AT and val >= c1_AT:
                         cc[n] = 'yellow'
-                    elif val >= d_AT and val <= d1_AT:
+                    elif val <= d_AT and val >= d1_AT:
                         cc[n] = 'darkgoldenrod'
                     else:
                         cc[n] = 'red'
@@ -367,11 +367,11 @@ def app():
                 for n, val in enumerate(y1):
                     if val > a_AT:
                         cc[n] = 'green'
-                    elif val >= b_AT and val <= b1_AT:
+                    elif val <= b_AT and val >= b1_AT:
                         cc[n] = 'lime'
-                    elif val >= c_AT and val <= c1_AT:
+                    elif val <= c_AT and val >= c1_AT:
                         cc[n] = 'yellow'
-                    elif val >= d_AT and val <= d1_AT:
+                    elif val <= d_AT and val >= d1_AT:
                         cc[n] = 'darkgoldenrod'
                     else:
                         cc[n] = 'red'
@@ -405,13 +405,13 @@ def app():
                 d1_AT = 17.0
                 e_AT = 17.0
                 for n, val in enumerate(y):
-                    if val > a_AT:
+                   if val > a_AT:
                         cc[n] = 'green'
-                    elif val >= b_AT and val <= b1_AT:
+                    elif val <= b_AT and val >= b1_AT:
                         cc[n] = 'lime'
-                    elif val >= c_AT and val <= c1_AT:
+                    elif val <= c_AT and val >= c1_AT:
                         cc[n] = 'yellow'
-                    elif val >= d_AT and val <= d1_AT:
+                    elif val <= d_AT and val >= d1_AT:
                         cc[n] = 'darkgoldenrod'
                     else:
                         cc[n] = 'red'
@@ -428,11 +428,11 @@ def app():
                 for n, val in enumerate(y1):
                     if val > a_AT:
                         cc[n] = 'green'
-                    elif val >= b_AT and val <= b1_AT:
+                    elif val <= b_AT and val >= b1_AT:
                         cc[n] = 'lime'
-                    elif val >= c_AT and val <= c1_AT:
+                    elif val <= c_AT and val >= c1_AT:
                         cc[n] = 'yellow'
-                    elif val >= d_AT and val <= d1_AT:
+                    elif val <= d_AT and val >= d1_AT:
                         cc[n] = 'darkgoldenrod'
                     else:
                         cc[n] = 'red'
