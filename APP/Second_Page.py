@@ -341,7 +341,7 @@ def app():
                 c_AT = 16.2
                 c1_AT = 18.1
                 d_AT = 15.2
-                d1_AT = 16.1
+                d1_AT = 16.19
                 e_AT = 15.2
                 for n, val in enumerate(y):
                     if val > a_AT:
@@ -402,7 +402,7 @@ def app():
                 c_AT = 16.2
                 c1_AT = 18.1
                 d_AT = 15.2
-                d1_AT = 16.1
+                d1_AT = 16.19
                 e_AT = 15.2
                 for n, val in enumerate(y):
                     if val > a_AT:
