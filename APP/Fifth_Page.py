@@ -350,7 +350,7 @@ def app():
                         cc[n] = 'lime'
                     elif val >= c1_AT and val <= c_AT:
                         cc[n] = 'yellow'
-                    elif val >= d1_A and val <= d_AT:
+                    elif val >= d1_AT and val <= d_AT:
                         cc[n] = 'darkgoldenrod'
                     else:
                         cc[n] = 'red'
@@ -371,7 +371,7 @@ def app():
                         cc[n] = 'lime'
                     elif val >= c1_AT and val <= c_AT:
                         cc[n] = 'yellow'
-                    elif val >= d1_A and val <= d_AT:
+                    elif val >= d1_AT and val <= d_AT:
                         cc[n] = 'darkgoldenrod'
                     else:
                         cc[n] = 'red'
@@ -411,7 +411,7 @@ def app():
                         cc[n] = 'lime'
                    elif val >= c1_AT and val <= c_AT:
                         cc[n] = 'yellow'
-                   elif val >= d1_A and val <= d_AT:
+                   elif val >= d1_AT and val <= d_AT:
                         cc[n] = 'darkgoldenrod'
                    else:
                         cc[n] = 'red'
@@ -432,7 +432,7 @@ def app():
                         cc[n] = 'lime'
                     elif val >= c1_AT and val <= c_AT:
                         cc[n] = 'yellow'
-                    elif val >= d1_A and val <= d_AT:
+                    elif val >= d1_AT and val <= d_AT:
                         cc[n] = 'darkgoldenrod'
                     else:
                         cc[n] = 'red'
