@@ -543,6 +543,17 @@ def main():
                     bar_1 = the_sport.groupby(['GENDER'])['NAME'].count()
                     st.bar_chart(bar_1)
                     
+                    x = the_sport['NAME'] 
+                    y = the_sport['IMAGERY']
+                    fig, ax = plt.subplots(figsize=(width, height))
+                    ax = plt.bar(x, y, data=sorted_y, color=cc, width=0.5) 
+                    for i in range(len(x)):
+                        plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
+                    plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
+                    plt.title("BMI")
+                    plt.ylabel("BMI Score")
+                    plt.ylim(xx, yy)
+                    st.pyplot(fig)
                   
                      
 if __name__ == '__main__':
