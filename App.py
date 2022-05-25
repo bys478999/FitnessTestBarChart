@@ -541,10 +541,10 @@ def main():
                     chosen_sport = st.selectbox('Chose The Sport', selectperiod['SPORT'].drop_duplicates())
                     the_sport = selected_period.loc[df['SPORT']==chosen_sport]
                     bar_1 = the_sport.groupby(['GENDER'])['NAME'].count()
-                    st.subheader("Service Given (Gender) for "+the_sport)
+                    st.subheader("Service Given (Gender) for "+chosen_sport)
                     st.bar_chart(bar_1) 
                     bar_2 = the_sport.groupby(['NAME'])['SPORT'].count()
-                    st.subheader("Service Given (Athlete) for "+the_sport)
+                    st.subheader("Service Given (Athlete) for "+chosen_sport)
                     st.bar_chart(bar_2) 
                     
                      
