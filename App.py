@@ -541,7 +541,8 @@ def main():
                     chosen_sport = st.selectbox('Chose The Sport', selectperiod['SPORT'].drop_duplicates())
                     the_sport = selected_period.loc[df['SPORT']==chosen_sport]
                     bar_1 = the_sport.groupby(['GENDER'])['NAME'].count()
-                    st.bar_chart(bar_1)           
+                    st.bar_chart(bar_1) 
+                    bar_2 = the_sport.groupby(['NAME'])['NAME'].count()
                     sorted_y = the_sport.sort_values(by=['IMAGERY'], inplace=False, ignore_index=True) 
                     width = st.sidebar.slider("plot width", 1., 15., 10.)
                     height = st.sidebar.slider("plot height", 1., 10., 5.)
