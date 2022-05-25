@@ -539,22 +539,33 @@ def main():
                     
                     selectperiod = selected_period.sort_values(by=['SPORT'], inplace=False, ignore_index=True) 
                     chosen_sport = st.selectbox('Chose The Sport', selectperiod['SPORT'].drop_duplicates())
-                    the_sport = selected_period.loc[df['SPORT']==chosen_sport]
+                    the_sport = selected_period.loc[(df['SPORT']==chosen_sport)&(df['GENDER']==M)]
+                    the_sport_2 = selected_period.loc[(df['SPORT']==chosen_sport)&(df['GENDER']==F)]
                     bar_1 = the_sport.groupby(['GENDER'])['NAME'].count()
                     st.bar_chart(bar_1)
                     
                     sorted_y = the_sport.sort_values(by=['IMAGERY'], inplace=False, ignore_index=True) 
+                    sorted_y_2 = the_sport_2.sort_values(by=['IMAGERY'], inplace=False, ignore_index=True)
                     width = st.sidebar.slider("plot width", 1., 15., 10.)
                     height = st.sidebar.slider("plot height", 1., 10., 5.)
                     xx = st.sidebar.slider("bottom Y-axis", 0., 40., 0.)
                     yy = st.sidebar.slider("upper Y-axis", 0., 120., 100.)
                     x = sorted_y['NAME'] 
+                    x2 = sorted_y_2['NAME']  
                     y = round(sorted_y['IMAGERY'].astype(float), 2)
+                    y2 = round(sorted_y_2['IMAGERY'].astype(float), 2)
                     cc =  ['#3354FF', '#50FF33','#FFFE33','#33FFB7','#f00505','#8733FF','#C533FF','#FF9333','#B6FF33','#33FF7F','#721601','#988943','#858984','#3F832E','#2D776A','#015089','#7567A9','#4B4A4E','#34600E','#E3A951']
-                    fig, ax = plt.subplots(figsize=(width, height))
-                    ax = plt.bar(x, y, data=y, color=cc, width=0.5) 
+                    fig, ax = plt.subplots(nrows=2, ncols=1, figsize=(width, height))
+                    ax[0] = plt.bar(x, y, data=y, color=cc, width=0.5) 
                     for i in range(len(x)):
                         plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
+                    plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
+                    plt.title("Imagery")
+                    plt.ylabel("Imagery Score")
+                    plt.ylim(xx, yy)
+                    ax[1] = plt.bar(x2, y2, data=y2, color=cc, width=0.5) 
+                    for i in range(len(x)):
+                        plt.text(i, y2[i], y2[i], ha="center", va="bottom", fontsize="medium")
                     plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
                     plt.title("Imagery")
                     plt.ylabel("Imagery Score")
