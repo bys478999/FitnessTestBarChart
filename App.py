@@ -542,7 +542,7 @@ def main():
                     the_sport = selected_period.loc[df['SPORT']==chosen_sport]
                     bar_1 = the_sport.groupby(['GENDER'])['NAME'].count()
                     st.bar_chart(bar_1) 
-                    bar_2 = the_sport.groupby(['SPORT'])['NAME'].count()
+                    bar_2 = the_sport.groupby(['NAME'])['SPORT'].count()
                     st.bar_chart(bar_2) 
                     
                      
