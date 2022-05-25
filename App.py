@@ -543,21 +543,21 @@ def main():
                     bar_1 = the_sport.groupby(['GENDER'])['NAME'].count()
                     st.bar_chart(bar_1)
                     
-                     
+                    sorted_y = the_sport.sort_values(by=['IMAGERY'], inplace=False, ignore_index=True) 
                     width = st.sidebar.slider("plot width", 1., 15., 10.)
                     height = st.sidebar.slider("plot height", 1., 10., 5.)
                     xx = st.sidebar.slider("bottom Y-axis", 0., 40., 0.)
                     yy = st.sidebar.slider("upper Y-axis", 0., 100., 35.)
-                    x = the_sport['NAME'] 
-                    y = the_sport['IMAGERY']
+                    x = sorted_y['NAME'] 
+                    y = round(sorted_y['IMAGERY'].astype(float), 2)
                     cc = ['colors'] * len(y)
                     fig, ax = plt.subplots(figsize=(width, height))
                     ax = plt.bar(x, y, data=y, color=cc, width=0.5) 
                     for i in range(len(x)):
                         plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                     plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
-                    plt.title("BMI")
-                    plt.ylabel("BMI Score")
+                    plt.title("IMAGERY")
+                    plt.ylabel("IMAGERY Score")
                     plt.ylim(xx, yy)
                     st.pyplot(fig)
                   
