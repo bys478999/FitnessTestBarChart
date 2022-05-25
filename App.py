@@ -518,7 +518,25 @@ def main():
                     enddate = col2.text_input("Chose the end date(year/month/day):")
                     period = (df['DATE'] >= startdate) & (df['DATE'] <= enddate)                  
                     selected_period = df.loc[period]
+                    st.subheader("Sports Psychology Service ("+"from "+startdate+" to "+enddate+")")
                     st.write(selected_period)
+                     
+                     
+                     
+                    sport = selected_period.groupby(['SPORT'])['NAME'].count()
+                    gender = selected_period.groupby(['GENDER'])['NAME'].count()
+                    legend_type = selected_period.groupby('SPORT').groups
+                    legend_type_2 = selected_period.groupby('GENDER').groups
+                    fig, ax = plt.subplots(nrows=1, ncols=2)    
+                    ax[0].pie(sport,labels=sport, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.8, textprops={'fontsize': 8})             
+                    ax[0].legend(legend_type, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')                 
+                    ax[0].set_title("Service Given (Sport)"+ "\nfrom "+startdate+" to "+enddate)
+                    ax[1].pie(gender,labels=gender, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.8, textprops={'fontsize': 8})             
+                    ax[1].legend(legend_type_2, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')                 
+                    ax[1].set_title("Service Given (Gender)"+ "\nfrom "+startdate+" to "+enddate)
+                    fig.tight_layout()
+                    st.pyplot(fig)
+                    
                   
                      
 if __name__ == '__main__':
