@@ -547,8 +547,10 @@ def main():
                     st.subheader("Service Given (Athlete) for "+chosen_sport)
                     st.bar_chart(bar_2) 
                     
-                     
-                    sorted_y = the_sport.sort_values(by=['IMAGERY'], inplace=False, ignore_index=True) 
+                    test = selected_period.sort_values(by=[''], inplace=False, ignore_index=True) 
+                    Test = ["IMAGERY", "MENTAL PREPARATION", "SELF-CONFIDENCE", "ANXIETY CONTROL", "CONCENTRATION", "RELAXATION ABILITY", "MOTIVATION"]
+                    choice = st.selectbox("Chose The Test",Test)
+                    sorted_y = the_sport.sort_values(by=[choice], inplace=False, ignore_index=True) 
                     width = st.sidebar.slider("plot width", 1., 15., 10.)
                     height = st.sidebar.slider("plot height", 1., 10., 5.)
                     xx = st.sidebar.slider("bottom Y-axis", 0., 40., 0.)
