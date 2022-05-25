@@ -562,7 +562,7 @@ def main():
                     for i in range(len(x)):
                         plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                     plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
-                    plt.title(Choice)
+                    plt.title(choice)
                     plt.ylabel(choice+" Score")
                     plt.ylim(xx, yy)
                     st.pyplot(fig)
