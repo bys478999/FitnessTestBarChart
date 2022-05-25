@@ -511,7 +511,7 @@ def main():
                if password == st.secrets["password"]:
                     sheet_id = st.secrets[username]
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Psychology Database')
-                  
+                    st.write(df)
                   
                   
                      
