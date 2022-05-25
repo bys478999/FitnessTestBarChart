@@ -543,6 +543,11 @@ def main():
                     bar_1 = the_sport.groupby(['GENDER'])['NAME'].count()
                     st.bar_chart(bar_1)
                     
+                     
+                    width = st.sidebar.slider("plot width", 1., 15., 10.)
+                    height = st.sidebar.slider("plot height", 1., 10., 5.)
+                    xx = st.sidebar.slider("bottom Y-axis", 0., 40., 0.)
+                    yy = st.sidebar.slider("upper Y-axis", 0., 100., 35.)
                     x = the_sport['NAME'] 
                     y = the_sport['IMAGERY']
                     fig, ax = plt.subplots(figsize=(width, height))
