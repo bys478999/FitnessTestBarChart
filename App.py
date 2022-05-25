@@ -550,8 +550,9 @@ def main():
                     yy = st.sidebar.slider("upper Y-axis", 0., 100., 35.)
                     x = the_sport['NAME'] 
                     y = the_sport['IMAGERY']
+                    cc = ['colors'] * len(y)
                     fig, ax = plt.subplots(figsize=(width, height))
-                    ax = plt.bar(x, y, data=sorted_y, color=cc, width=0.5) 
+                    ax = plt.bar(x, y, data=y, color=cc, width=0.5) 
                     for i in range(len(x)):
                         plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
                     plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
