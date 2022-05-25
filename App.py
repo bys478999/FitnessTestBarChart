@@ -512,7 +512,13 @@ def main():
                     sheet_id = st.secrets[username]
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Psychology Database')
                     st.write(df)
-                  
+                    df['DATE'] = pd.to_datetime(df['DATE'], '%Y/%m/%d')
+                    col1, col2 = st.columns(2)
+                    startdate = col1.text_input("Chose the start date(year/month/day):")
+                    enddate = col2.text_input("Chose the end date(year/month/day):")
+                    period = (df['DATE'] >= startdate) & (df['DATE'] <= enddate)                  
+                    selected_period = df.loc[period]
+                    st.write(selected_period)
                   
                      
 if __name__ == '__main__':
