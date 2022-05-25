@@ -550,7 +550,7 @@ def main():
                     x = sorted_y['NAME'] 
                     y = round(sorted_y['IMAGERY'].astype(float), 2)
                     cc =  ['#3354FF', '#50FF33','#FFFE33','#33FFB7','#f00505','#8733FF','#C533FF','#FF9333','#B6FF33','#33FF7F','#721601','#988943','#858984','#3F832E','#2D776A','#015089','#7567A9','#4B4A4E','#34600E','#E3A951']
-                    fig, ax = plt.subplots(nrows=2, ncols=1, figsize=(width, height))
+                    fig, ax = plt.subplots(figsize=(width, height))
                     ax = plt.bar(x, y, data=y, color=cc, width=0.5) 
                     for i in range(len(x)):
                         plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
