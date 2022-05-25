@@ -539,8 +539,8 @@ def main():
                     
                     selectperiod = selected_period.sort_values(by=['SPORT'], inplace=False, ignore_index=True) 
                     chosen_sport = st.selectbox('Chose The Sport', selectperiod['SPORT'].drop_duplicates())
-                    the_sport = selected_period.loc[(df['SPORT']==chosen_sport)&(df['GENDER']==M)]
-                    the_sport_2 = selected_period.loc[(df['SPORT']==chosen_sport)&(df['GENDER']==F)]
+                    the_sport = selected_period.loc[(df['SPORT']==chosen_sport)&(df['GENDER']=="M")]
+                    the_sport_2 = selected_period.loc[(df['SPORT']==chosen_sport)&(df['GENDER']=="F")]
                     bar_1 = the_sport.groupby(['GENDER'])['NAME'].count()
                     st.bar_chart(bar_1)
                     
