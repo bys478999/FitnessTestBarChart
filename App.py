@@ -520,7 +520,7 @@ def main():
                     selected_period = df.loc[period]
                     st.subheader("Sports Psychology Service ("+"from "+startdate+" to "+enddate+")")
                     st.write(selected_period)
-                    test = selected_period.transpose()
+                    test = df.transpose()
                     st.write(test)
                      
                      
