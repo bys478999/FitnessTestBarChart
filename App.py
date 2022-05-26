@@ -512,9 +512,7 @@ def main():
                     sheet_id = st.secrets[username]
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Psychology Database')
                     st.write(df)
-                    df_2 = pd.DataFrame(data=df)
-                    df2 = df_2.T
-                    st.write(df2)
+
                     
                     df['DATE'] = pd.to_datetime(df['DATE'], '%Y/%m/%d')
                     col1, col2 = st.columns(2)
