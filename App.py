@@ -520,9 +520,8 @@ def main():
                     selected_period = df.loc[period]
                     st.subheader("Sports Psychology Service ("+"from "+startdate+" to "+enddate+")")
                     st.write(selected_period)
-                    test = df.transpose()
-                    st.write(test)
-                     
+                    df_2 = df.T
+                    st.write(df_2)
                      
                      
                     sport = selected_period.groupby(['SPORT'])['NAME'].count()
