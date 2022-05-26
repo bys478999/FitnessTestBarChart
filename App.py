@@ -512,6 +512,9 @@ def main():
                     sheet_id = st.secrets[username]
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Psychology Database')
                     st.write(df)
+                    df_2 = df.T
+                    st.write(df_2)
+                    
                     df['DATE'] = pd.to_datetime(df['DATE'], '%Y/%m/%d')
                     col1, col2 = st.columns(2)
                     startdate = col1.text_input("Chose the start date(year/month/day):")
@@ -520,8 +523,7 @@ def main():
                     selected_period = df.loc[period]
                     st.subheader("Sports Psychology Service ("+"from "+startdate+" to "+enddate+")")
                     st.write(selected_period)
-                    df_2 = df.T
-                    st.write(df_2)
+
                      
                      
                     sport = selected_period.groupby(['SPORT'])['NAME'].count()
