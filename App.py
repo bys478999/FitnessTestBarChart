@@ -569,8 +569,9 @@ def main():
                            
 
                     choice = st.selectbox("Chose The Athlete",the_sport['NAME'].drop_duplicates())
-                    the_sport_2 = the_sport.T
-                    st.write(the_sport_2)
+                    the_sport_2 = the_sport.drop("DATE" , axis=1) 
+                    the_sport_3 = the_sport_2.T
+                    st.write(the_sport_3)
                     sorted_y = the_sport.sort_values(by=[choice], inplace=False, ignore_index=True) 
                     width = st.sidebar.slider("plot width", 1., 20., 15.)
                     height = st.sidebar.slider("plot height", 1., 10., 5.)
