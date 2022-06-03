@@ -569,6 +569,9 @@ def main():
                            
 
                     choice = st.selectbox("Chose The Athlete",the_sport['NAME'].drop_duplicates())
+                    df1 = pd.DataFrame(data=the_sport_2)
+                    df2 = df1.T
+                    st.write(df2)
                     the_sport_2 = the_sport.T.copy
                     st.write(the_sport_2)
                     sorted_y = the_sport.sort_values(by=[choice], inplace=False, ignore_index=True) 
