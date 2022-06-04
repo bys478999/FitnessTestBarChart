@@ -176,7 +176,7 @@ def app():
        value = col11.selectbox('Chose The '+choice, df[choice].drop_duplicates()) 
        value2 = col22.selectbox('Chose The '+choice2, df[choice2].drop_duplicates()) 
        value3 = col33.selectbox('Chose The '+choice3, df[choice3].drop_duplicates()) 
-       value4 = col44.selectbox('Chose The '+choice3, df[choice4].drop_duplicates()) 
+       value4 = col44.selectbox('Chose The '+choice4, df[choice4].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)&(df[choice3]==value3)&(df[choice4]==value4)]
           file = a[['YEAR','SPORT','NAME','AGE','HEIGHT','WEIGHT','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
