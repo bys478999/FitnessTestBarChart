@@ -570,7 +570,7 @@ def main():
                     newdata = the_sport.drop('DATE', axis=1, inplace=True)
                     choice = st.selectbox("Chose The Athlete",the_sport['NAME'].drop_duplicates())
                     the_athlete = the_sport.loc[df['NAME']==choice].set_index('NAME').head()
-                    st.write(the_sport.set_index('NAME').head())
+                    st.write(the_sport.set_index('NAME'))
                     st.write(the_athlete)
                     df1 = str(the_athlete.T)
                     st.dataframe(df1)
