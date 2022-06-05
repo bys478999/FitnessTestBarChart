@@ -567,12 +567,11 @@ def main():
                     plt.ylim(xx, yy)
                     st.pyplot(fig)
                            
-
+                    newdata = the_sport.drop('DATE', axis=1, inplace=True)
                     choice = st.selectbox("Chose The Athlete",the_sport['NAME'].drop_duplicates())
-                    newdata = choice.drop('DATE', axis=1, inplace=True)
                     st.write(the_sport)
-                    st.write(newdata)
-                    df1 = pd.DataFrame(data=newdata)
+                    st.write(choice)
+                    df1 = pd.DataFrame(data=choice)
                     df2 = str(df1.T)
                     st.write(df2)
 
