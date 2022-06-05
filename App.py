@@ -569,12 +569,12 @@ def main():
                            
                     newdata = the_sport.drop('DATE', axis=1, inplace=True)
                     choice = st.selectbox("Chose The Athlete",the_sport['NAME'].drop_duplicates())
-                    the_athlete = the_sport.loc[df['NAME']==choice]
+                    the_athlete = the_sport.loc[df['NAME']==choice].drop('DATE', axis=1, inplace=True)
                     st.write(the_sport)
                     st.write(the_athlete)
                     df1 = pd.DataFrame(data=the_athlete)
                     df2 = str(df1.T)
-                    st.table(df2)
+                    st.write(df2)
 
 
                   
