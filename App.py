@@ -573,7 +573,7 @@ def main():
                     st.write(the_sport.set_index('NAME'))
                     st.write(the_athlete)
                     df2 = pd.DataFrame(data=the_athlete)
-                    df1 = df2.transpose()
+                    df1 = str(df2.transpose())
                     st.dataframe(df1)
 
                   
