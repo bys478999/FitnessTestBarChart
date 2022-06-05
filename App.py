@@ -569,7 +569,7 @@ def main():
                            
 
                     choice = st.selectbox("Chose The Athlete",the_sport['NAME'].drop_duplicates())
-                    newdata = the_sport.drop('DATE', axis=1, inplace=True)
+                    newdata = choice.drop('DATE', axis=1, inplace=True)
                     st.write(the_sport)
                     st.write(newdata)
                     df1 = pd.DataFrame(data=newdata)
