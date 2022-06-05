@@ -574,7 +574,7 @@ def main():
                     st.write(the_athlete)
                     df2 = pd.DataFrame(data=the_athlete)
                     df1 = str(df2.transpose())
-                    st.table(df1)
+                    st.metric(df1)
 
                   
                      
