@@ -572,7 +572,7 @@ def main():
                     newdata = the_sport.drop('DATE', axis=1, inplace=True)
                     st.write(the_sport)
                     st.write(newdata)
-                    df1 = pd.DataFrame(data=the_sport)
+                    df1 = pd.DataFrame(data=newdata)
                     df2 = str(df1.T)
                     st.write(df2)
 
