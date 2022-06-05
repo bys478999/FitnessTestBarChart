@@ -573,7 +573,7 @@ def main():
                     st.write(the_sport)
                     st.write(the_athlete)
                     df1 = pd.DataFrame(data=the_athlete)
-                    df2 = str(the_athlete.T)
+                    df2 = the_athlete.T
                     st.dataframe(df2)
 
                   
