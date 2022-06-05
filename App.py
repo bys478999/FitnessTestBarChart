@@ -572,9 +572,8 @@ def main():
                     the_athlete = the_sport.loc[df['NAME']==choice]
                     st.write(the_sport)
                     st.write(the_athlete)
-                    df1 = pd.DataFrame(data=the_athlete)
-                    df2 = the_athlete.T
-                    st.dataframe(df2)
+                    df1 = int(the_athlete.T)
+                    st.dataframe(df1)
 
                   
                      
