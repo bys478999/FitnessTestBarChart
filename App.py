@@ -568,10 +568,11 @@ def main():
                     st.pyplot(fig)
                            
                     newdata = the_sport.drop('DATE', axis=1, inplace=True)
-                    choice = st.selectbox("Chose The Athlete",newdata['NAME'].drop_duplicates())
+                    choice = st.selectbox("Chose The Athlete",the_sport['NAME'].drop_duplicates())
+                    the_athlete = newdata.loc[df['NAME']==choice]
                     st.write(the_sport)
-                    st.write(choice)
-                    df1 = pd.DataFrame(data=choice)
+                    st.write(the_athlete)
+                    df1 = pd.DataFrame(data=the_athlete)
                     df2 = str(df1.T)
                     st.write(df2)
 
