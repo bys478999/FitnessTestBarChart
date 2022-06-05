@@ -574,7 +574,7 @@ def main():
                     st.write(the_athlete)
                     df1 = pd.DataFrame(data=the_athlete)
                     df2 = str(df1.T)
-                    st.write(df2)
+                    st.table(df2)
 
 
                   
