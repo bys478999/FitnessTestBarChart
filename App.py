@@ -567,7 +567,7 @@ def main():
                     plt.ylim(xx, yy)
                     st.pyplot(fig)
                            
-                    newdata = the_sport.drop('DATE', axis=1, inplace=True)
+                    newdata = the_sport.drop(['DATE', 'GENDER'], axis=1, inplace=True)
                     choice = st.selectbox("Chose The Athlete",the_sport['NAME'].drop_duplicates())
                     the_athlete = the_sport.loc[df['NAME']==choice].set_index('NAME')
                     st.write(the_sport.set_index('NAME'))
