@@ -569,8 +569,8 @@ def main():
                            
                     newdata = the_sport.drop(['DATE', 'GENDER','SPORT'], axis=1, inplace=True)
                     choice = st.selectbox("Chose The Athlete",the_sport['NAME'].drop_duplicates())
-                    the_athlete = the_sport.loc[df['NAME']==choice].set_index('NAME')
-                    st.write(the_sport.set_index('NAME'))
+                    the_athlete = the_sport.loc[df['NAME']==choice]
+                    st.write(the_sport)
                     df2 = pd.DataFrame(data=the_athlete)
                     df1 = df2.transpose()
                     st.dataframe(df1)
