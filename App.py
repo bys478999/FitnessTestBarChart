@@ -576,7 +576,7 @@ def main():
                     st.dataframe(df1)
                     st.bar_chart(df1)
                      
-                    sorted_y = the_sport.sort_values(by=[choice], inplace=False, ignore_index=True) 
+                    sorted_y = df1.sort_values(by=[choice], inplace=False, ignore_index=True) 
                     width = st.sidebar.slider("plot width", 1., 20., 15.)
                     height = st.sidebar.slider("plot height", 1., 10., 5.)
                     xx = st.sidebar.slider("bottom Y-axis", 0., 40., 0.)
