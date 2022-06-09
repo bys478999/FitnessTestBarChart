@@ -574,14 +574,9 @@ def main():
                     df2 = pd.DataFrame(data=the_athlete)
                     df1 = df2.transpose()
                     st.dataframe(df1)
-                    st.bar_chart(df2)
+
                      
-                    fig, ax = plt.subplots(nrows=1, ncols=1)    
-                    ax.pie(df2,labels=df2, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.8, textprops={'fontsize': 8})             
-                    ax.legend(legend_type, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')                 
-                    ax.set_title("Service Given (Sport)") 
-                    fig.tight_layout()
-                    st.pyplot(fig)
+                  
 
               
 
