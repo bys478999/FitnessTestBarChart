@@ -576,10 +576,10 @@ def main():
                     st.dataframe(df1)
 
                     sorted_y = df1.sort_values(by=[choice], inplace=False, ignore_index=True) 
-                    width_1 = st.slider("plot width", 1., 20., 15.)
-                    height_1 = st.slider("plot height", 1., 10., 5.)
-                    xx1 = st.slider("bottom Y-axis", 0., 40., 0.)
-                    yy1 = st.slider("upper Y-axis", 0., 120., 120.)
+                    width_1 = st.slider("width", 1., 20., 15.)
+                    height_1 = st.slider("height", 1., 10., 5.)
+                    xx1 = st.slider("bottom axis", 0., 40., 0.)
+                    yy1 = st.slider("upper axis", 0., 120., 120.)
                     x = sorted_y[choice] 
                     y = round(sorted_y['NAME'].astype(float), 2)
                     cc =  ['#3354FF', '#50FF33','#FFFE33','#33FFB7','#f00505','#8733FF','#C533FF','#FF9333','#B6FF33','#33FF7F','#721601','#988943','#858984','#3F832E','#2D776A','#015089','#7567A9','#4B4A4E','#34600E','#E3A951']
