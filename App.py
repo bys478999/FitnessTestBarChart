@@ -576,22 +576,11 @@ def main():
                     st.dataframe(df1)
                     st.bar_chart(df2)
                      
-                    sorted_y = df2.sort_values(by=[choice], inplace=False, ignore_index=True) 
-                    width = st.sidebar.slider("plot width", 1., 20., 15.)
-                    height = st.sidebar.slider("plot height", 1., 10., 5.)
-                    xx = st.sidebar.slider("bottom Y-axis", 0., 40., 0.)
-                    yy = st.sidebar.slider("upper Y-axis", 0., 120., 120.)
-                    x = sorted_y['NAME'] 
-                    y = round(sorted_y[choice].astype(float), 2)
-                    cc =  ['#3354FF', '#50FF33','#FFFE33','#33FFB7','#f00505','#8733FF','#C533FF','#FF9333','#B6FF33','#33FF7F','#721601','#988943','#858984','#3F832E','#2D776A','#015089','#7567A9','#4B4A4E','#34600E','#E3A951']
-                    fig, ax = plt.subplots(figsize=(width, height))
-                    ax = plt.bar(x, y, data=y, color=cc, width=0.5) 
-                    for i in range(len(x)):
-                        plt.text(i, y[i], y[i], ha="center", va="bottom", fontsize="medium")
-                    plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
-                    plt.title(choice)
-                    plt.ylabel(choice+" SCORE")
-                    plt.ylim(xx, yy)
+                    fig, ax = plt.subplots(nrows=1, ncols=1)    
+                    ax.pie(df1,labels=df1, autopct='%1.1f%%', pctdistance=1.1, labeldistance= 0.8, textprops={'fontsize': 8})             
+                    ax.legend(legend_type, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')                 
+                    ax.set_title("Service Given (Sport)") 
+                    fig.tight_layout()
                     st.pyplot(fig)
 
               
