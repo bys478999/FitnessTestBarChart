@@ -574,7 +574,7 @@ def main():
                     df2 = pd.DataFrame(data=the_athlete)
                     df1 = df2.transpose()
                     st.dataframe(df1)
-                    st.bar_chart(df1)
+                    st.bar_chart(df2)
                      
                     sorted_y = df1.sort_values(by=[choice], inplace=False, ignore_index=True) 
                     width = st.sidebar.slider("plot width", 1., 20., 15.)
