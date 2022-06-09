@@ -578,8 +578,8 @@ def main():
                     sorted_y = df1.sort_values(by=[choice], inplace=False, ignore_index=True) 
                     width = st.sidebar.slider("plot width", 1., 20., 15.)
                     height = st.sidebar.slider("plot height", 1., 10., 5.)
-                    xx = st.sidebar.slider("bottom Y-axis", 0., 40., 0.)
-                    yy = st.sidebar.slider("upper Y-axis", 0., 120., 120.)
+                    xx1 = st.sidebar.slider("bottom Y-axis", 0., 40., 0.)
+                    yy1 = st.sidebar.slider("upper Y-axis", 0., 120., 120.)
                     x = sorted_y[choice] 
                     y = round(sorted_y['NAME'].astype(float), 2)
                     cc =  ['#3354FF', '#50FF33','#FFFE33','#33FFB7','#f00505','#8733FF','#C533FF','#FF9333','#B6FF33','#33FF7F','#721601','#988943','#858984','#3F832E','#2D776A','#015089','#7567A9','#4B4A4E','#34600E','#E3A951']
@@ -590,7 +590,7 @@ def main():
                     plt.xticks(rotation='vertical', fontsize="medium", ha="right", va="center", wrap=True)
                     plt.title(choice)
                     plt.ylabel(choice+" SCORE")
-                    plt.ylim(xx, yy)
+                    plt.ylim(xx1, yy1)
                     st.pyplot(fig)
                   
 
