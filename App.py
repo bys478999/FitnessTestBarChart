@@ -571,7 +571,7 @@ def main():
                     choice = st.selectbox("Chose The Athlete",the_sport['NAME'].drop_duplicates())
                     the_athlete = the_sport.loc[df['NAME']==choice]
                     st.write(the_sport)
-                    df2 = pd.DataFrame(data=the_athlete).set_index()
+                    df2 = pd.DataFrame(data=the_athlete).set_index('NAME')
                     df1 = df2.transpose()
                     st.dataframe(df1)
 
