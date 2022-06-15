@@ -573,6 +573,7 @@ def main():
                     st.write(the_sport)
                     df2 = pd.DataFrame(data=the_athlete).set_index('NAME')
                     df1 = df2.transpose()
+                    df1.columns = ['TEST', 'NAME']
                     st.dataframe(df1)
 
                     sorted_y = df1.sort_values(by=[choice], inplace=False, ignore_index=True) 
