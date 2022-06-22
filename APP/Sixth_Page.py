@@ -179,7 +179,7 @@ def app():
        value4 = col44.selectbox('Chose The '+choice4, df[choice4].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)&(df[choice3]==value3)&(df[choice4]==value4)]
-          file = a[['YEAR','SPORT','NAME','AGE','HEIGHT','WEIGHT','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','YOYO TEST']] 
+          file = a[['YEAR','SPORT','NAME','AGE','HEIGHT','WEIGHT','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','40 M SPRINT','YOYO TEST']] 
           st.write(file.set_index('NAME'))
           st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
 
