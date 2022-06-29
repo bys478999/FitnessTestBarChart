@@ -55,7 +55,7 @@ def app():
     st.write(twenty)
         
     forty = df[['YEAR','SPORT','NAME','GENDER','AGE','40 M SPRINT']].dropna()
-    forty = df.loc[(df !=0).any(axis=1)]
+    forty = df[df.line_race !=0]
     st.subheader('40 Meter Sprint (s)')
     st.write(forty)
         
