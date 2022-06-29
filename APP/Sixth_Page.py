@@ -46,18 +46,20 @@ def app():
     st.subheader('Sit & Reach (cm)')
     st.write(sr)
         
-    ten = df[['YEAR','SPORT','NAME','GENDER','AGE','10 M SPRINT']].dropna()
+    a = df[['YEAR','SPORT','NAME','GENDER','AGE','10 M SPRINT']].dropna()
+    ten = a.drop(df.index[df['40 M SPRINT']==0], inplace=True)
     st.subheader('10 Meter Sprint (s)')
     st.write(ten)
         
-    twenty = df[['YEAR','SPORT','NAME','GENDER','AGE','20 M SPRINT']].dropna()
+    aa = df[['YEAR','SPORT','NAME','GENDER','AGE','20 M SPRINT']].dropna()
+    twenty = aa.drop(df.index[df['20 M SPRINT']==0], inplace=True)
     st.subheader('20 Meter Sprint (s)')
     st.write(twenty)
         
-    forty = df[['YEAR','SPORT','NAME','GENDER','AGE','40 M SPRINT']].dropna()
-    aa = forty.drop(df.index[df['40 M SPRINT']==0], inplace=True)
+    aaa = df[['YEAR','SPORT','NAME','GENDER','AGE','40 M SPRINT']].dropna()
+    forty = aaa.drop(df.index[df['40 M SPRINT']==0], inplace=True)
     st.subheader('40 Meter Sprint (s)')
-    st.write(aa)
+    st.write(forty)
         
     total = df[['YEAR','SPORT','NAME','GENDER','AGE','TOTAL']].dropna()
     st.subheader('Total Handgrip Strength (kg)')
