@@ -54,8 +54,8 @@ def app():
     st.subheader('20 Meter Sprint (s)')
     st.write(twenty)
         
-    forty = df[['YEAR','SPORT','NAME','GENDER','AGE','40 M SPRINT']].dropna().drop(df.index[df['40 M SPRINT']==0], inplace=True)
-    df.drop(df.index[df['40 M SPRINT']==0], inplace=True)
+    forty = df[['YEAR','SPORT','NAME','GENDER','AGE','40 M SPRINT']].dropna()
+    forty.drop(df.index[df['40 M SPRINT']==0], inplace=True)
     st.subheader('40 Meter Sprint (s)')
     st.write(forty)
         
