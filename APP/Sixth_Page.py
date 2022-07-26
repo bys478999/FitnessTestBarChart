@@ -47,19 +47,19 @@ def app():
     st.write(sr)
         
     a = df[['YEAR','SPORT','NAME','GENDER','AGE','10 M SPRINT']].dropna()
-    ten = a.drop(df.index[df['10 M SPRINT']==0], inplace=True)
+    #ten = a.drop(df.index[df['10 M SPRINT']==0], inplace=True)
     st.subheader('10 Meter Sprint (s)')
-    st.write(ten)
+    st.write(a)
         
     aa = df[['YEAR','SPORT','NAME','GENDER','AGE','20 M SPRINT']].dropna()
-    twenty = aa.drop(df.index[df['20 M SPRINT']==0], inplace=True)
+    #twenty = aa.drop(df.index[df['20 M SPRINT']==0], inplace=True)
     st.subheader('20 Meter Sprint (s)')
-    st.write(twenty)
+    st.write(aa)
         
     aaa = df[['YEAR','SPORT','NAME','GENDER','AGE','40 M SPRINT']].dropna()
-    forty = aaa.drop(df.index[df['40 M SPRINT']==0], inplace=True)
+    #forty = aaa.drop(df.index[df['40 M SPRINT']==0], inplace=True)
     st.subheader('40 Meter Sprint (s)')
-    st.write(forty)
+    st.write(aaa)
         
     total = df[['YEAR','SPORT','NAME','GENDER','AGE','TOTAL']].dropna()
     st.subheader('Total Handgrip Strength (kg)')
