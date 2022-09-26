@@ -584,12 +584,12 @@ def main():
                     sheet_id = st.secrets[username]
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Form Responses 1')
                     st.write(df)
+                    st.subheader("Service Given During SUKMA 2022")
                     group_1 = df.groupby(['Timestamp'])['Name'].count()
-                    st.write(group_1)
-                    st.line_chart(group_1)
                     col1, col2 = st.columns(2)   
                     col1.write(group_1)
                     col2.line_chart(group_1)
+                    
                     group_2 = df.groupby(['Gender'])['Name'].count()
                     st.write(group_2)
                     group_3 = df.groupby(['Status'])['Name'].count()
