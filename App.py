@@ -623,7 +623,7 @@ def main():
                     col1,col2,col3 = st.columns(3)
                     col1.write(group_5)
                     col2.write(injured)
-                    col3.bar_chartinjured) 
+                    col3.bar_chart(injured) 
                      
          
                     group_6 = df.groupby(['TreatmentGiven'])['Name'].count()
