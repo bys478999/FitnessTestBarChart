@@ -586,6 +586,7 @@ def main():
                     st.write(df)
                     group_1 = df.groupby(['Timestamp'])['Name'].count()
                     st.write(group_1)
+                    st.line_chart(group_1)
                     group_2 = df.groupby(['Gender'])['Name'].count()
                     st.write(group_2)
                     group_3 = df.groupby(['Status'])['Name'].count()
