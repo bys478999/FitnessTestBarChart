@@ -574,7 +574,7 @@ def main():
                     df1 = df2.transpose()
                     st.dataframe(df1)
 
-     elif choice == "SUKMA":
+    elif choice == "SUKMA":
           st.header("Sukan Malaysia (SUKMA)")
           username = st.sidebar.text_input("msnppsukma")
           password = st.sidebar.text_input("Password", type='password')
