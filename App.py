@@ -640,7 +640,7 @@ def main():
                     
                     sport = st.selectbox('Chose The Sport', df['Sport'].drop_duplicates())
                     st.write(sport)
-                    chosensport = sport[['NAME','GENDER','STATUS','INJURYPART','Diagnosis','TreatmentGiven']]
+                    chosensport = sport[['Name','Gender','Status','InjuryPart','Diagnosis','TreatmentGiven']]
                     st.write(chosensport)
       
       
