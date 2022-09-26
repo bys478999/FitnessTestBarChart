@@ -619,8 +619,11 @@ def main():
                     injury = df.assign(InjuryPart=df.InjuryPart.str.split(", ")).explode('InjuryPart')
                     injured = injury.groupby(['InjuryPart'])['Name'].count()
                     col1,col2 = st.columns(2)
+                    col1.subheader("Injury Part (Combination)")
                     col1.write(group_5)
-                    col2.write(injured)  
+                    col2.subheader("Injury Part")
+                    col2.write(injured) 
+                    st.subheader("Injury Part")
                     st.bar_chart(injured) 
                      
          
@@ -628,8 +631,11 @@ def main():
                     treatment = df.assign(TreatmentGiven=df.TreatmentGiven.str.split(", ")).explode('TreatmentGiven')
                     treat = treatment.groupby(['TreatmentGiven'])['Name'].count()
                     col1,col2 = st.columns(2)
+                    col1.subheader("Treatment Given (Combination)")
                     col1.write(group_6)
+                    col2.subheader("Treatment Given")
                     col2.write(treat)  
+                    st.subheader("Treatment Given")
                     st.bar_chart(treat) 
                     
                   
