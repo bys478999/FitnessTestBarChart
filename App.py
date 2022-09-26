@@ -643,11 +643,9 @@ def main():
                     ChosenSport = chosensport[['Name','Gender','Status','InjuryPart','Diagnosis','TreatmentGiven']] 
                     gender = chosensport.groupby(['Gender'])['Name'].count()
                     injurypart = chosensport.groupby(['InjuryPart'])['Name'].count()
-                    athlete = chosensport.groupby(['Name'])['Name'].count()
-                    col1,col2,col3 = st.columns(3)
-                    col1.write(gender)
-                    col2.write(injurypart)
-                    col3.write(athlete)
+                    col1,col2 = st.columns(2)
+                    col1.bar_chart(gender)
+                    col2.bar_chart(injurypart)
                     st.write(ChosenSport)
       
       
