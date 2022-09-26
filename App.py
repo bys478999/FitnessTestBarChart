@@ -624,12 +624,7 @@ def main():
                     fig.tight_layout()
                     st.pyplot(fig)
                   
-                    fig, ax = plt.subplots(nrows=1, ncols=1)    
-                    ax.pie(group_4,labels=group_4, labeldistance= 0.8, textprops={'fontsize': 8})
-                    ax.legend(legend_4, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
-                    ax.set_title("Service Given By Sport")
-                    fig.tight_layout()
-                    st.pyplot(fig)
+
                   
                   
                     st.bar_chart(group_3)
@@ -637,7 +632,9 @@ def main():
                     st.bar_chart(group_5)
                     st.bar_chart(group_6)
 
-
+                    treatment = df.assign(Treatment Given=df.Treatment Given.str.split(", ")).explode('Treatment Given')
+                    treat = treatment.groupby(['Treatment Given'])['Name'].count()
+                    st.write(treat)
       
       
       
