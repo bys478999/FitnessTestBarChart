@@ -609,7 +609,7 @@ def main():
                     legend_2 = df.groupby('Gender').groups
                     legend_3 = df.groupby('Status').groups
                     legend_7 = df.groupby('Service Venue').groups
-                    myexplode = [0.1,0,0,0,0]
+                    myexplode = [0.1,0,0,0]
                     fig, ax = plt.subplots(nrows=3, ncols=1)    
                     ax[0].pie(group_2,labels=group_2, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
                     ax[1].pie(group_3,labels=group_3, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 6})
