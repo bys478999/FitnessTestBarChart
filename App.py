@@ -625,7 +625,7 @@ def main():
                     st.pyplot(fig)
                   
                     fig, ax = plt.subplots(nrows=1, ncols=1)    
-                    ax.pie(group_4,labels=group_4, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
+                    ax.pie(group_4,labels=group_4, labeldistance= 1.2, textprops={'fontsize': 8})
                     ax.legend(legend_4, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
                     ax.set_title("Service Given By Sport")
                     fig.tight_layout()
