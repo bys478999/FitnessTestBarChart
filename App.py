@@ -612,7 +612,7 @@ def main():
                     myexplode = [0,0.1,0,0]
                     fig, ax = plt.subplots(nrows=3, ncols=1)    
                     ax[0].pie(group_2,labels=group_2, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
-                    ax[1].pie(group_4,labels=group_4, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 6})
+                    ax[1].pie(group_3,labels=group_3, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 6})
                     ax[2].pie(group_7,labels=group_7, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 6},  explode = myexplode)
                     ax[0].legend(legend_2, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
                     ax[1].legend(legend_3, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
@@ -622,6 +622,13 @@ def main():
                     ax[2].set_title("Service Given By Service Venue")
                     fig.tight_layout()
                     st.pyplot(fig)
+                  
+                    fig, ax = plt.subplots(nrows=1, ncols=1)    
+                    ax[0].pie(group_4,labels=group_4, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
+                    ax[0].set_title("Service Given By Sport")
+                    fig.tight_layout()
+                    st.pyplot(fig)
+                  
                   
                     st.bar_chart(group_3)
                     st.bar_chart(group_4)
