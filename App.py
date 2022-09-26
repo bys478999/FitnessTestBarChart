@@ -590,15 +590,30 @@ def main():
                     col1.write(group_1)
                     col2.line_chart(group_1)
                     
-                    
-                  
-                  
+                    st.subheader("Service Given By Gender")
                     group_2 = df.groupby(['Gender'])['Name'].count()
-                    st.write(group_2)
+                    col1,col2 = st.column(2)
+                    col1.write(group_2)
+                    col2.bar_chart(group_2)
+                  
+                    st.subheader("Service Given By Status")
                     group_3 = df.groupby(['Status'])['Name'].count()
-                    st.write(group_3)
+                    col1,col2 = st.column(2)
+                    col1.write(group_3)
+                    col2.bar_chart(group_3) 
+    
+                    st.subheader("Service Given By Sport")
                     group_4 = df.groupby(['Sport'])['Name'].count()
-                    st.write(group_4)
+                    col1,col2 = st.column(2)
+                    col1.write(group_4)
+                    col2.bar_chart(group_4) 
+                  
+                    st.subheader("Service Given By Venue")
+                    group_7 = df.groupby(['Service Venue'])['Name'].count()
+                    col1,col2 = st.column(2)
+                    col1.write(group_7)
+                    col2.bar_chart(group_7) 
+                 
                     group_5 = df.groupby(['InjuryPart'])['Name'].count()
                     st.write(group_5)
                     group_6 = df.groupby(['TreatmentGiven'])['Name'].count()
@@ -607,8 +622,7 @@ def main():
                     st.write(group_7)
 
 
-                    st.bar_chart(group_3)
-                    st.bar_chart(group_4)
+
 
          
                     injury = df.assign(InjuryPart=df.InjuryPart.str.split(", ")).explode('InjuryPart')
