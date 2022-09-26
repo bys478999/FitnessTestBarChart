@@ -608,6 +608,7 @@ def main():
 
                     legend_2 = df.groupby('Gender').groups
                     legend_3 = df.groupby('Status').groups
+                    legend_4 = df.groupby('Sport').groups
                     legend_7 = df.groupby('Service Venue').groups
                     myexplode = [0,0.1,0,0]
                     fig, ax = plt.subplots(nrows=3, ncols=1)    
@@ -625,6 +626,7 @@ def main():
                   
                     fig, ax = plt.subplots(nrows=1, ncols=1)    
                     ax[0].pie(group_4,labels=group_4, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
+                    ax[0].legend(legend_4, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
                     ax[0].set_title("Service Given By Sport")
                     fig.tight_layout()
                     st.pyplot(fig)
