@@ -577,7 +577,7 @@ def main():
               
     elif choice == "SUKMA":
           st.header("Sukan Malaysia (SUKMA)")
-          username = st.sidebar.text_input("msnppsukma")
+          username = st.sidebar.text_input("Username")
           password = st.sidebar.text_input("Password", type='password')
           if st.sidebar.checkbox("Login"): 
                if password == st.secrets["password"]:
