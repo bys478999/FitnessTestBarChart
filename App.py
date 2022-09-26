@@ -15,7 +15,7 @@ st.set_page_config(
 
 def main():
     st.title("""Sports Science & Sports Medicine Website""")
-    menu = ["Home","Data Analysis","Body Mechanics", "Gym Attendance","Supplement","Sports Rehab","Sports Nutrition", "Sports Psychology"]
+    menu = ["Home","Data Analysis","Body Mechanics", "Gym Attendance","Supplement","Sports Rehab","Sports Nutrition", "Sports Psychology", "SUKMA"]
     st.sidebar.image('msnpp.png')
     choice = st.sidebar.selectbox("Menu",menu)
       
@@ -574,7 +574,15 @@ def main():
                     df1 = df2.transpose()
                     st.dataframe(df1)
 
-
+     elif choice == "SUKMA":
+          st.header("Sukan Malaysia (SUKMA)")
+          username = st.sidebar.text_input("msnppsukma")
+          password = st.sidebar.text_input("Password", type='password')
+          if st.sidebar.checkbox("Login"): 
+               if password == st.secrets["password"]:
+                    sheet_id = st.secrets[username]
+                    df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Form Responses 1')
+                    st.write(df)                    
 
               
 
