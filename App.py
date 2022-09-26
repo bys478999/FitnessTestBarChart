@@ -599,7 +599,7 @@ def main():
                     st.write(group_3)
                     group_4 = df.groupby(['Sport'])['Name'].count()
                     st.write(group_4)
-                    group_5 = df.groupby(['Injury Part'])['Name'].count()
+                    group_5 = df.groupby(['InjuryPart'])['Name'].count()
                     st.write(group_5)
                     group_6 = df.groupby(['TreatmentGiven'])['Name'].count()
                     st.write(group_6)
@@ -631,11 +631,15 @@ def main():
                     st.bar_chart(group_4)
                     st.bar_chart(group_5)
                     st.bar_chart(group_6)
-
+         
+                    injury = df.assign(InjuryPart=df.InjuryPart.str.split(", ")).explode('InjuryPart')
+                    injured = injury.groupby(['InjuryPart'])['Name'].count()
+                    st.write(injured)
+         
                     treatment = df.assign(TreatmentGiven=df.TreatmentGiven.str.split(", ")).explode('TreatmentGiven')
                     treat = treatment.groupby(['TreatmentGiven'])['Name'].count()
                     st.write(treat)
-      
+                  
       
       
       
