@@ -586,6 +586,20 @@ def main():
                     st.write(df)
                     group_1 = df.groupby(['Timestamp'])['Name'].count()
                     st.write(group_1)
+                    group_2 = df.groupby(['Gender'])['Name'].count()
+                    st.write(group_2)
+                    group_3 = df.groupby(['Status'])['Name'].count()
+                    st.write(group_3)
+                    group_4 = df.groupby(['Sport'])['Name'].count()
+                    st.write(group_4)
+                    group_5 = df.groupby(['Injury Part'])['Name'].count()
+                    st.write(group_5)
+                    group_6 = df.groupby(['Treatment Given'])['Name'].count()
+                    st.write(group_6)
+                    group_7 = df.groupby(['Service Venue'])['Name'].count()
+                    st.write(group_7)
+
+
       
 
 
