@@ -648,7 +648,7 @@ def main():
                     col1.bar_chart(gender)
                     col2.subheader('Injury Part')
                     col2.bar_chart(injurypart)
-                    st.subheader('Injury Detail for '+sport)
+                    st.subheader('Injury Detail for '+sport+' Athlete')
                     st.write(ChosenSport)
       
       
