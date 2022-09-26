@@ -639,7 +639,7 @@ def main():
                     st.bar_chart(treat) 
                     
                     sport = st.selectbox('Chose The Sport', df['Sport'].drop_duplicates())
-                    chosensport = df.loc[sport]
+                    chosensport = df.loc(sport)
                     ChosenSport = chosensport[['Name','Gender','Status','InjuryPart','Diagnosis','TreatmentGiven']]
                     st.write(ChosenSport)
       
