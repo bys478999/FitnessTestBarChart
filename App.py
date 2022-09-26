@@ -644,6 +644,16 @@ def main():
                     st.write(ChosenSport)
       
 
+                    gender = chosensport.groupby(['Gender'])['Name'].count()
+                    injurypart = chosensport.groupby(['InjuryPart'])['Name'].count()
+                    athlete = chosensport.groupby(['Name'])['Name'].count()
+                    col1,col2,col3 = st.columns(3)
+                    col1.bar_chart(gender)
+                    col2.bar_chart(injurypart)
+                    col3.bar_chart(athlete)
+      
+      
+      
       
                   
                      
