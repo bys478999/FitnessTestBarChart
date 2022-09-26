@@ -638,7 +638,10 @@ def main():
                     st.subheader("Treatment Given")
                     st.bar_chart(treat) 
                     
-                  
+                    sport = st.selectbox('Chose The Sport', df['Sport'].drop_duplicates())
+                    st.write(sport)
+                    chosensport = sport[['NAME','GENDER','STATUS','INJURYPART','Diagnosis','TreatmentGiven']]
+                    st.write(chosensport)
       
       
       
