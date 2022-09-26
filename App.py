@@ -612,7 +612,7 @@ def main():
                     fig, ax = plt.subplots(nrows=3, ncols=1)    
                     ax[0].pie(group_2,labels=group_2, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
                     ax[1].pie(group_3,labels=group_3, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 6})
-                    ax[2].pie(group_7,labels=group_7, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
+                    ax[2].pie(group_7,labels=group_7, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 6})
                     ax[0].legend(legend_2, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
                     ax[1].legend(legend_3, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
                     ax[2].legend(legend_7, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
