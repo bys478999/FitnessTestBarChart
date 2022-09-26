@@ -616,21 +616,22 @@ def main():
                   
 
                     group_5 = df.groupby(['InjuryPart'])['Name'].count()
-                    st.write(group_5)
                     injury = df.assign(InjuryPart=df.InjuryPart.str.split(", ")).explode('InjuryPart')
                     injured = injury.groupby(['InjuryPart'])['Name'].count()
-                    st.write(injured)
-                    col1,col2,col3 = st.columns(3)
+                    col1,col2 = st.columns(2)
                     col1.write(group_5)
-                    col2.write(injured)
-                    col3.bar_chart(injured) 
+                    col2.write(injured)  
+                    st.bar_chart(injured) 
                      
          
                     group_6 = df.groupby(['TreatmentGiven'])['Name'].count()
-                    st.write(group_6)
                     treatment = df.assign(TreatmentGiven=df.TreatmentGiven.str.split(", ")).explode('TreatmentGiven')
                     treat = treatment.groupby(['TreatmentGiven'])['Name'].count()
-                    st.write(treat)
+                    col1,col2 = st.columns(2)
+                    col1.write(group_6)
+                    col2.write(treat)  
+                    st.bar_chart(treat) 
+                    
                   
       
       
