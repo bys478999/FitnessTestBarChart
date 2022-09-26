@@ -583,9 +583,11 @@ def main():
                if password == st.secrets["password"]:
                     sheet_id = st.secrets[username]
                     df = pd.read_excel(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=xlsx", sheet_name='Form Responses 1')
-                    st.write(df)                    
-
+                    st.write(df)
+                    group_1 = df.groupby('Timestamp').count()
+                    st.write(group_1)
       
+
 
                   
                      
