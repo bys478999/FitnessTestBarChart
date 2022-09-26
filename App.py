@@ -590,6 +590,9 @@ def main():
                     col1.write(group_1)
                     col2.line_chart(group_1)
                     
+                    
+                  
+                  
                     group_2 = df.groupby(['Gender'])['Name'].count()
                     st.write(group_2)
                     group_3 = df.groupby(['Status'])['Name'].count()
@@ -603,10 +606,28 @@ def main():
                     group_7 = df.groupby(['Service Venue'])['Name'].count()
                     st.write(group_7)
 
-
+                    legend_2 = df.groupby('Gender').groups
+                    legend_3 = df.groupby('Status').groups
+                    legend_7 = df.groupby('Service Venue').groups
+                    fig, ax = plt.subplots(nrows=1, ncols=3)    
+                    ax[0].pie(group_2,labels=group_2, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
+                    ax[1].pie(group_3,labels=group_3, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
+                    ax[2].pie(group_7,labels=group_7, autopct='%1.1f%%', pctdistance=1.2, labeldistance= 0.6, textprops={'fontsize': 8})
+                    ax[0].legend(legend_2, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
+                    ax[1].legend(legend_3, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
+                    ax[2].legend(legend_7, loc='best', bbox_to_anchor=(1.05, 1.0), fontsize='xx-small')
+                    ax[0].set_title("Service Given By Gender")
+                    ax[1].set_title("Service Given By Status")
+                    ax[2].set_title("Service Given By Service Venue")
+                    fig.tight_layout()
+                    st.pyplot(fig)
       
 
 
+      
+      
+      
+      
                   
                      
 if __name__ == '__main__':
