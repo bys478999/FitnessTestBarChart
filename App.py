@@ -332,7 +332,7 @@ def main():
                     
                     supplement_type = wholedata.groupby(['Supplement'])['Quantity'].sum()   
                     total_price = wholedata.groupby(['Supplement'])['Total Price (RM)'].sum()
-                    sport = wholedata.groupby(['Sports','Supplement'])['Quantity','Total Price (RM)'].sum()
+                    sport = wholedata.groupby(['Sports','Supplement'])['Total Price (RM)'].sum()
                     gender = wholedata.groupby(['Gender'])['Quantity'].sum()
                     purpose = wholedata.groupby(['Purpose'])['Quantity'].sum()                                    
                     sport_quantity = wholedata.groupby(['Sports'])['Quantity'].sum()
