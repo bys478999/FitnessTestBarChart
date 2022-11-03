@@ -53,7 +53,7 @@ def main():
         username = st.sidebar.text_input("Username")
         password = st.sidebar.text_input("Password", type='password')
         if st.sidebar.checkbox("Login"): 
-            if password == st.secrets["password_1"] and username == st.secrets["username_1"]:
+            if password == st.secrets["password_1"] and username == st.secrets["username"]:
                     app = MultiApp()
                     st.title('Fitness Test Web Application')
                     app.add_app("Fitness Test Result", Sixth_Page.app)
