@@ -417,6 +417,7 @@ def main():
                     rehab = selected_period_2[['DATE','NAME','GENDER','STATUS','SPORT','INJURY PART','EXERCISE','MODALITIES']]
                     st.subheader("Assessment and Treatment ("+"from "+startdate+" to "+enddate+")")
                     st.write(selected_1)
+                    st.download_button(label='Download the dataframe',data=selected_1.to_csv(),mime='text/csv', file_name='Sports Injury Report.csv')
                     x = selected_period.groupby('SPORT')['NAME'].count()
                     y = selected_period.groupby('INJURY PART')['SPORT'].count()                          
                     st.subheader("Case Reported By Injury Part")
