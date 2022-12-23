@@ -132,7 +132,7 @@ def app():
     number = ["1","2","3","4"]
     chose = st.selectbox("Chose how many filter you want:",number)
     if chose == "1":
-       menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
+       menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER","AGE","BMI","BODY FAT","MAXIMUM PUSH UP","1 MIN CURL UP","CMJ","SBJ","TOTAL","SIT & REACH","ILLINOIS/L","ILLINOIS/R","10 M SPRINT","20 M SPRINT","40 M SPRINT","YOYO TEST"]
        choice = st.selectbox("Filter(1)",menu)
        value = st.selectbox('Chose The '+choice, df[choice].drop_duplicates()) 
        if st.checkbox("Done"):
@@ -142,7 +142,7 @@ def app():
           st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
     elif chose == "2":
        col1, col2 = st.columns(2) 
-       menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
+       menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER","AGE","BMI","BODY FAT","MAXIMUM PUSH UP","1 MIN CURL UP","CMJ","SBJ","TOTAL","SIT & REACH","ILLINOIS/L","ILLINOIS/R","10 M SPRINT","20 M SPRINT","40 M SPRINT","YOYO TEST"]
        choice = col1.selectbox("Filter(1)",menu)
        choice2 = col2.selectbox("Filter(2)",menu)
        col11, col22 = st.columns(2) 
@@ -155,7 +155,7 @@ def app():
           st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
     elif chose == "3":
        col1, col2, col3 = st.columns(3) 
-       menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
+       menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER","AGE","BMI","BODY FAT","MAXIMUM PUSH UP","1 MIN CURL UP","CMJ","SBJ","TOTAL","SIT & REACH","ILLINOIS/L","ILLINOIS/R","10 M SPRINT","20 M SPRINT","40 M SPRINT","YOYO TEST"]
        choice = col1.selectbox("Filter(1)",menu)
        choice2 = col2.selectbox("Filter(2)",menu)
        choice3 = col3.selectbox("Filter(3)",menu)
@@ -170,7 +170,7 @@ def app():
           st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
     else:
        col1, col2, col3, col4 = st.columns(4) 
-       menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER"]
+       menu = ["YEAR","PHASE","CATEGORY","SPORT","GENDER","AGE","BMI","BODY FAT","MAXIMUM PUSH UP","1 MIN CURL UP","CMJ","SBJ","TOTAL","SIT & REACH","ILLINOIS/L","ILLINOIS/R","10 M SPRINT","20 M SPRINT","40 M SPRINT","YOYO TEST"]
        choice = col1.selectbox("Filter(1)",menu)
        choice2 = col2.selectbox("Filter(2)",menu)
        choice3 = col3.selectbox("Filter(3)",menu)
