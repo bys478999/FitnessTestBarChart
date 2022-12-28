@@ -68,7 +68,14 @@ def app():
     yy = df[['YEAR','SPORT','NAME','GENDER','AGE','YOYO TEST']].dropna()
     st.subheader('Beep Test')
     st.write(yy)
-        
+    
+    bp = df[['YEAR','SPORT','NAME','GENDER','AGE','1RM BENCH PRESS']].dropna()
+    st.subheader('1RM Bench Press')
+    st.write(bp)
+       
+    squat = df[['YEAR','SPORT','NAME','GENDER','AGE','1RM BACK SQUAT']].dropna()
+    st.subheader('1RM Back Squat')
+    st.write(squat)
     
     
     st.header('Fitness Test Data (Female)')
@@ -137,7 +144,7 @@ def app():
        value = st.selectbox('Chose The '+choice, df[choice].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)]
-          file = a[['YEAR','MONTH','SPORT','NAME','AGE','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','40 M SPRINT','YOYO TEST','NOTE']] 
+          file = a[['YEAR','MONTH','SPORT','NAME','AGE','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','40 M SPRINT','YOYO TEST','NOTE','1RM BENCH PRESS','1RM BACK SQUAT']] 
           st.write(file.set_index('NAME'))
           st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
     elif chose == "2":
@@ -150,7 +157,7 @@ def app():
        value2 = col22.selectbox('Chose The '+choice2, df[choice2].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)]
-          file = a[['YEAR','MONTH','SPORT','NAME','AGE','HEIGHT','WEIGHT','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','40 M SPRINT','YOYO TEST','NOTE']] 
+          file = a[['YEAR','MONTH','SPORT','NAME','AGE','HEIGHT','WEIGHT','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','40 M SPRINT','YOYO TEST','NOTE','1RM BENCH PRESS','1RM BACK SQUAT']] 
           st.write(file.set_index('NAME'))
           st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
     elif chose == "3":
@@ -165,7 +172,7 @@ def app():
        value3 = col33.selectbox('Chose The '+choice3, df[choice3].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)&(df[choice3]==value3)]
-          file = a[['YEAR','MONTH','SPORT','NAME','AGE','HEIGHT','WEIGHT','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','40 M SPRINT','YOYO TEST','NOTE']] 
+          file = a[['YEAR','MONTH','SPORT','NAME','AGE','HEIGHT','WEIGHT','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','40 M SPRINT','YOYO TEST','NOTE','1RM BENCH PRESS','1RM BACK SQUAT']] 
           st.write(file.set_index('NAME'))
           st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
     else:
@@ -182,7 +189,7 @@ def app():
        value4 = col44.selectbox('Chose The '+choice4, df[choice4].drop_duplicates()) 
        if st.checkbox("Done"):
           a = df.loc[(df[choice]==value)&(df[choice2]==value2)&(df[choice3]==value3)&(df[choice4]==value4)]
-          file = a[['YEAR','MONTH','SPORT','NAME','AGE','HEIGHT','WEIGHT','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','40 M SPRINT','YOYO TEST','NOTE']] 
+          file = a[['YEAR','MONTH','SPORT','NAME','AGE','HEIGHT','WEIGHT','BMI','BODY FAT','MAXIMUM PUSH UP','1 MIN CURL UP','CMJ','SBJ','TOTAL','SIT & REACH','ILLINOIS/L','ILLINOIS/R','10 M SPRINT','20 M SPRINT','40 M SPRINT','YOYO TEST','NOTE','1RM BENCH PRESS','1RM BACK SQUAT']] 
           st.write(file.set_index('NAME'))
           st.download_button(label='Download Fitness Test Result',data=file.to_csv(),mime='text/csv', file_name='Fitness Test.csv')
 
